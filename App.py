@@ -1,10 +1,13 @@
-import streamlit as st
+import os
+import sqlite3
 import pandas as pd
-from datetime import datetime
+import streamlit as st
 
-# =========================================================
-# APP CONFIG
-# =========================================================
+from database import init_db, upsert_house
+
+# ============================================================
+# CONFIG
+# ============================================================
 
 st.set_page_config(
     page_title="新竹雙通勤找房",
@@ -12,154 +15,176 @@ st.set_page_config(
     layout="wide"
 )
 
-# =========================================================
-# SAMPLE / CURRENT TRACKING DATABASE
-# 下一版會改成 CSV / SQLite 自動更新
-# =========================================================
+DB_PATH = "houses.db"
+CSV_PATH = "data/houses.csv"
 
-houses = [
-    {
-        "status": "🔻 降價",
-        "name": "佳陞禾樂",
-        "district": "竹北市",
-        "address": "新竹縣竹北市光明十五街",
-        "price": 1728,
-        "old_price": 1798,
-        "area": 37.34,
-        "age": 4.2,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "work1": 0.0,
-        "work2": 0.0,
-        "source": "永慶",
-        "url": "",
-        "first_seen": "2026-10-06",
-        "last_seen": "2026-10-07",
-        "lat": None,
-        "lon": None,
-    },
-    {
-        "status": "🔻 降價",
-        "name": "星都匯 D區",
-        "district": "竹東鎮",
-        "address": "新竹縣竹東鎮旭光一路",
-        "price": 1528,
-        "old_price": 1598,
-        "area": 34.78,
-        "age": 0.3,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "work1": 0.0,
-        "work2": 0.0,
-        "source": "永慶",
-        "url": "",
-        "first_seen": "2026-10-05",
-        "last_seen": "2026-10-07",
-        "lat": None,
-        "lon": None,
-    },
-    {
-        "status": "🔻 降價",
-        "name": "臻研臻美",
-        "district": "竹東鎮",
-        "address": "新竹縣竹東鎮和江街",
-        "price": 1398,
-        "old_price": 1498,
-        "area": 41.39,
-        "age": 10.8,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "work1": 0.0,
-        "work2": 0.0,
-        "source": "永慶",
-        "url": "",
-        "first_seen": "2026-10-06",
-        "last_seen": "2026-10-07",
-        "lat": None,
-        "lon": None,
-    },
-    {
-        "status": "👀 追蹤",
-        "name": "美學苑",
-        "district": "新竹市",
-        "address": "新竹市北區經國路二段",
-        "price": 1398,
-        "old_price": 1398,
-        "area": 32.88,
-        "age": 19.8,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "work1": 0.0,
-        "work2": 0.0,
-        "source": "房仲",
-        "url": "",
-        "first_seen": "2026-09-29",
-        "last_seen": "2026-10-07",
-        "lat": None,
-        "lon": None,
-    },
-    {
-        "status": "👀 追蹤",
-        "name": "竹科潤隆",
-        "district": "新竹市",
-        "address": "新竹市東區埔頂三路30號",
-        "price": 1986,
-        "old_price": 1986,
-        "area": 31.25,
-        "age": 3.3,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "work1": 0.0,
-        "work2": 0.0,
-        "source": "房仲",
-        "url": "",
-        "first_seen": "2026-10-02",
-        "last_seen": "2026-10-07",
-        "lat": None,
-        "lon": None,
-    },
-]
+init_db()
 
-df = pd.DataFrame(houses)
+# ============================================================
+# AUTO IMPORT CSV
+# ============================================================
 
-# =========================================================
+def import_csv():
+
+    if not os.path.exists(CSV_PATH):
+        return
+
+    df_csv = pd.read_csv(CSV_PATH)
+
+    for _, r in df_csv.iterrows():
+
+        def val(key, default=None):
+            if key not in r:
+                return default
+
+            v = r[key]
+
+            if pd.isna(v):
+                return default
+
+            return v
+
+        h = {
+            "name": val("name", ""),
+            "district": val("district", ""),
+            "address": val("address", ""),
+            "price": float(val("price", 0)),
+            "area": float(val("area", 0)),
+            "age": float(val("age", 0)),
+            "rooms": int(val("rooms", 0)),
+            "parking": val("parking", ""),
+            "floor": val("floor", ""),
+            "source": val("source", ""),
+            "url": val("url", ""),
+            "lat": val("lat"),
+            "lon": val("lon"),
+            "work1_distance": val("work1_distance"),
+            "work2_distance": val("work2_distance")
+        }
+
+        upsert_house(h)
+
+import_csv()
+
+# ============================================================
+# DATABASE LOADERS
+# ============================================================
+
+def load_houses():
+
+    con = sqlite3.connect(DB_PATH)
+
+    df = pd.read_sql_query("""
+        SELECT *
+        FROM houses
+        ORDER BY price
+    """, con)
+
+    con.close()
+
+    return df
+
+
+def load_history(fp):
+
+    con = sqlite3.connect(DB_PATH)
+
+    df = pd.read_sql_query("""
+        SELECT
+            price,
+            seen_at
+        FROM price_history
+        WHERE fingerprint=?
+        ORDER BY seen_at
+    """, con, params=(fp,))
+
+    con.close()
+
+    return df
+
+
+df = load_houses()
+
+# ============================================================
 # HEADER
-# =========================================================
+# ============================================================
 
 st.title("🏠 新竹雙通勤找房")
 
 st.caption(
-    "📍 科環路 × 竹北水瀧三街 ｜ "
-    "1000–2000萬 ｜ 正2房 ｜ ≤20年 ｜ 坡道平面"
+    "科環路 × 竹北水瀧三街"
 )
 
 st.caption(
-    f"最後更新：{datetime.now().strftime('%Y-%m-%d %H:%M')}"
+    "1000–2000萬｜正2房｜≤20年｜坡道平面｜雙通勤合計≤15km"
 )
 
-# =========================================================
-# FILTER
-# =========================================================
+# ============================================================
+# DATA STATUS
+# ============================================================
 
-with st.expander("🔎 搜尋條件", expanded=False):
+if df.empty:
+
+    st.error("資料庫目前沒有房源。")
+    st.stop()
+
+active = df[df["active"] == 1].copy()
+
+# ============================================================
+# METRICS
+# ============================================================
+
+new_count = len(
+    active[active["last_status"] == "new"]
+)
+
+drop_count = len(
+    active[active["last_status"] == "price_drop"]
+)
+
+relisted_count = len(
+    active[active["last_status"] == "relisted"]
+)
+
+delisted_count = len(
+    df[df["active"] == 0]
+)
+
+st.subheader("📡 最新追蹤")
+
+a, b, c, d = st.columns(4)
+
+a.metric("🆕 新增", new_count)
+b.metric("🔻 降價", drop_count)
+c.metric("♻️ 重上架", relisted_count)
+d.metric("❌ 下架", delisted_count)
+
+if new_count == 0 and drop_count == 0:
+    st.info("本次無新增、無降價")
+
+# ============================================================
+# FILTERS
+# ============================================================
+
+with st.expander("🔎 篩選", expanded=False):
 
     price_range = st.slider(
         "總價（萬）",
         500,
         3000,
         (1000, 2000),
-        step=50
+        50
     )
 
-    age_limit = st.slider(
+    max_age = st.slider(
         "最大屋齡",
         0,
         40,
         20
     )
 
-    distance_limit = st.slider(
-        "雙通勤合計距離（km）",
+    max_distance = st.slider(
+        "雙通勤合計上限（km）",
         5,
         40,
         15
@@ -183,248 +208,380 @@ with st.expander("🔎 搜尋條件", expanded=False):
         ]
     )
 
-# =========================================================
-# APPLY FILTER
-# =========================================================
+    strict_parking = st.toggle(
+        "只接受明確『坡道平面』",
+        True
+    )
 
-filtered = df[
-    (df["price"] >= price_range[0]) &
-    (df["price"] <= price_range[1]) &
-    (df["age"] <= age_limit) &
-    (df["rooms"] == 2) &
-    (df["parking"] == "坡道平面") &
-    (df["district"].isin(districts))
+    strict_distance = st.toggle(
+        "只看已驗證且雙通勤≤上限",
+        False
+    )
+
+# ============================================================
+# FILTER
+# ============================================================
+
+f = active[
+    (active["price"] >= price_range[0])
+    &
+    (active["price"] <= price_range[1])
+    &
+    (active["rooms"] == 2)
+    &
+    (active["age"] <= max_age)
+    &
+    (active["district"].isin(districts))
 ].copy()
 
-# 只有距離已經計算的才使用15km硬篩
-filtered["distance_total"] = filtered["work1"] + filtered["work2"]
+if strict_parking:
+    f = f[f["parking"] == "坡道平面"]
 
-# =========================================================
-# SUMMARY
-# =========================================================
-
-st.subheader("📊 本次追蹤")
-
-c1, c2, c3 = st.columns(3)
-
-c1.metric(
-    "追蹤房源",
-    len(filtered)
+f["distance_total"] = (
+    pd.to_numeric(
+        f["work1_distance"],
+        errors="coerce"
+    )
+    +
+    pd.to_numeric(
+        f["work2_distance"],
+        errors="coerce"
+    )
 )
 
-c2.metric(
-    "降價",
-    len(filtered[filtered["price"] < filtered["old_price"]])
+if strict_distance:
+
+    f = f[
+        f["distance_total"].notna()
+        &
+        (f["distance_total"] <= max_distance)
+    ]
+
+# ============================================================
+# PIPELINE COUNTERS
+# ============================================================
+
+st.subheader("🧮 篩選結果")
+
+m1, m2, m3 = st.columns(3)
+
+m1.metric(
+    "資料庫",
+    f"{len(active):,}"
 )
 
-c3.metric(
-    "新物件",
-    len(filtered[filtered["status"].str.contains("新增")])
+m2.metric(
+    "符合基本條件",
+    f"{len(f):,}"
 )
 
-# =========================================================
-# PRICE CHANGES
-# =========================================================
-
-changes = filtered[
-    filtered["price"] < filtered["old_price"]
+verified = f[
+    f["distance_total"].notna()
 ]
 
-if len(changes) > 0:
+m3.metric(
+    "已驗證距離",
+    f"{len(verified):,}"
+)
 
-    st.success(
-        f"🔥 發現 {len(changes)} 筆降價房源"
-    )
-
-else:
-
-    st.info(
-        "本次無新增、無降價"
-    )
-
-# =========================================================
+# ============================================================
 # MAP
-# =========================================================
+# ============================================================
 
-st.subheader("🗺️ 房源地圖")
+st.subheader("🗺️ 真實定位房源")
 
-map_df = filtered[
-    filtered["lat"].notna() &
-    filtered["lon"].notna()
-][["lat", "lon"]]
+map_df = f[
+    f["lat"].notna()
+    &
+    f["lon"].notna()
+].copy()
 
-if len(map_df) > 0:
+if not map_df.empty:
 
     st.map(
         map_df,
         latitude="lat",
         longitude="lon",
+        size=50,
         zoom=11,
-        height=380
+        height=400
     )
 
 else:
 
     st.warning(
-        "目前尚未有通過正式地址定位驗證的座標。"
-        "為避免錯誤標記，本版不使用近似位置。"
+        "目前沒有完成正式地址定位的物件。"
+        "系統不會使用近似座標。"
     )
 
-# =========================================================
+# ============================================================
 # SORT
-# =========================================================
+# ============================================================
 
-sort_option = st.selectbox(
-    "排序方式",
+sort = st.selectbox(
+    "排序",
     [
+        "雙通勤距離",
         "價格低 → 高",
         "坪數大 → 小",
-        "屋齡新 → 舊",
-        "降價幅度"
+        "屋齡新 → 舊"
     ]
 )
 
-if sort_option == "價格低 → 高":
-    filtered = filtered.sort_values("price")
+if sort == "雙通勤距離":
 
-elif sort_option == "坪數大 → 小":
-    filtered = filtered.sort_values(
+    f = f.sort_values(
+        "distance_total",
+        na_position="last"
+    )
+
+elif sort == "價格低 → 高":
+
+    f = f.sort_values("price")
+
+elif sort == "坪數大 → 小":
+
+    f = f.sort_values(
         "area",
         ascending=False
     )
 
-elif sort_option == "屋齡新 → 舊":
-    filtered = filtered.sort_values("age")
-
 else:
-    filtered["drop"] = (
-        filtered["old_price"] -
-        filtered["price"]
+
+    f = f.sort_values("age")
+
+# ============================================================
+# CARDS
+# ============================================================
+
+st.subheader(
+    f"🏘️ 房源 ({len(f)})"
+)
+
+status_icons = {
+    "new": "🆕 新增",
+    "price_drop": "🔻 降價",
+    "price_up": "🔺 漲價",
+    "relisted": "♻️ 重新上架",
+    "existing": "👀 追蹤"
+}
+
+for _, h in f.iterrows():
+
+    status = status_icons.get(
+        h["last_status"],
+        "👀 追蹤"
     )
-
-    filtered = filtered.sort_values(
-        "drop",
-        ascending=False
-    )
-
-# =========================================================
-# MOBILE CARDS
-# =========================================================
-
-st.subheader("🏘️ 房源")
-
-for _, h in filtered.iterrows():
-
-    drop = h["old_price"] - h["price"]
 
     with st.container(border=True):
 
         st.markdown(
-            f"### {h['status']}｜{h['name']}"
+            f"### {status}｜{h['name']}"
         )
 
         st.caption(
-            f"{h['district']} ｜ "
-            f"{h['address']}"
+            f"{h['district']}｜{h['address']}"
         )
 
-        a, b = st.columns(2)
+        c1, c2 = st.columns(2)
 
-        a.metric(
-            "💰 總價",
-            f"{h['price']:,} 萬"
+        c1.metric(
+            "💰",
+            f"{h['price']:,.0f} 萬"
         )
 
-        b.metric(
-            "🏠 坪數",
+        c2.metric(
+            "📐",
             f"{h['area']:.2f} 坪"
         )
 
         st.write(
-            f"**2房 ｜ {h['age']}年 ｜ "
+            f"**{h['rooms']}房 ｜ "
+            f"{h['age']:.1f}年 ｜ "
             f"🚗 {h['parking']}**"
         )
 
-        # Price change
-        if drop > 0:
+        # -----------------------------------------------
+        # DISTANCE
+        # -----------------------------------------------
 
-            pct = drop / h["old_price"] * 100
-
-            st.success(
-                f"🔻 {h['old_price']:,} → "
-                f"{h['price']:,} 萬　"
-                f"降 {drop:,} 萬 "
-                f"({pct:.1f}%)"
-            )
-
-        # Distance
-        if h["work1"] > 0 and h["work2"] > 0:
-
-            total = h["work1"] + h["work2"]
+        if pd.notna(h["distance_total"]):
 
             st.write(
-                f"🏭 科環路：**{h['work1']:.1f} km**"
+                f"🏭 科環路　"
+                f"**{h['work1_distance']:.1f} km**"
             )
 
             st.write(
-                f"🏢 水瀧三街：**{h['work2']:.1f} km**"
+                f"🏢 水瀧三街　"
+                f"**{h['work2_distance']:.1f} km**"
             )
 
-            if total <= distance_limit:
+            if h["distance_total"] <= max_distance:
 
                 st.success(
-                    f"🚘 雙通勤合計："
-                    f"**{total:.1f} km ✓**"
+                    f"🚘 合計 "
+                    f"{h['distance_total']:.1f} km ✓"
                 )
 
             else:
 
                 st.error(
-                    f"🚘 雙通勤合計："
-                    f"**{total:.1f} km ✕**"
+                    f"🚘 合計 "
+                    f"{h['distance_total']:.1f} km ✕"
                 )
 
         else:
 
             st.caption(
-                "🚘 雙通勤道路距離：等待正式地址驗證"
+                "🚘 等待正式地址＋道路距離驗證"
             )
 
-        st.caption(
-            f"首次發現：{h['first_seen']} ｜ "
-            f"最新追蹤：{h['last_seen']} ｜ "
-            f"來源：{h['source']}"
+        # -----------------------------------------------
+        # HISTORY
+        # -----------------------------------------------
+
+        history = load_history(
+            h["fingerprint"]
         )
 
-        if h["url"]:
+        if len(history) >= 2:
+
+            first = history.iloc[0]["price"]
+            latest = history.iloc[-1]["price"]
+
+            diff = latest - first
+
+            if diff < 0:
+
+                pct = abs(diff) / first * 100
+
+                st.success(
+                    f"🔻 {first:,.0f} → "
+                    f"{latest:,.0f} 萬　"
+                    f"-{abs(diff):,.0f}萬 "
+                    f"(-{pct:.1f}%)"
+                )
+
+            elif diff > 0:
+
+                st.warning(
+                    f"🔺 {first:,.0f} → "
+                    f"{latest:,.0f} 萬"
+                )
+
+        # -----------------------------------------------
+        # DATES
+        # -----------------------------------------------
+
+        st.caption(
+            f"首次：{h['first_seen']}  ｜  "
+            f"最新：{h['last_seen']}  ｜  "
+            f"{h['source']}"
+        )
+
+        # -----------------------------------------------
+        # LINK
+        # -----------------------------------------------
+
+        if isinstance(h["url"], str) and h["url"]:
 
             st.link_button(
-                "🔗 查看原始房源",
+                "🔗 查看刊登",
                 h["url"],
                 use_container_width=True
             )
 
-# =========================================================
-# DATABASE STATUS
-# =========================================================
+        # -----------------------------------------------
+        # PRICE HISTORY
+        # -----------------------------------------------
+
+        if not history.empty:
+
+            with st.expander(
+                "📈 價格歷史"
+            ):
+
+                chart = history.copy()
+
+                chart["seen_at"] = pd.to_datetime(
+                    chart["seen_at"]
+                )
+
+                chart = chart.set_index(
+                    "seen_at"
+                )
+
+                st.line_chart(
+                    chart["price"]
+                )
+
+                st.dataframe(
+                    history,
+                    hide_index=True,
+                    use_container_width=True
+                )
+
+# ============================================================
+# DELISTED
+# ============================================================
+
+delisted = df[
+    df["active"] == 0
+]
+
+if not delisted.empty:
+
+    with st.expander(
+        f"❌ 疑似下架 ({len(delisted)})"
+    ):
+
+        st.dataframe(
+            delisted[
+                [
+                    "name",
+                    "district",
+                    "price",
+                    "area",
+                    "last_seen"
+                ]
+            ],
+            hide_index=True,
+            use_container_width=True
+        )
+
+# ============================================================
+# SYSTEM STATUS
+# ============================================================
 
 st.divider()
 
-st.subheader("🗄️ 資料庫狀態")
+st.subheader("⚙️ V5 系統狀態")
 
-st.write(
-    """
-    🟢 App：正常  
-    🟢 條件篩選：正常  
-    🟢 價格比較：正常  
-    🟢 手機卡片：正常  
-    🟡 正式地址定位：下一階段  
-    🟡 雙通勤道路距離：下一階段  
-    🟡 大量房源資料庫：下一階段  
-    🔴 自動爬取：尚未接入
-    """
-)
+st.markdown("""
+**已完成**
 
-st.caption(
-    "定位失敗的房源不會顯示錯誤 Marker。"
-)
+- 🟢 SQLite 房源資料庫
+- 🟢 跨日期房源 fingerprint
+- 🟢 新增偵測
+- 🟢 降價 / 漲價偵測
+- 🟢 重新上架架構
+- 🟢 下架架構
+- 🟢 價格歷史
+- 🟢 CSV 大量匯入
+- 🟢 正2房篩選
+- 🟢 1000–2000萬篩選
+- 🟢 ≤20年篩選
+- 🟢 坡道平面 strict mode
+- 🟢 雙通勤 ≤15 km 架構
+- 🟢 真實座標才畫地圖
+- 🟢 手機版 UI
+
+**下一階段**
+
+- 🟡 地址自動驗證
+- 🟡 道路距離 API
+- 🟡 自動資料來源
+- 🟡 GitHub Actions
+- 🟡 每日 08:00 / 20:00 更新
+""")
