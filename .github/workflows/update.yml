@@ -2,7 +2,6 @@ name: Update House Database
 
 on:
   workflow_dispatch:
-
   schedule:
     - cron: "0 0 * * *"
     - cron: "0 12 * * *"
@@ -10,42 +9,40 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: house-database-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-
   update:
-
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
+          cache: pip
       - name: Install
-        run: |
-          pip install -r requirements.txt
-
-      - name: Collect
-        run: |
-          python collector.py
-
-      - name: Import
-        run: |
-          python import_houses.py
-
-      - name: Commit
+        run: pip install -r requirements.txt
+      - name: Collect public HTML (no API key)
+        run: python collector.py
+      - name: Import verified provenance
+        run: python import_houses.py
+      - name: Parser, database and Streamlit integration tests
+        run: python -m pytest -q
+      - name: Save diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collection-report
+          path: data/collection_report.json
+      - name: Commit collected data only after tests pass
         run: |
           git config user.name "House Tracker Bot"
           git config user.email "actions@github.com"
-
-          git add data/houses.csv houses.db
-
-          git diff --cached --quiet || \
-          git commit -m "Auto update house listings"
-
-          git push
+          git add data/houses.csv data/collection_report.json houses.db
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh public listings with collection provenance"
+            git push
+          fi
