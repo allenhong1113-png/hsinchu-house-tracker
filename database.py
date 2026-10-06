@@ -1,8 +1,10 @@
 import sqlite3
 import hashlib
+import os
+from pathlib import Path
 from datetime import datetime
 
-DB_PATH = "houses.db"
+DB_PATH = os.environ.get("HOUSE_DB_PATH", str(Path(__file__).resolve().parent / "houses.db"))
 
 
 def connect():
@@ -66,6 +68,15 @@ def init_db():
 
     required_columns = {
 
+        "listing_id": "TEXT",
+        "title": "TEXT",
+        "collected_at": "TEXT",
+        "layout_status": "TEXT",
+        "source_page": "TEXT",
+        "geocode_status": "TEXT",
+        "route_status": "TEXT",
+        "geocode_provider": "TEXT",
+        "route_provider": "TEXT",
         "work1_distance":
             "REAL",
 
@@ -150,6 +161,10 @@ def clean_text(value):
 
 def make_fingerprint(h):
 
+    if h.get("source") and (h.get("listing_id") or h.get("url")):
+        key = f"{h['source']}|{h.get('listing_id') or h['url']}"
+        return hashlib.sha256(key.encode()).hexdigest()
+
     name = clean_text(
         h.get("name")
     )
@@ -209,9 +224,7 @@ def upsert_house(h):
 
     fp = make_fingerprint(h)
 
-    now = datetime.now().strftime(
-        "%Y-%m-%d %H:%M:%S"
-    )
+    now = h.get("collected_at") or datetime.now().isoformat()
 
     row = cur.execute(
         """
@@ -419,6 +432,8 @@ def upsert_house(h):
             now
         ))
 
+    for field in ["listing_id", "title", "collected_at", "layout_status", "source_page", "geocode_status", "route_status", "geocode_provider", "route_provider"]:
+        cur.execute(f"UPDATE houses SET {field}=? WHERE fingerprint=?", (h.get(field), fp))
     con.commit()
     con.close()
 

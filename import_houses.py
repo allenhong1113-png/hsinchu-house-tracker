@@ -1,102 +1,50 @@
-import os
+"""Shared idempotent importer used by Actions and Streamlit bootstrap."""
+import hashlib
+import json
+from pathlib import Path
 import pandas as pd
+from database import connect, init_db, upsert_house
 
-from database import (
-    init_db,
-    upsert_house,
-    mark_missing_inactive
-)
+CSV_PATH = Path(__file__).resolve().parent / "data/houses.csv"
 
-CSV_PATH = "data/houses.csv"
 
-init_db()
+def import_csv(path=CSV_PATH):
+    init_db()
+    content = Path(path).read_bytes()
+    digest = hashlib.sha256(content).hexdigest()
+    con = connect()
+    con.execute("CREATE TABLE IF NOT EXISTS imports (digest TEXT PRIMARY KEY, imported_at TEXT DEFAULT CURRENT_TIMESTAMP)")
+    if con.execute("SELECT 1 FROM imports WHERE digest=?", (digest,)).fetchone():
+        con.close()
+        return {"already_imported": True}
+    con.commit()
+    con.close()
+    df = pd.read_csv(path)
+    required = {"listing_id", "source", "url", "collected_at", "price", "rooms"}
+    if not required.issubset(df.columns) or df.empty:
+        raise ValueError("CSV lacks real listing provenance or contains no listings")
+    # Validate the entire batch before any writes. Unknown age/parking remain unknown.
+    if df[list(required)].isna().any().any():
+        raise ValueError("Missing required listing provenance/numeric fields")
+    if not df.url.str.startswith("https://buy.yungching.com.tw/house/").all():
+        raise ValueError("Unsupported listing URL")
+    stats = {}
+    for record in df.to_dict("records"):
+        house = {k: (None if pd.isna(v) else v) for k, v in record.items()}
+        # Incoming CSV cannot assert guessed coordinates or unverified distances.
+        if house.get("geocode_status") != "verified_address":
+            house.update(lat=None, lon=None)
+        if house.get("route_status") != "verified_road":
+            house.update(work1_distance=None, work2_distance=None)
+        status, _ = upsert_house(house)
+        stats[status] = stats.get(status, 0) + 1
+    con = connect()
+    con.execute("INSERT INTO imports(digest) VALUES (?)", (digest,))
+    con.commit()
+    con.close()
+    print(json.dumps({"imported": len(df), "statuses": stats}, ensure_ascii=False))
+    return stats
 
-if not os.path.exists(CSV_PATH):
-    print("找不到 data/houses.csv")
-    raise SystemExit
 
-df = pd.read_csv(CSV_PATH)
-
-required = [
-    "name",
-    "district",
-    "address",
-    "price",
-    "area",
-    "age",
-    "rooms",
-    "parking",
-    "floor",
-    "source",
-    "url"
-]
-
-missing = [x for x in required if x not in df.columns]
-
-if missing:
-    print("缺少欄位:", missing)
-    raise SystemExit
-
-# ---------------------------
-# 去除完全重複列
-# ---------------------------
-
-raw_count = len(df)
-df = df.drop_duplicates()
-
-print("原始筆數:", raw_count)
-print("完全去重後:", len(df))
-
-seen = []
-
-stats = {
-    "new": 0,
-    "price_drop": 0,
-    "price_up": 0,
-    "relisted": 0,
-    "existing": 0
-}
-
-for _, r in df.iterrows():
-
-    def value(name, default=None):
-        v = r.get(name, default)
-        if pd.isna(v):
-            return default
-        return v
-
-    house = {
-        "name": value("name", ""),
-        "district": value("district", ""),
-        "address": value("address", ""),
-        "price": float(value("price", 0)),
-        "area": float(value("area", 0)),
-        "age": float(value("age", 0)),
-        "rooms": int(value("rooms", 0)),
-        "parking": value("parking", ""),
-        "floor": value("floor", ""),
-        "source": value("source", ""),
-        "url": value("url", ""),
-        "lat": value("lat"),
-        "lon": value("lon"),
-        "work1_distance": value("work1_distance"),
-        "work2_distance": value("work2_distance")
-    }
-
-    status, fp = upsert_house(house)
-
-    seen.append(fp)
-
-    if status in stats:
-        stats[status] += 1
-
-# 等真正做到「完整市場掃描」再打開這一行
-# mark_missing_inactive(seen)
-
-print()
-print("===== 本次結果 =====")
-print("新增:", stats["new"])
-print("降價:", stats["price_drop"])
-print("漲價:", stats["price_up"])
-print("重新上架:", stats["relisted"])
-print("既有:", stats["existing"])
+if __name__ == "__main__":
+    import_csv()

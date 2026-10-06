@@ -3,7 +3,8 @@ import sqlite3
 import pandas as pd
 import streamlit as st
 
-from database import init_db, upsert_house
+from database import init_db, DB_PATH
+from import_houses import import_csv, CSV_PATH
 
 # ============================================================
 # CONFIG
@@ -15,56 +16,13 @@ st.set_page_config(
     layout="wide"
 )
 
-DB_PATH = "houses.db"
-CSV_PATH = "data/houses.csv"
-
 init_db()
-
-# ============================================================
-# AUTO IMPORT CSV
-# ============================================================
-
-def import_csv():
-
-    if not os.path.exists(CSV_PATH):
-        return
-
-    df_csv = pd.read_csv(CSV_PATH)
-
-    for _, r in df_csv.iterrows():
-
-        def val(key, default=None):
-            if key not in r:
-                return default
-
-            v = r[key]
-
-            if pd.isna(v):
-                return default
-
-            return v
-
-        h = {
-            "name": val("name", ""),
-            "district": val("district", ""),
-            "address": val("address", ""),
-            "price": float(val("price", 0)),
-            "area": float(val("area", 0)),
-            "age": float(val("age", 0)),
-            "rooms": int(val("rooms", 0)),
-            "parking": val("parking", ""),
-            "floor": val("floor", ""),
-            "source": val("source", ""),
-            "url": val("url", ""),
-            "lat": val("lat"),
-            "lon": val("lon"),
-            "work1_distance": val("work1_distance"),
-            "work2_distance": val("work2_distance")
-        }
-
-        upsert_house(h)
-
-import_csv()
+# Bootstrap only if CSV content has changed. Never refresh seen/status on UI rerun.
+try:
+    if CSV_PATH.exists():
+        import_csv()
+except (ValueError, OSError) as exc:
+    st.error(f"房源匯入失敗：{exc}")
 
 # ============================================================
 # DATABASE LOADERS
@@ -128,7 +86,9 @@ if df.empty:
     st.error("資料庫目前沒有房源。")
     st.stop()
 
-active = df[df["active"] == 1].copy()
+active = df[(df["active"] == 1) & df["listing_id"].notna() & df["collected_at"].notna()].copy()
+# Legacy rows lacking listing URLs are retained in history but are not collected listings.
+st.info("公開房源 PoC：各區第一頁，並非全市場掃描。道路距離未驗證者僅為候選。正2房仍須核對格局圖。")
 
 # ============================================================
 # METRICS
@@ -215,7 +175,7 @@ with st.expander("🔎 篩選", expanded=False):
 
     strict_distance = st.toggle(
         "只看已驗證且雙通勤≤上限",
-        False
+        True
     )
 
 # ============================================================
@@ -233,6 +193,10 @@ f = active[
     &
     (active["district"].isin(districts))
 ].copy()
+
+f = f[~(f["name"].fillna("") + f["title"].fillna("")).str.replace(" ", "", regex=False).str.contains("綠光森林16", regex=False)]
+f = f[f["layout_status"] == "advertised_2_rooms"]
+basic_count = len(f[f["parking"] == "坡道平面"])
 
 if strict_parking:
     f = f[f["parking"] == "坡道平面"]
@@ -252,7 +216,8 @@ f["distance_total"] = (
 if strict_distance:
 
     f = f[
-        f["distance_total"].notna()
+        (f["route_status"] == "verified_road")
+        & f["distance_total"].notna()
         &
         (f["distance_total"] <= max_distance)
     ]
@@ -272,11 +237,11 @@ m1.metric(
 
 m2.metric(
     "符合基本條件",
-    f"{len(f):,}"
+    f"{basic_count:,}"
 )
 
 verified = f[
-    f["distance_total"].notna()
+    (f["route_status"] == "verified_road") & f["distance_total"].notna()
 ]
 
 m3.metric(
@@ -291,7 +256,8 @@ m3.metric(
 st.subheader("🗺️ 真實定位房源")
 
 map_df = f[
-    f["lat"].notna()
+    (f["geocode_status"] == "verified_address")
+    & f["lat"].notna()
     &
     f["lon"].notna()
 ].copy()
@@ -405,7 +371,7 @@ for _, h in f.iterrows():
         # DISTANCE
         # -----------------------------------------------
 
-        if pd.notna(h["distance_total"]):
+        if h["route_status"] == "verified_road" and pd.notna(h["distance_total"]):
 
             st.write(
                 f"🏭 科環路　"
@@ -556,32 +522,10 @@ if not delisted.empty:
 
 st.divider()
 
-st.subheader("⚙️ V5 系統狀態")
-
-st.markdown("""
-**已完成**
-
-- 🟢 SQLite 房源資料庫
-- 🟢 跨日期房源 fingerprint
-- 🟢 新增偵測
-- 🟢 降價 / 漲價偵測
-- 🟢 重新上架架構
-- 🟢 下架架構
-- 🟢 價格歷史
-- 🟢 CSV 大量匯入
-- 🟢 正2房篩選
-- 🟢 1000–2000萬篩選
-- 🟢 ≤20年篩選
-- 🟢 坡道平面 strict mode
-- 🟢 雙通勤 ≤15 km 架構
-- 🟢 真實座標才畫地圖
-- 🟢 手機版 UI
-
-**下一階段**
-
-- 🟡 地址自動驗證
-- 🟡 道路距離 API
-- 🟡 自動資料來源
-- 🟡 GitHub Actions
-- 🟡 每日 08:00 / 20:00 更新
-""")
+st.subheader("⚙️ 公開資料 PoC 狀態")
+from pathlib import Path
+import json
+report_path = Path(__file__).resolve().parent / "data/collection_report.json"
+if report_path.exists():
+    st.json(json.loads(report_path.read_text()))
+st.caption("未使用付費 API key。只顯示正式地址驗證座標；不使用路中心或社區中心猜測。部分頁面抓取不推斷下架。")

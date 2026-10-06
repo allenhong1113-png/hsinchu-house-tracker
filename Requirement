@@ -1,5 +1,2 @@
-streamlit
-pandas
-folium
-streamlit-folium
-requests
+# Legacy filename. Install the canonical requirements.txt instead.
+-r requirements.txt
