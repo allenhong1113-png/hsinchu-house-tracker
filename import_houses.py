@@ -1,81 +1,102 @@
-from database import init_db, upsert_house
+import os
+import pandas as pd
+
+from database import (
+    init_db,
+    upsert_house,
+    mark_missing_inactive
+)
+
+CSV_PATH = "data/houses.csv"
 
 init_db()
 
-houses = [
-    {
-        "name": "竹科潤隆",
-        "district": "新竹市",
-        "address": "新竹市東區埔頂三路30號",
-        "price": 1986,
-        "area": 31.25,
-        "age": 3.3,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "floor": "",
-        "source": "房仲",
-        "url": "",
-        "lat": None,
-        "lon": None
-    },
+if not os.path.exists(CSV_PATH):
+    print("找不到 data/houses.csv")
+    raise SystemExit
 
-    {
-        "name": "美學苑",
-        "district": "新竹市",
-        "address": "新竹市北區經國路二段",
-        "price": 1398,
-        "area": 32.88,
-        "age": 19.8,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "floor": "2F",
-        "source": "房仲",
-        "url": "",
-        "lat": None,
-        "lon": None
-    },
+df = pd.read_csv(CSV_PATH)
 
-    {
-        "name": "佳陞禾樂",
-        "district": "竹北市",
-        "address": "新竹縣竹北市光明十五街",
-        "price": 1728,
-        "area": 37.34,
-        "age": 4.2,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "floor": "",
-        "source": "永慶",
-        "url": "",
-        "lat": None,
-        "lon": None
-    },
-
-    {
-        "name": "星都匯D區",
-        "district": "竹東鎮",
-        "address": "新竹縣竹東鎮旭光一路",
-        "price": 1528,
-        "area": 34.78,
-        "age": 0.3,
-        "rooms": 2,
-        "parking": "坡道平面",
-        "floor": "14F",
-        "source": "永慶",
-        "url": "",
-        "lat": None,
-        "lon": None
-    }
+required = [
+    "name",
+    "district",
+    "address",
+    "price",
+    "area",
+    "age",
+    "rooms",
+    "parking",
+    "floor",
+    "source",
+    "url"
 ]
 
-for house in houses:
+missing = [x for x in required if x not in df.columns]
 
-    result = upsert_house(house)
+if missing:
+    print("缺少欄位:", missing)
+    raise SystemExit
 
-    print(
-        house["name"],
-        "=>",
-        result
-    )
+# ---------------------------
+# 去除完全重複列
+# ---------------------------
 
-print("資料庫更新完成")
+raw_count = len(df)
+df = df.drop_duplicates()
+
+print("原始筆數:", raw_count)
+print("完全去重後:", len(df))
+
+seen = []
+
+stats = {
+    "new": 0,
+    "price_drop": 0,
+    "price_up": 0,
+    "relisted": 0,
+    "existing": 0
+}
+
+for _, r in df.iterrows():
+
+    def value(name, default=None):
+        v = r.get(name, default)
+        if pd.isna(v):
+            return default
+        return v
+
+    house = {
+        "name": value("name", ""),
+        "district": value("district", ""),
+        "address": value("address", ""),
+        "price": float(value("price", 0)),
+        "area": float(value("area", 0)),
+        "age": float(value("age", 0)),
+        "rooms": int(value("rooms", 0)),
+        "parking": value("parking", ""),
+        "floor": value("floor", ""),
+        "source": value("source", ""),
+        "url": value("url", ""),
+        "lat": value("lat"),
+        "lon": value("lon"),
+        "work1_distance": value("work1_distance"),
+        "work2_distance": value("work2_distance")
+    }
+
+    status, fp = upsert_house(house)
+
+    seen.append(fp)
+
+    if status in stats:
+        stats[status] += 1
+
+# 等真正做到「完整市場掃描」再打開這一行
+# mark_missing_inactive(seen)
+
+print()
+print("===== 本次結果 =====")
+print("新增:", stats["new"])
+print("降價:", stats["price_drop"])
+print("漲價:", stats["price_up"])
+print("重新上架:", stats["relisted"])
+print("既有:", stats["existing"])
