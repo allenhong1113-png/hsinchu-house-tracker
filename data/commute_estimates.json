@@ -1,0 +1,177 @@
+{
+  "calculated_at": "2026-10-07T04:59:30.180206+00:00",
+  "destination_digest": "bbb5eabbf6d158cff8b89c852212eb84ba0195bd0dfe14e7c5efc39f59f535b4",
+  "route_provider": "OSRM / FOSSGIS, car fastest-route distance; © OpenStreetMap contributors (ODbL)",
+  "policy_url": "https://routing.openstreetmap.de/about.html",
+  "rows": [
+    {
+      "listing_id": "7517313",
+      "listing_url": "https://buy.yungching.com.tw/house/7517313",
+      "listing_address": "新竹市東區埔頂三路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/53581",
+      "transaction_url": "https://community.yungching.com.tw/building/53581/price",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹市東區埔頂三路30號",
+          "transaction_address": "新竹市新竹市埔頂三路30號20樓之7",
+          "transaction_month": "115年06月",
+          "lat": 24.7901281,
+          "lon": 121.0127963,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF30%E8%99%9F/@24.7901281,121.0127963,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c4694a1:0x6c2646fa7988bb2!8m2!3d24.7901281!4d121.0127963!16s%2Fg%2F11rx_f6rpc?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            3.961,
+            6.4508
+          ],
+          "road_snap_distances_m": [
+            [
+              55.20788591,
+              51.78965236
+            ],
+            [
+              55.20788591,
+              11.72883492
+            ]
+          ]
+        },
+        {
+          "proxy_address": "新竹市東區埔頂三路38號",
+          "transaction_address": "新竹市新竹市埔頂三路38號22樓之1",
+          "transaction_month": "115年01月",
+          "lat": 24.7902763,
+          "lon": 121.0125431,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF38%E8%99%9F/@24.7902763,121.0099628,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c12ae39:0x2638cfa7ff1f3ed1!8m2!3d24.7902763!4d121.0125431!16s%2Fg%2F11p5bdpyq5?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            3.961,
+            6.4508
+          ],
+          "road_snap_distances_m": [
+            [
+              66.164318,
+              51.78965236
+            ],
+            [
+              66.164318,
+              11.72883492
+            ]
+          ]
+        }
+      ],
+      "total_min_km": 10.4118,
+      "total_max_km": 10.4118
+    },
+    {
+      "listing_id": "7489250",
+      "listing_url": "https://buy.yungching.com.tw/house/7489250",
+      "listing_address": "新竹市東區埔頂三路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/53581",
+      "transaction_url": "https://community.yungching.com.tw/building/53581/price",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹市東區埔頂三路30號",
+          "transaction_address": "新竹市新竹市埔頂三路30號20樓之7",
+          "transaction_month": "115年06月",
+          "lat": 24.7901281,
+          "lon": 121.0127963,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF30%E8%99%9F/@24.7901281,121.0127963,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c4694a1:0x6c2646fa7988bb2!8m2!3d24.7901281!4d121.0127963!16s%2Fg%2F11rx_f6rpc?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            3.961,
+            6.4508
+          ],
+          "road_snap_distances_m": [
+            [
+              55.20788591,
+              51.78965236
+            ],
+            [
+              55.20788591,
+              11.72883492
+            ]
+          ]
+        },
+        {
+          "proxy_address": "新竹市東區埔頂三路38號",
+          "transaction_address": "新竹市新竹市埔頂三路38號22樓之1",
+          "transaction_month": "115年01月",
+          "lat": 24.7902763,
+          "lon": 121.0125431,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF38%E8%99%9F/@24.7902763,121.0099628,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c12ae39:0x2638cfa7ff1f3ed1!8m2!3d24.7902763!4d121.0125431!16s%2Fg%2F11p5bdpyq5?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            3.961,
+            6.4508
+          ],
+          "road_snap_distances_m": [
+            [
+              66.164318,
+              51.78965236
+            ],
+            [
+              66.164318,
+              11.72883492
+            ]
+          ]
+        }
+      ],
+      "total_min_km": 10.4118,
+      "total_max_km": 10.4118
+    },
+    {
+      "listing_id": "7429273",
+      "listing_url": "https://buy.yungching.com.tw/house/7429273",
+      "listing_address": "新竹市東區慈濟路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/51988",
+      "transaction_url": "https://community.yungching.com.tw/building/51988/price",
+      "status": "estimated_transaction_proxy",
+      "door_count": 1,
+      "routed_door_count": 1,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹市東區慈濟路149號",
+          "transaction_address": "新竹市新竹市慈濟路149號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7914402,
+          "lon": 121.014359,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%9F%94%E9%A0%82%E9%87%8C%E6%85%88%E6%BF%9F%E8%B7%AF149%E8%99%9F/@24.7914402,121.0117787,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363f6d0afd73:0x6926cc490b8e3abc!8m2!3d24.7914402!4d121.014359!16s%2Fg%2F11vln9m3jx?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            4.085,
+            6.4496
+          ],
+          "road_snap_distances_m": [
+            [
+              20.85488566,
+              51.78965236
+            ],
+            [
+              20.85488566,
+              11.72883492
+            ]
+          ]
+        }
+      ],
+      "total_min_km": 10.534600000000001,
+      "total_max_km": 10.534600000000001
+    }
+  ],
+  "errors": []
+}
