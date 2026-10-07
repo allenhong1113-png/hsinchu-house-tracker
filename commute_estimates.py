@@ -67,7 +67,7 @@ class PublicPages:
             raise ValueError('Public source returned access restriction')
         return r.text
 
-def discover(limit=None):
+def discover(limit=None, retry_unmatched=False):
     df=pd.read_csv(ROOT/'data/houses.csv',dtype={'listing_id':str})
     df=df[df.price.between(1000,2000)&(df.rooms==2)&(df.age<=20)&(df.parking=='坡道平面')&(df.layout_status=='advertised_2_rooms')]
     df=df[~(df['name'].fillna('')+df.title.fillna('')).str.replace(' ','',regex=False).str.contains('綠光森林16',regex=False)]
@@ -75,21 +75,27 @@ def discover(limit=None):
     if limit: df=df.head(limit)
     path=ROOT/'data/transaction_proxies.json'
     previous=json.loads(path.read_text()) if path.exists() else {"rows":[]}
+    snapshot_digest=digest(df.to_dict('records'))
+    prior_errors={e['listing_id']:e for e in previous.get('errors',[]) if e.get('listing_id')} if previous.get('snapshot_digest')==snapshot_digest and not retry_unmatched else {}
     rows={r['listing_id']:r for r in previous['rows'] if r['listing_id'] in set(df.listing_id)}
     errors=[]; checked=[]; pages=PublicPages();cache={}
     def save(status):
-        report=dict(collected_at=datetime.now(timezone.utc).isoformat(),candidate_count=candidate_count,attempt_limit=len(df),checked_listings=len(checked),linked_listings=len(rows),status=status,rows=list(rows.values()),errors=errors,checked_ids=checked)
+        report=dict(collected_at=datetime.now(timezone.utc).isoformat(),snapshot_digest=snapshot_digest,candidate_count=candidate_count,attempt_limit=len(df),checked_listings=len(checked),linked_listings=len(rows),status=status,rows=list(rows.values()),errors=errors,checked_ids=checked)
         temporary=path.with_suffix('.tmp')
         temporary.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         temporary.replace(path)
     for _,h in df.iterrows():
         if h.listing_id in rows and rows[h.listing_id].get('listing_address')==h.address and rows[h.listing_id].get('listing_collected_at')==h.collected_at:
             checked.append(h.listing_id); save('in_progress');continue
+        if h.listing_id in prior_errors:
+            old=prior_errors[h.listing_id]
+            if not old.get('stopped'):
+                errors.append(old);checked.append(h.listing_id);save('in_progress');continue
         stop=False
         try:
             html=pages.get(h.url)
             soup=BeautifulSoup(html,'html.parser')
-            links={urljoin(h.url,a['href']) for a in soup.select('.address a.community[href]') if re.fullmatch(r'https://community\.yungching\.com\.tw/building/\d+',urljoin(h.url,a['href']))}
+            links={urljoin(h.url,a['href']) for a in soup.select('.address a.community[href], a.link-community[block_name=buy_buydetail_moredetail][href]') if re.fullmatch(r'https://community\.yungching\.com\.tw/building/\d+',urljoin(h.url,a['href']))}
             if len(links)!=1:
                 errors.append(dict(listing_id=h.listing_id,listing_url=h.url,reason='no_unique_listing_community_link',detail='房源本身沒有唯一公開社區連結；不可套用附近社區門牌'))
             else:
@@ -107,6 +113,14 @@ def discover(limit=None):
                     print(h.listing_id,community,'doors',len(doors),flush=True)
                 else:
                     errors.append(dict(listing_id=h.listing_id,reason='no_public_transaction_link',detail='社區頁沒有公開實價登錄連結'))
+        except requests.HTTPError as exc:
+            code=exc.response.status_code if exc.response is not None else None
+            if code in (404,410):
+                errors.append(dict(listing_id=h.listing_id,reason='listing_page_unavailable',detail=f'刊登頁無法開啟（HTTP {code}）；不判定距離不合格'))
+            elif code is not None and code>=500:
+                errors.append(dict(listing_id=h.listing_id,reason='listing_server_error',detail=f'刊登頁暫時服務異常（HTTP {code}）；尚無門牌結果'))
+            else:
+                errors.append(dict(listing_id=h.listing_id,reason='public_access_failed',detail=str(exc),stopped=True));stop=True
         except requests.Timeout as exc:
             errors.append(dict(listing_id=h.listing_id,reason='request_timeout',detail=str(exc)))
         except (requests.RequestException,ValueError) as exc:
@@ -125,6 +139,15 @@ def calculate():
     destinations=json.loads((ROOT/'data/destinations.json').read_text())['destinations']
     endpoint='https://routing.openstreetmap.de/routed-car/route/v1/driving/'
     rows=[];cache={};errors=[]
+    existing_path=ROOT/'data/commute_estimates.json'
+    existing=json.loads(existing_path.read_text()) if existing_path.exists() else {}
+    if existing.get('destination_digest')==destination_digest():
+        for listing in existing.get('rows',[]):
+            for p in listing.get('proxies',[]):
+                pin=pins.get(p['proxy_address'],{})
+                if pin.get('status')=='reviewed_exact_door_pin' and pin.get('lat')==p.get('lat') and pin.get('lon')==p.get('lon') and len(p.get('distances_km',[]))==2 and all(math.isfinite(v) and v>0 for v in p['distances_km']):
+                    p['route_calculated_at']=p.get('route_calculated_at',existing.get('calculated_at'))
+                    cache[p['proxy_address']]=p
     for listing in proxies['rows']:
         results=[]
         for door in listing['doors']:
@@ -140,11 +163,12 @@ def calculate():
                         if j.get('code')!='Ok' or len(j.get('routes',[]))!=1:raise ValueError('No road route')
                         distance=j['routes'][0]['distance']/1000
                         if not math.isfinite(distance) or distance<=0:raise ValueError('Invalid route distance')
+                        if len(j.get('waypoints',[]))!=2 or any(w['distance']>200 for w in j['waypoints']):raise ValueError('Road snap exceeds 200 metres')
                         distances.append(distance);snap.append([w['distance'] for w in j['waypoints']])
-                    cache[door['proxy_address']]=dict(**door,**p,distances_km=distances,road_snap_distances_m=snap)
+                    cache[door['proxy_address']]=dict(**door,**p,distances_km=distances,road_snap_distances_m=snap,route_calculated_at=datetime.now(timezone.utc).isoformat())
                 except (requests.RequestException,ValueError,KeyError) as exc:
                     errors.append(dict(proxy_address=door['proxy_address'],reason=str(exc)));cache[door['proxy_address']]=None
-            if cache[door['proxy_address']]:results.append(cache[door['proxy_address']])
+            if cache[door['proxy_address']]:results.append({**cache[door['proxy_address']],**door})
         if results:
             rows.append(dict(**{k:v for k,v in listing.items() if k!='doors'},status='estimated_transaction_proxy',door_count=len(listing['doors']),routed_door_count=len(results),complete_doors=len(results)==len(listing['doors']),proxies=results,total_min_km=min(sum(p['distances_km']) for p in results),total_max_km=max(sum(p['distances_km']) for p in results)))
     report=dict(calculated_at=datetime.now(timezone.utc).isoformat(),destination_digest=destination_digest(),route_provider='OSRM / FOSSGIS, car fastest-route distance; © OpenStreetMap contributors (ODbL)',policy_url='https://routing.openstreetmap.de/about.html',rows=rows,errors=errors)
@@ -159,5 +183,5 @@ def load_estimates(path=None):
     return {r['listing_id']:r for r in report['rows'] if r.get('status')=='estimated_transaction_proxy'}
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate']);a.add_argument('--limit',type=int);args=a.parse_args()
-    discover(args.limit) if args.mode=='discover' else calculate()
+    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate']);a.add_argument('--limit',type=int);a.add_argument('--retry-unmatched',action='store_true');args=a.parse_args()
+    discover(args.limit,args.retry_unmatched) if args.mode=='discover' else calculate()
