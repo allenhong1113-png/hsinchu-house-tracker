@@ -215,6 +215,7 @@ f = active[
 f = f[~(f["name"].fillna("") + f["title"].fillna("")).str.replace(" ", "", regex=False).str.contains("綠光森林16", regex=False)]
 f = f[f["layout_status"] == "advertised_2_rooms"]
 basic_count = len(f[f["parking"] == "坡道平面"])
+basic_candidates = f[f["parking"] == "坡道平面"].copy()
 
 if strict_parking:
     f = f[f["parking"] == "坡道平面"]
@@ -278,6 +279,46 @@ m3.metric(
 )
 
 st.caption(f"已完成同社區實價門牌估算：{estimated_count} 筆基本條件房源。估算採已取得門牌中的最大合計；不是確切待售戶定位，也不是完整社區範圍。")
+
+# Every basic candidate remains visible in the audit table, even when the distance
+# filter hides its card. A missing route is pending, never over the limit.
+proxy_report_path = Path(__file__).resolve().parent / "data/transaction_proxies.json"
+proxy_report = json.loads(proxy_report_path.read_text()) if proxy_report_path.exists() else {"rows": [], "errors": []}
+proxy_rows = {r["listing_id"]: r for r in proxy_report["rows"]}
+proxy_errors = {r["listing_id"]: r for r in proxy_report.get("errors", []) if r.get("listing_id")}
+pin_path = Path(__file__).resolve().parent / "data/transaction_pins.json"
+reviewed_pins = json.loads(pin_path.read_text()) if pin_path.exists() else {}
+audit_rows = []
+matched_count = 0
+for _, h in basic_candidates.iterrows():
+    listing_id = str(h["listing_id"])
+    evidence = proxy_rows.get(listing_id)
+    if evidence and (evidence.get("listing_address") != h["address"] or evidence.get("listing_collected_at") != h["collected_at"]):
+        evidence = None
+    doors = evidence.get("doors", []) if evidence else []
+    status = "尚未比對"
+    error = proxy_errors.get(listing_id)
+    if error:
+        status = error.get("detail", error.get("reason", "比對尚未完成"))
+    if evidence:
+        status = "已取得實價門牌，待定位與道路計算" if doors else "公開實價頁尚無同街明確門牌"
+    if doors:
+        matched_count += 1
+        rejected = [p["proxy_address"] for p in doors if reviewed_pins.get(p["proxy_address"], {}).get("status", "").startswith("rejected_")]
+        if rejected:
+            status = "已取得門牌，但地圖定位不明確"
+    e = estimates.get(listing_id)
+    if e and e.get("listing_address") == h["address"] and e.get("listing_collected_at") == h["collected_at"]:
+        if e.get("complete_doors"):
+            status = f"已完成門牌估算：{e['total_max_km']:.2f} km" + ("（≤上限）" if e["total_max_km"] <= max_distance else "（超過上限）")
+        else:
+            status = "部分門牌完成路線，其他門牌待定位"
+    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else "", "刊登網址": h["url"]})
+with st.expander(f"📋 全部基本條件刊登的實價門牌比對 ({len(audit_rows)})", expanded=True):
+    st.caption(f"已取得門牌 {matched_count}/{len(audit_rows)} 筆。待定位或待路線計算不代表超過15公里；下方距離篩選不會隱藏本表。")
+    audit_df = pd.DataFrame(audit_rows)
+    st.dataframe(audit_df, hide_index=True, use_container_width=True)
+    st.download_button("下載全部門牌比對結果", audit_df.to_csv(index=False).encode("utf-8-sig"), file_name="transaction-door-matches.csv", mime="text/csv")
 
 # ============================================================
 # MAP
