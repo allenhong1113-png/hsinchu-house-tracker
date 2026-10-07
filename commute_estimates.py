@@ -73,30 +73,51 @@ def discover(limit=None):
     df=df[~(df['name'].fillna('')+df.title.fillna('')).str.replace(' ','',regex=False).str.contains('綠光森林16',regex=False)]
     candidate_count=len(df)
     if limit: df=df.head(limit)
-    pages=PublicPages();cache={};rows=[];errors=[]
-    try:
-        for _,h in df.iterrows():
+    path=ROOT/'data/transaction_proxies.json'
+    previous=json.loads(path.read_text()) if path.exists() else {"rows":[]}
+    rows={r['listing_id']:r for r in previous['rows'] if r['listing_id'] in set(df.listing_id)}
+    errors=[]; checked=[]; pages=PublicPages();cache={}
+    def save(status):
+        report=dict(collected_at=datetime.now(timezone.utc).isoformat(),candidate_count=candidate_count,attempt_limit=len(df),checked_listings=len(checked),linked_listings=len(rows),status=status,rows=list(rows.values()),errors=errors,checked_ids=checked)
+        temporary=path.with_suffix('.tmp')
+        temporary.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+        temporary.replace(path)
+    for _,h in df.iterrows():
+        if h.listing_id in rows and rows[h.listing_id].get('listing_address')==h.address and rows[h.listing_id].get('listing_collected_at')==h.collected_at:
+            checked.append(h.listing_id); save('in_progress');continue
+        stop=False
+        try:
             html=pages.get(h.url)
             soup=BeautifulSoup(html,'html.parser')
             links={urljoin(h.url,a['href']) for a in soup.select('.address a.community[href]') if re.fullmatch(r'https://community\.yungching\.com\.tw/building/\d+',urljoin(h.url,a['href']))}
             if len(links)!=1:
-                errors.append(dict(listing_id=h.listing_id,reason='No unique explicitly linked community'));continue
-            community=links.pop()
-            if community not in cache:
-                overview=BeautifulSoup(pages.get(community),'html.parser')
-                prices=[urljoin('https://community.yungching.com.tw/',a['href']) for a in overview.select('a[href]') if re.fullmatch(r'(?:/)?building/\d+/price',a['href'])]
-                if not prices:cache[community]=None
-                else:cache[community]=(prices[0],pages.get(prices[0]))
-            if cache[community]:
-                price_url,price_html=cache[community]
-                doors=parse_transactions(price_html,h.address)
-                rows.append(dict(listing_id=h.listing_id,listing_url=h.url,listing_address=h.address,listing_collected_at=h.collected_at,community_url=community,transaction_url=price_url,doors=doors))
-                print(h.listing_id,community,'doors',len(doors),flush=True)
-    except (requests.RequestException,ValueError) as exc:
-        errors.append(dict(reason=str(exc),stopped=True))
-    report=dict(collected_at=datetime.now(timezone.utc).isoformat(),candidate_count=candidate_count,attempt_limit=len(df),linked_listings=len(rows),rows=rows,errors=errors)
-    (ROOT/'data/transaction_proxies.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print('SUMMARY',len(rows),'linked;',sum(bool(x['doors']) for x in rows),'with doors; errors',len(errors),flush=True)
+                errors.append(dict(listing_id=h.listing_id,listing_url=h.url,reason='no_unique_listing_community_link',detail='房源本身沒有唯一公開社區連結；不可套用附近社區門牌'))
+            else:
+                community=links.pop()
+                if community not in cache:
+                    overview=BeautifulSoup(pages.get(community),'html.parser')
+                    prices=[urljoin('https://community.yungching.com.tw/',a['href']) for a in overview.select('a[href]') if re.fullmatch(r'(?:/)?building/\d+/price',a['href'])]
+                    cache[community]=(prices[0],pages.get(prices[0])) if prices else None
+                if cache[community]:
+                    price_url,price_html=cache[community]
+                    doors=parse_transactions(price_html,h.address)
+                    rows[h.listing_id]=dict(listing_id=h.listing_id,listing_url=h.url,listing_address=h.address,listing_collected_at=h.collected_at,community_url=community,transaction_url=price_url,doors=doors,matched_at=datetime.now(timezone.utc).isoformat())
+                    if not doors:
+                        errors.append(dict(listing_id=h.listing_id,reason='no_public_matching_transaction_door',detail='公開實價頁沒有同街且標記內政部來源的明確門牌'))
+                    print(h.listing_id,community,'doors',len(doors),flush=True)
+                else:
+                    errors.append(dict(listing_id=h.listing_id,reason='no_public_transaction_link',detail='社區頁沒有公開實價登錄連結'))
+        except requests.Timeout as exc:
+            errors.append(dict(listing_id=h.listing_id,reason='request_timeout',detail=str(exc)))
+        except (requests.RequestException,ValueError) as exc:
+            errors.append(dict(listing_id=h.listing_id,reason='public_access_failed',detail=str(exc),stopped=True));stop=True
+        checked.append(h.listing_id)
+        save('blocked' if stop else 'in_progress')
+        print('CHECKED',len(checked),'/',len(df),'matched',sum(bool(r['doors']) for r in rows.values()),flush=True)
+        if stop:break
+    status='complete' if len(checked)==len(df) else 'blocked'
+    save(status)
+    print('SUMMARY',len(checked),'checked;',sum(bool(r['doors']) for r in rows.values()),'with doors; errors',len(errors),'status',status,flush=True)
 
 def calculate():
     proxies=json.loads((ROOT/'data/transaction_proxies.json').read_text())
