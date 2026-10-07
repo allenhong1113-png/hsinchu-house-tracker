@@ -15,7 +15,7 @@ This no-key PoC requests one public search page for 新竹市、竹北市、竹�
 
 1000–2000萬, advertised 2 bedrooms, known age <=20, explicit 坡道平面, excluding 綠光森林16. Reject obvious 1+1/2+1/converted rooms and duplex rentals; listing room counts still require floorplan confirmation. Unknown age is not zero. Deduplicate only stable source IDs, never merge separate units by similar size/community.
 
-Final results default to road distance total <=15km, allowing clearly labelled same-community transaction-door estimates as requested. Disable the estimate toggle to require exact-house verified routes. Disable the distance toggle to inspect unverified candidates. No guessed house numbers, community/road centroids, or straight-line substitutes. Legacy manual records remain in database history but are excluded from collected counts.
+Cards default to all basic candidates, with pending and over-limit statuses shown explicitly; these are not all final commuting matches. Enable the distance toggle to require road distance total <=15km, allowing clearly labelled same-community transaction-door estimates as requested. Disable the estimate toggle to require exact-house verified routes. Disable the distance toggle to inspect unverified candidates. No guessed house numbers, community/road centroids, or straight-line substitutes. Legacy manual records remain in database history but are excluded from collected counts.
 
 ## Distance prerequisites
 
