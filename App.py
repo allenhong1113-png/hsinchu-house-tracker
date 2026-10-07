@@ -1,4 +1,6 @@
 import os
+import json
+from pathlib import Path
 import sqlite3
 import pandas as pd
 import streamlit as st
@@ -70,12 +72,24 @@ df = load_houses()
 st.title("🏠 新竹雙通勤找房")
 
 st.caption(
-    "科環路 × 竹北水瀧三街"
+    "台積電 F12P8 × 竹北半吊子廚房"
 )
 
 st.caption(
     "1000–2000萬｜正2房｜≤20年｜坡道平面｜雙通勤合計≤15km"
 )
+
+# Destination pins are verified named places, separate from house locations.
+destination_path = Path(__file__).resolve().parent / "data/destinations.json"
+if destination_path.exists():
+    destinations = json.loads(destination_path.read_text())["destinations"]
+    with st.expander("📍 通勤目的地（已核對地標）", expanded=True):
+        for destination in destinations:
+            st.markdown(f"**{destination['name']}** · {destination['address']} · [地圖]({destination['map_url']})")
+        pins = [d for d in destinations if d.get("geocode_status") == "verified_place_pin"]
+        if pins:
+            st.map(pd.DataFrame(pins)[["lat", "lon"]])
+        st.caption("目的地使用已核對的地標點位；尚未確認個別車行入口。房源仍須完整地址定位及道路路線驗證，才會列入15公里結果。")
 
 # ============================================================
 # DATA STATUS
@@ -523,8 +537,6 @@ if not delisted.empty:
 st.divider()
 
 st.subheader("⚙️ 公開資料 PoC 狀態")
-from pathlib import Path
-import json
 report_path = Path(__file__).resolve().parent / "data/collection_report.json"
 if report_path.exists():
     st.json(json.loads(report_path.read_text()))
