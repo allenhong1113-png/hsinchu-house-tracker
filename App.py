@@ -313,7 +313,7 @@ for _, h in basic_candidates.iterrows():
             status = f"已完成門牌估算：{e['total_max_km']:.2f} km" + ("（≤上限）" if e["total_max_km"] <= max_distance else "（超過上限）")
         else:
             status = "部分門牌完成路線，其他門牌待定位"
-    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else "", "刊登網址": h["url"]})
+    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else (error.get("alternative_transaction_url", "") if error else ""), "刊登網址": h["url"]})
 with st.expander(f"📋 全部基本條件刊登的實價門牌比對 ({len(audit_rows)})", expanded=True):
     st.caption(f"已取得門牌 {matched_count}/{len(audit_rows)} 筆。待定位或待路線計算不代表超過15公里；下方距離篩選不會隱藏本表。")
     audit_df = pd.DataFrame(audit_rows)
