@@ -1,0 +1,34 @@
+{
+  "verified_at": "2026-10-07",
+  "coordinate_source": "Google Maps place pin (!3d/!4d), not map viewport (@)",
+  "distance_limit_km": 15,
+  "destinations": [
+    {
+      "id": "work1",
+      "name": "台積電全球研發中心（F12P8）",
+      "address": "新竹縣寶山鄉科環路168號",
+      "lat": 24.7673267,
+      "lon": 121.0087257,
+      "geocode_status": "verified_place_pin",
+      "entrance_verified": false,
+      "sources": [
+        "https://www.tsmc.com/chinese/aboutTSMC/TSMC_Fabs",
+        "https://findbiz.nat.gov.tw/fts/factory/05/11095N00098"
+      ],
+      "map_url": "https://www.google.com/maps/place/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%85%A8%E7%90%83%E7%A0%94%E7%99%BC%E4%B8%AD%E5%BF%83(F12P8)/@24.765768,121.0092177,18z/data=!4m6!3m5!1s0x34684973fe2cf8bf:0x15346965bd724a7d!8m2!3d24.7673267!4d121.0087257!16s%2Fg%2F11krp_40p8?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+      "id": "work2",
+      "name": "半吊子廚房",
+      "address": "新竹縣竹北市中山路52巷5號",
+      "lat": 24.8349387,
+      "lon": 121.0244598,
+      "geocode_status": "verified_place_pin",
+      "entrance_verified": false,
+      "sources": [
+        "https://www.thehalfkitchen.com/"
+      ],
+      "map_url": "https://www.google.com.tw/maps/place/%E5%8D%8A%E5%90%8A%E5%AD%90%E5%BB%9A%E6%88%BF/@24.8349387,121.0244598,17z/data=!3m1!4b1!4m6!3m5!1s0x3468376849bc425b:0xbf1acbe417520e6f!8m2!3d24.8349387!4d121.0244598!16s%2Fg%2F11pw8z2wyp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+    }
+  ]
+}
