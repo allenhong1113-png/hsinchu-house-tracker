@@ -103,6 +103,7 @@ if df.empty:
 
 active = df[(df["active"] == 1) & df["listing_id"].notna() & df["collected_at"].notna()].copy()
 # Legacy rows lacking listing URLs are retained in history but are not collected listings.
+st.caption("筆數按不同刊登ID計算；同社區、樓層、坪數相同者可能為重複刊登，尚未確認是否同一戶。")
 st.info("公開房源 PoC：各區第一頁，並非全市場掃描。同社區實價門牌可作道路距離估算，不代表待售戶的確切門牌。正2房仍須核對格局圖。")
 
 # ============================================================
