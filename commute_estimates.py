@@ -67,16 +67,18 @@ class PublicPages:
             raise ValueError('Public source returned access restriction')
         return r.text
 
-def discover():
+def discover(limit=None):
     df=pd.read_csv(ROOT/'data/houses.csv',dtype={'listing_id':str})
     df=df[df.price.between(1000,2000)&(df.rooms==2)&(df.age<=20)&(df.parking=='坡道平面')&(df.layout_status=='advertised_2_rooms')]
     df=df[~(df['name'].fillna('')+df.title.fillna('')).str.replace(' ','',regex=False).str.contains('綠光森林16',regex=False)]
+    candidate_count=len(df)
+    if limit: df=df.head(limit)
     pages=PublicPages();cache={};rows=[];errors=[]
     try:
         for _,h in df.iterrows():
             html=pages.get(h.url)
             soup=BeautifulSoup(html,'html.parser')
-            links={urljoin(h.url,a['href']) for a in soup.select('a[href]') if re.fullmatch(r'https://community\.yungching\.com\.tw/building/\d+',urljoin(h.url,a['href']))}
+            links={urljoin(h.url,a['href']) for a in soup.select('.address a.community[href]') if re.fullmatch(r'https://community\.yungching\.com\.tw/building/\d+',urljoin(h.url,a['href']))}
             if len(links)!=1:
                 errors.append(dict(listing_id=h.listing_id,reason='No unique explicitly linked community'));continue
             community=links.pop()
@@ -92,7 +94,7 @@ def discover():
                 print(h.listing_id,community,'doors',len(doors),flush=True)
     except (requests.RequestException,ValueError) as exc:
         errors.append(dict(reason=str(exc),stopped=True))
-    report=dict(collected_at=datetime.now(timezone.utc).isoformat(),candidate_count=len(df),linked_listings=len(rows),rows=rows,errors=errors)
+    report=dict(collected_at=datetime.now(timezone.utc).isoformat(),candidate_count=candidate_count,attempt_limit=len(df),linked_listings=len(rows),rows=rows,errors=errors)
     (ROOT/'data/transaction_proxies.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print('SUMMARY',len(rows),'linked;',sum(bool(x['doors']) for x in rows),'with doors; errors',len(errors),flush=True)
 
@@ -136,5 +138,5 @@ def load_estimates(path=None):
     return {r['listing_id']:r for r in report['rows'] if r.get('status')=='estimated_transaction_proxy'}
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate']);args=a.parse_args()
-    discover() if args.mode=='discover' else calculate()
+    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate']);a.add_argument('--limit',type=int);args=a.parse_args()
+    discover(args.limit) if args.mode=='discover' else calculate()
