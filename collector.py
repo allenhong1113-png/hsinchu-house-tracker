@@ -21,12 +21,20 @@ def normalize(df):
 def collect_all():
     DATA_DIR.mkdir(exist_ok=True)
     timestamp = datetime.now(timezone.utc).isoformat()
-    datasets, reports = collect(timestamp)
+    try:
+        datasets, reports = collect(timestamp)
+    except Exception as exc:
+        report = dict(collected_at=timestamp, status="failed", published=False,
+                      complete_market_scan=False, raw_count=0, unique_count=0,
+                      error=str(exc), retained_snapshot=OUTPUT.exists())
+        (DATA_DIR / "last_collection_attempt.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        raise
     report = dict(collected_at=timestamp, sources=reports, complete_market_scan=False,
                   scope="PoC: first public search page in each of five regions", raw_count=sum(len(d) for d in datasets))
     if not datasets or any(r["status"] != "success" for r in reports):
         report.update(status="failed", published=False)
-        (DATA_DIR / "collection_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
+        (DATA_DIR / "last_collection_attempt.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
         raise RuntimeError("Incomplete/failed collection; prior CSV retained; import must not run")
     df = normalize(pd.concat(datasets, ignore_index=True))
     report.update(status="success", published=True, unique_count=len(df))
@@ -34,6 +42,7 @@ def collect_all():
     df.to_csv(tmp, index=False, encoding="utf-8-sig")
     tmp.replace(OUTPUT)
     (DATA_DIR / "collection_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
+    (DATA_DIR / "last_collection_attempt.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return df
 
