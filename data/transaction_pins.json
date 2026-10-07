@@ -25,5 +25,21 @@
     "reason": "Map result represents 1428–1430號, not a uniquely verified 1428號 pin",
     "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E6%B8%AF%E5%8D%97%E9%87%8C%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%BA%8C%E6%AE%B51428-1430%E8%99%9F/@24.8205968,120.925151,17z/data=!3m1!4b1!4m6!3m5!1s0x3468351054773b51:0x3c6319aae9c1d9c6!8m2!3d24.8205968!4d120.9277313!16s%2Fg%2F11yjgkwl6m?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
     "reviewed_at": "2026-10-07"
+  },
+  "新竹縣竹東鎮旭光一路121號": {
+    "lat": 24.7730745,
+    "lon": 121.0571041,
+    "status": "reviewed_exact_door_pin",
+    "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+    "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+    "reviewed_at": "2026-10-07"
+  },
+  "新竹縣竹東鎮旭光一路129號": {
+    "lat": 24.7732741,
+    "lon": 121.0568247,
+    "status": "reviewed_exact_door_pin",
+    "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+    "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+    "reviewed_at": "2026-10-07"
   }
 }
