@@ -33,10 +33,12 @@ Run #2 returned HTTP 403 for Yungching robots.txt on the hosted runner. Do not e
 
 ## 實價門牌估算 PoC
 
-`python commute_estimates.py discover --limit 4` 只讀取房源本身的 `.address a.community` 公開社區連結，再讀該社區公開實價頁第一頁。僅取來源標為「內政部實價登錄」、且街名符合房源的門牌；樓層另存原始實價地址，不把成交戶當作待售戶。`data/transaction_proxies.json` 保留房源網址、社區網址、成交月份及門牌證據。這是四筆房源的門牌 PoC，尚未完成其餘候選的定位，不是完整社區或市場掃描。
+`python commute_estimates.py discover` 讀取房源本身的地址欄或詳細資料欄公開社區連結，再讀該社區公開實價頁第一頁。每筆結果原子保存，可續跑；404及單筆5xx不會中斷其餘刊登，401/403/429等存取限制仍停止。`--retry-unmatched` 可明確重試未比對紀錄。僅取來源標為「內政部實價登錄」、且街名符合房源的門牌；樓層另存原始實價地址，不把成交戶當作待售戶。`data/transaction_proxies.json` 保留房源網址、社區網址、成交月份及門牌證據。目前針對全部53筆基本條件刊登逐筆處理。報告的 `checked_ids` 列出每筆檢查結果，`rows` 保存已取得門牌，`errors` 保存缺少連結、404、服務異常等原因。不是完整社區或市場掃描；有門牌仍須另行定位、道路計算。
 
 `data/transaction_pins.json` 記錄逐一在地圖確認的門牌點位與來源網址（!3d/!4d，不用視窗中心）。延平路二段1428號搜尋回傳1428–1430號範圍，已拒絕該定位，沒有填猜測座標或距離。
 
 `python commute_estimates.py calculate` 以免費、免 key 的 FOSSGIS OSRM 汽車路線計算 **房源實價門牌 → F12P8** 與 **房源實價門牌 → 半吊子廚房**。單線序列請求間隔超過1秒、同門牌快取共用、道路吸附限制200公尺，無即時交通資訊。遵守 [服務規則](https://routing.openstreetmap.de/about.html)，資料 © OpenStreetMap contributors／ODbL；可 [回報道路問題](https://www.openstreetmap.org/fixthemap)。沒有內建公共 Nominatim 通用定位 API，也沒有付費 API key。
 
 結果存入 `data/commute_estimates.json`，不覆蓋原房源的精確地址／座標／驗證距離。Streamlit 以房源 ID、街名、取得時間及目的地座標摘要檢查快照，目的地改變即失效。估算顯示每個實價門牌的兩段距離與合計範圍；≤15公里的估算結果仍須確認待售戶正2房格局，不宣稱確切待售戶已驗證。Actions 實際執行快照與 Streamlit 整合測試，並保留門牌、點位及距離 artifacts；不宣稱 hosted runner 取得新房源。
+
+App 新增「全部基本條件刊登的實價門牌比對」表及 CSV 下載：即使道路距離篩選只留下3筆，表中仍保留全部53筆的實價門牌及處理狀態。未定位、網站失效與超過15公里分開顯示；不能用尚未算出距離來判定不合格。已取得的道路距離按目的地摘要及門牌點位快取，目的地或點位變更才重新請求。
