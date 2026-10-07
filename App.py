@@ -7,6 +7,7 @@ import streamlit as st
 
 from database import init_db, DB_PATH
 from import_houses import import_csv, CSV_PATH
+from commute_estimates import load_estimates
 
 # ============================================================
 # CONFIG
@@ -89,7 +90,7 @@ if destination_path.exists():
         pins = [d for d in destinations if d.get("geocode_status") == "verified_place_pin"]
         if pins:
             st.map(pd.DataFrame(pins)[["lat", "lon"]])
-        st.caption("目的地使用已核對的地標點位；尚未確認個別車行入口。房源仍須完整地址定位及道路路線驗證，才會列入15公里結果。")
+        st.caption("目的地使用已核對的地標點位；依指定地標計算，不核對車行出入口。可使用同社區實價門牌作估算，結果會分開標示。")
 
 # ============================================================
 # DATA STATUS
@@ -102,7 +103,7 @@ if df.empty:
 
 active = df[(df["active"] == 1) & df["listing_id"].notna() & df["collected_at"].notna()].copy()
 # Legacy rows lacking listing URLs are retained in history but are not collected listings.
-st.info("公開房源 PoC：各區第一頁，並非全市場掃描。道路距離未驗證者僅為候選。正2房仍須核對格局圖。")
+st.info("公開房源 PoC：各區第一頁，並非全市場掃描。同社區實價門牌可作道路距離估算，不代表待售戶的確切門牌。正2房仍須核對格局圖。")
 
 # ============================================================
 # METRICS
@@ -188,9 +189,11 @@ with st.expander("🔎 篩選", expanded=False):
     )
 
     strict_distance = st.toggle(
-        "只看已驗證且雙通勤≤上限",
+        "只看雙通勤≤上限",
         True
     )
+
+    allow_estimates = st.toggle("允許同社區實價門牌估算", True)
 
 # ============================================================
 # FILTER
@@ -227,14 +230,24 @@ f["distance_total"] = (
     )
 )
 
-if strict_distance:
+# Snapshot estimates are bound to both the listing street/date and destinations.
+estimates = load_estimates()
+f["estimate"] = [estimates.get(str(x)) for x in f["listing_id"]]
+f["estimate"] = [e if isinstance(e, dict) and e.get("listing_address") == a and e.get("listing_collected_at") == t else None for e, a, t in zip(f["estimate"], f["address"], f["collected_at"])]
+f["distance_kind"] = "unverified"
+for index, h in f.iterrows():
+    if h["route_status"] == "verified_road" and pd.notna(h["distance_total"]):
+        f.at[index, "distance_kind"] = "verified_road"
+    elif allow_estimates and isinstance(h["estimate"], dict):
+        e = h["estimate"]
+        # Unlocated transaction doors remain uncertain and cannot pass the final filter.
+        if e.get("complete_doors"):
+            f.at[index, "distance_total"] = e["total_max_km"]
+            f.at[index, "distance_kind"] = "estimated_transaction_proxy"
 
-    f = f[
-        (f["route_status"] == "verified_road")
-        & f["distance_total"].notna()
-        &
-        (f["distance_total"] <= max_distance)
-    ]
+estimated_count = int((f["distance_kind"] == "estimated_transaction_proxy").sum())
+if strict_distance:
+    f = f[(f["distance_kind"] != "unverified") & f["distance_total"].notna() & (f["distance_total"] <= max_distance)]
 
 # ============================================================
 # PIPELINE COUNTERS
@@ -262,6 +275,8 @@ m3.metric(
     "已驗證距離",
     f"{len(verified):,}"
 )
+
+st.caption(f"已完成同社區實價門牌估算：{estimated_count} 筆基本條件房源。估算採已取得門牌中的最大合計；不是確切待售戶定位，也不是完整社區範圍。")
 
 # ============================================================
 # MAP
@@ -291,8 +306,19 @@ else:
 
     st.warning(
         "目前沒有完成正式地址定位的物件。"
-        "系統不會使用近似座標。"
+        "未定位的地址不標示。"
     )
+
+proxy_pins = []
+for e in f["estimate"]:
+    if allow_estimates and isinstance(e, dict):
+        for p in e["proxies"]:
+            if p.get("status") == "reviewed_exact_door_pin":
+                proxy_pins.append({"lat": p["lat"], "lon": p["lon"], "門牌": p["proxy_address"]})
+if proxy_pins:
+    st.subheader("📍 實價門牌估算位置（非待售戶確址）")
+    st.map(pd.DataFrame(proxy_pins).drop_duplicates("門牌"), latitude="lat", longitude="lon")
+    st.caption("只標示已核對的實價門牌地圖點位；沒有使用街道中心、社區中心或猜測座標。")
 
 # ============================================================
 # SORT
@@ -388,12 +414,12 @@ for _, h in f.iterrows():
         if h["route_status"] == "verified_road" and pd.notna(h["distance_total"]):
 
             st.write(
-                f"🏭 科環路　"
+                f"🏭 台積電 F12P8　"
                 f"**{h['work1_distance']:.1f} km**"
             )
 
             st.write(
-                f"🏢 水瀧三街　"
+                f"🏢 半吊子廚房　"
                 f"**{h['work2_distance']:.1f} km**"
             )
 
@@ -411,11 +437,19 @@ for _, h in f.iterrows():
                     f"{h['distance_total']:.1f} km ✕"
                 )
 
+        elif allow_estimates and isinstance(h["estimate"], dict):
+            e = h["estimate"]
+            st.warning(f"實價門牌估算：雙通勤合計 {e['total_min_km']:.2f}–{e['total_max_km']:.2f} km（非待售戶確址）")
+            if not e["complete_doors"]:
+                st.caption(f"僅 {e['routed_door_count']}/{e['door_count']} 個已取得門牌完成定位；不列入≤上限結果。")
+            for p in e["proxies"]:
+                st.write(f"{p['proxy_address']}：F12P8 {p['distances_km'][0]:.2f} km ＋ 半吊子廚房 {p['distances_km'][1]:.2f} km")
+                st.caption(f"實價紀錄：{p['transaction_address']} · {p['transaction_month']}")
+                st.markdown(f"[核對門牌地圖]({p['map_url']})")
+            st.markdown(f"[同社區實價門牌來源]({e['transaction_url']})")
+            st.caption("OSRM 汽車路線的道路距離；不考慮即時路況、車行入口。© OpenStreetMap contributors（ODbL）／FOSSGIS。")
         else:
-
-            st.caption(
-                "🚘 等待正式地址＋道路距離驗證"
-            )
+            st.caption("🚘 尚無可核對的實價門牌定位／道路距離")
 
         # -----------------------------------------------
         # HISTORY
@@ -540,7 +574,8 @@ st.subheader("⚙️ 公開資料 PoC 狀態")
 report_path = Path(__file__).resolve().parent / "data/collection_report.json"
 if report_path.exists():
     st.json(json.loads(report_path.read_text()))
-st.caption("未使用付費 API key。只顯示正式地址驗證座標；不使用路中心或社區中心猜測。部分頁面抓取不推斷下架。")
+st.caption("未使用付費 API key。確切房源與實價門牌估算位置分開顯示，不使用路中心或社區中心猜測。部分頁面抓取不推斷下架。")
+st.markdown("[道路服務使用規則](https://routing.openstreetmap.de/about.html) · [回報道路問題](https://www.openstreetmap.org/fixthemap)")
 attempt_path = Path(__file__).resolve().parent / "data/last_collection_attempt.json"
 if attempt_path.exists():
     attempt = json.loads(attempt_path.read_text())
