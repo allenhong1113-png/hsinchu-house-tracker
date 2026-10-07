@@ -41,10 +41,13 @@ def test_idempotent_import_and_price_history(tmp_path, monkeypatch):
 
 def test_streamlit_reads_collected_data():
     from streamlit.testing.v1 import AppTest
-    app = AppTest.from_file(str(Path(__file__).resolve().parent / "App.py")).run(timeout=30)
+    app = AppTest.from_file(str(Path(__file__).resolve().parent / "App.py"), default_timeout=30).run()
     assert not app.exception
     assert not app.error
-    assert int(app.metric[4].value.replace(",", "")) > 0
+    snapshot = pd.read_csv(Path(__file__).resolve().parent / "data" / "houses.csv")
+    assert len(snapshot) > 0
+    assert int(app.metric[4].value.replace(",", "")) == len(snapshot)
+    assert snapshot.url.notna().all() and snapshot.collected_at.notna().all()
     # Candidate mode renders actual listing links, while final mode excludes unknown routes.
     assert len(app.get("link_button")) == 0
     app.toggle[1].set_value(False).run()
