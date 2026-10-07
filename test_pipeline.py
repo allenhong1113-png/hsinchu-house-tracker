@@ -48,6 +48,15 @@ def test_streamlit_reads_collected_data():
     assert len(snapshot) > 0
     assert int(app.metric[4].value.replace(",", "")) == len(snapshot)
     assert snapshot.url.notna().all() and snapshot.collected_at.notna().all()
+    # The distance filter must never hide the all-candidate matching audit.
+    basic = snapshot[snapshot.price.between(1000,2000) & (snapshot.rooms == 2) & (snapshot.age <= 20) & (snapshot.parking == "坡道平面") & (snapshot.layout_status == "advertised_2_rooms")]
+    audit = next(d.value for d in app.dataframe if "刊登ID" in d.value.columns)
+    assert set(audit["刊登ID"].astype(str)) == set(basic.listing_id.astype(str))
+    assert len(audit) == len(basic)
+    from commute_estimates import load_estimates
+    valid_routes = load_estimates()
+    over = set(audit.loc[audit["處理狀態"].str.contains("（超過上限）", regex=False), "刊登ID"])
+    assert over == {i for i,e in valid_routes.items() if e.get("complete_doors") and e["total_max_km"] > 15}
     # Candidate mode renders actual listing links, while final mode excludes unknown routes.
     from commute_estimates import load_estimates
     estimates = load_estimates()
@@ -113,3 +122,22 @@ def test_commute_snapshot_matches_public_provenance():
             totals.append(sum(p["distances_km"]))
         assert e["total_min_km"] == min(totals)
         assert e["total_max_km"] == max(totals)
+
+
+def test_all_candidates_have_transaction_match_result():
+    import json
+    root = Path(__file__).resolve().parent
+    snapshot = pd.read_csv(root / "data/houses.csv", dtype={"listing_id": str})
+    basic = snapshot[snapshot.price.between(1000,2000) & (snapshot.rooms == 2) & (snapshot.age <= 20) & (snapshot.parking == "坡道平面") & (snapshot.layout_status == "advertised_2_rooms")]
+    report = json.loads((root / "data/transaction_proxies.json").read_text())
+    assert report["status"] == "complete"
+    assert set(report["checked_ids"]) == set(basic.listing_id)
+    assert report["checked_listings"] == len(basic)
+    outcomes = {r["listing_id"] for r in report["rows"]} | {e["listing_id"] for e in report["errors"]}
+    assert outcomes == set(basic.listing_id)
+    for r in report["rows"]:
+        h = basic.set_index("listing_id").loc[r["listing_id"]]
+        assert h.url == r["listing_url"] and h.address == r["listing_address"]
+        assert r["transaction_url"].startswith(r["community_url"] + "/price")
+        for d in r["doors"]:
+            assert "號" in d["proxy_address"] and d["transaction_month"]
