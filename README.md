@@ -19,7 +19,7 @@ Final results default to verified road distance total <=15km. Disable the distan
 
 ## Distance prerequisites
 
-科環路 and 竹北水瀧三街 identify roads, not unique destination doorways. Exact destination addresses or user-verified entrances are required before any road-distance result can be certified. Current public listing pages usually omit door numbers. Those records stay unlocated and have no map marker. Distance calculation is not yet validated end to end; no distance-qualified listing is claimed by this PoC.
+Destinations are now configured in `data/destinations.json`: 台積電全球研發中心 (F12P8), 寶山鄉科環路168號, and 半吊子廚房, 竹北市中山路52巷5號. Addresses were checked against the TSMC/company-registration sources and the bakery website, and Google Maps place pins were checked in the browser. Coordinates come from the place URL's !3d/!4d fields, never the map viewport. These are verified named-place pins, not individually verified vehicle entrances. The App displays destination pins separately from house markers. Public listings still omit house numbers and remain unlocated. Destination verification does not certify any house's road distance. No distance-qualified listing is claimed by this PoC.
 
 ## Review findings
 
