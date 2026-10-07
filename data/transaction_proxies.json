@@ -1,8 +1,11 @@
 {
-  "collected_at": "2026-10-07T04:57:46.621828+00:00",
+  "collected_at": "2026-10-07T11:07:45.685991+00:00",
+  "snapshot_digest": "1fe0b13370513935873a60e8589bb29c8ab7f30d9da7dcc86c6ddae7f43f5f87",
   "candidate_count": 53,
-  "attempt_limit": 4,
-  "linked_listings": 4,
+  "attempt_limit": 53,
+  "checked_listings": 53,
+  "linked_listings": 41,
+  "status": "complete",
   "rows": [
     {
       "listing_id": "7517313",
@@ -73,7 +76,1043 @@
           "transaction_month": "115年07月"
         }
       ]
+    },
+    {
+      "listing_id": "7462870",
+      "listing_url": "https://buy.yungching.com.tw/house/7462870",
+      "listing_address": "新竹市北區經國路二段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/2413",
+      "transaction_url": "https://community.yungching.com.tw/building/2413/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市北區經國路二段539之16號",
+          "transaction_address": "新竹市新竹市經國路二段539之16號7樓",
+          "transaction_month": "115年04月"
+        },
+        {
+          "proxy_address": "新竹市北區經國路二段539之2號",
+          "transaction_address": "新竹市新竹市經國路二段539之2號4樓",
+          "transaction_month": "115年04月"
+        },
+        {
+          "proxy_address": "新竹市北區經國路二段535之1號",
+          "transaction_address": "新竹市新竹市經國路二段535之1號7樓",
+          "transaction_month": "115年02月"
+        },
+        {
+          "proxy_address": "新竹市北區經國路二段537號",
+          "transaction_address": "新竹市新竹市經國路二段537號",
+          "transaction_month": "114年11月"
+        },
+        {
+          "proxy_address": "新竹市北區經國路二段539之17號",
+          "transaction_address": "新竹市新竹市經國路二段539之17號13樓",
+          "transaction_month": "114年07月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:06.091242+00:00"
+    },
+    {
+      "listing_id": "7502477",
+      "listing_url": "https://buy.yungching.com.tw/house/7502477",
+      "listing_address": "新竹市北區榮濱南路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/33566",
+      "transaction_url": "https://community.yungching.com.tw/building/33566/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市北區榮濱南路372號",
+          "transaction_address": "新竹市新竹市榮濱南路372號4樓",
+          "transaction_month": "114年04月"
+        },
+        {
+          "proxy_address": "新竹市北區榮濱南路360號",
+          "transaction_address": "新竹市新竹市榮濱南路360號4樓",
+          "transaction_month": "114年03月"
+        },
+        {
+          "proxy_address": "新竹市北區榮濱南路368號",
+          "transaction_address": "新竹市新竹市榮濱南路368號5樓",
+          "transaction_month": "113年11月"
+        },
+        {
+          "proxy_address": "新竹市北區榮濱南路352號",
+          "transaction_address": "新竹市新竹市榮濱南路352號5樓",
+          "transaction_month": "113年09月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:15.064569+00:00"
+    },
+    {
+      "listing_id": "7486453",
+      "listing_url": "https://buy.yungching.com.tw/house/7486453",
+      "listing_address": "新竹市東區水利路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/38726",
+      "transaction_url": "https://community.yungching.com.tw/building/38726/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市東區水利路39巷16號",
+          "transaction_address": "新竹市新竹市水利路39巷16號5樓之9",
+          "transaction_month": "111年09月"
+        },
+        {
+          "proxy_address": "新竹市東區水利路39巷18號",
+          "transaction_address": "新竹市新竹市水利路39巷18號",
+          "transaction_month": "111年05月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:23.975314+00:00"
+    },
+    {
+      "listing_id": "7513317",
+      "listing_url": "https://buy.yungching.com.tw/house/7513317",
+      "listing_address": "新竹縣竹北市華興三街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/31211",
+      "transaction_url": "https://community.yungching.com.tw/building/31211/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市華興三街37號",
+          "transaction_address": "新竹縣竹北市華興三街37號4樓之5",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市華興三街39號",
+          "transaction_address": "新竹縣竹北市華興三街39號5樓之1",
+          "transaction_month": "114年06月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市華興三街35號",
+          "transaction_address": "新竹縣竹北市華興三街35號7樓之5",
+          "transaction_month": "114年03月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:33.667891+00:00"
+    },
+    {
+      "listing_id": "7489341",
+      "listing_url": "https://buy.yungching.com.tw/house/7489341",
+      "listing_address": "新竹縣竹北市新瀧三街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/57241",
+      "transaction_url": "https://community.yungching.com.tw/building/57241/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市新瀧三街55號",
+          "transaction_address": "新竹縣竹北市新瀧三街55號4樓",
+          "transaction_month": "114年08月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市新瀧三街57號",
+          "transaction_address": "新竹縣竹北市新瀧三街57號8樓",
+          "transaction_month": "113年08月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:41.967614+00:00"
+    },
+    {
+      "listing_id": "6667621",
+      "listing_url": "https://buy.yungching.com.tw/house/6667621",
+      "listing_address": "新竹縣竹北市光明十五街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/68051",
+      "transaction_url": "https://community.yungching.com.tw/building/68051/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市光明十五街12號",
+          "transaction_address": "新竹縣竹北市光明十五街12號2樓",
+          "transaction_month": "113年06月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市光明十五街16號",
+          "transaction_address": "新竹縣竹北市光明十五街16號3樓",
+          "transaction_month": "113年05月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:58:51.061809+00:00"
+    },
+    {
+      "listing_id": "7448640",
+      "listing_url": "https://buy.yungching.com.tw/house/7448640",
+      "listing_address": "新竹縣竹北市十興路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35709",
+      "transaction_url": "https://community.yungching.com.tw/building/35709/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市十興路一段268號",
+          "transaction_address": "新竹縣竹北市十興路一段268號4樓之5",
+          "transaction_month": "113年12月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市十興路一段266號",
+          "transaction_address": "新竹縣竹北市十興路一段266號13樓之1",
+          "transaction_month": "113年11月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:00.065164+00:00"
+    },
+    {
+      "listing_id": "7509805",
+      "listing_url": "https://buy.yungching.com.tw/house/7509805",
+      "listing_address": "新竹縣竹北市勝利八街一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/14227",
+      "transaction_url": "https://community.yungching.com.tw/building/14227/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段233號",
+          "transaction_address": "新竹縣竹北市勝利八街一段233號22樓之1",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段229號",
+          "transaction_address": "新竹縣竹北市勝利八街一段229號13樓之6",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段227號",
+          "transaction_address": "新竹縣竹北市勝利八街一段227號10樓之2",
+          "transaction_month": "115年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:09.324089+00:00"
+    },
+    {
+      "listing_id": "7520983",
+      "listing_url": "https://buy.yungching.com.tw/house/7520983",
+      "listing_address": "新竹縣竹北市六家一路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/6617",
+      "transaction_url": "https://community.yungching.com.tw/building/6617/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市六家一路一段138號",
+          "transaction_address": "新竹縣竹北市六家一路一段138號3樓之3",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市六家一路一段140號",
+          "transaction_address": "新竹縣竹北市六家一路一段140號4樓之7",
+          "transaction_month": "114年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:18.089570+00:00"
+    },
+    {
+      "listing_id": "7508492",
+      "listing_url": "https://buy.yungching.com.tw/house/7508492",
+      "listing_address": "新竹縣竹北市中央路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/32172",
+      "transaction_url": "https://community.yungching.com.tw/building/32172/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市中央路183號",
+          "transaction_address": "新竹縣竹北市中央路183號8樓",
+          "transaction_month": "113年09月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市中央路187號",
+          "transaction_address": "新竹縣竹北市中央路187號10樓",
+          "transaction_month": "113年04月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市中央路189號",
+          "transaction_address": "新竹縣竹北市中央路189號8樓",
+          "transaction_month": "112年05月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:27.110744+00:00"
+    },
+    {
+      "listing_id": "7497607",
+      "listing_url": "https://buy.yungching.com.tw/house/7497607",
+      "listing_address": "新竹縣竹北市興隆路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/14542",
+      "transaction_url": "https://community.yungching.com.tw/building/14542/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市興隆路一段51號",
+          "transaction_address": "新竹縣竹北市興隆路一段51號11樓",
+          "transaction_month": "114年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市興隆路一段29號",
+          "transaction_address": "新竹縣竹北市興隆路一段29號9樓",
+          "transaction_month": "113年09月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:36.251199+00:00"
+    },
+    {
+      "listing_id": "7447384",
+      "listing_url": "https://buy.yungching.com.tw/house/7447384",
+      "listing_address": "新竹縣竹北市勝利八街一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/14227",
+      "transaction_url": "https://community.yungching.com.tw/building/14227/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段233號",
+          "transaction_address": "新竹縣竹北市勝利八街一段233號22樓之1",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段229號",
+          "transaction_address": "新竹縣竹北市勝利八街一段229號13樓之6",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市勝利八街一段227號",
+          "transaction_address": "新竹縣竹北市勝利八街一段227號10樓之2",
+          "transaction_month": "115年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:39.052075+00:00"
+    },
+    {
+      "listing_id": "7466543",
+      "listing_url": "https://buy.yungching.com.tw/house/7466543",
+      "listing_address": "新竹縣竹北市光明十一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35672",
+      "transaction_url": "https://community.yungching.com.tw/building/35672/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市光明十一路1巷50弄28號",
+          "transaction_address": "新竹縣竹北市光明十一路1巷50弄28號11樓",
+          "transaction_month": "114年09月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市光明十一路1巷50弄18號",
+          "transaction_address": "新竹縣竹北市光明十一路1巷50弄18號6樓",
+          "transaction_month": "114年03月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市光明十一路1巷50弄26號",
+          "transaction_address": "新竹縣竹北市光明十一路1巷50弄26號10樓",
+          "transaction_month": "113年12月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:48.407164+00:00"
+    },
+    {
+      "listing_id": "7346711",
+      "listing_url": "https://buy.yungching.com.tw/house/7346711",
+      "listing_address": "新竹縣竹北市興隆路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35696",
+      "transaction_url": "https://community.yungching.com.tw/building/35696/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市興隆路一段633號",
+          "transaction_address": "新竹縣竹北市興隆路一段633號14樓之8",
+          "transaction_month": "114年09月"
+        }
+      ],
+      "matched_at": "2026-10-07T10:59:57.015416+00:00"
+    },
+    {
+      "listing_id": "7527524",
+      "listing_url": "https://buy.yungching.com.tw/house/7527524",
+      "listing_address": "新竹縣竹北市嘉興路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35662",
+      "transaction_url": "https://community.yungching.com.tw/building/35662/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市嘉興路338巷26號",
+          "transaction_address": "新竹縣竹北市嘉興路338巷26號2樓",
+          "transaction_month": "113年02月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市嘉興路338巷18號",
+          "transaction_address": "新竹縣竹北市嘉興路338巷18號3樓",
+          "transaction_month": "113年01月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:06.908848+00:00"
+    },
+    {
+      "listing_id": "7541940",
+      "listing_url": "https://buy.yungching.com.tw/house/7541940",
+      "listing_address": "新竹縣竹北市北新一街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/51941",
+      "transaction_url": "https://community.yungching.com.tw/building/51941/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市北新一街28號",
+          "transaction_address": "新竹縣竹北市北新一街28號21樓",
+          "transaction_month": "115年06月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市北新一街6號",
+          "transaction_address": "新竹縣竹北市北新一街6號21樓",
+          "transaction_month": "115年06月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市北新一街22號",
+          "transaction_address": "新竹縣竹北市北新一街22號20樓",
+          "transaction_month": "115年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:15.677326+00:00"
+    },
+    {
+      "listing_id": "7478172",
+      "listing_url": "https://buy.yungching.com.tw/house/7478172",
+      "listing_address": "新竹縣竹北市新瀧一街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/32157",
+      "transaction_url": "https://community.yungching.com.tw/building/32157/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市新瀧一街13號",
+          "transaction_address": "新竹縣竹北市新瀧一街13號13樓",
+          "transaction_month": "113年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市新瀧一街15號",
+          "transaction_address": "新竹縣竹北市新瀧一街15號12樓",
+          "transaction_month": "113年07月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:24.342696+00:00"
+    },
+    {
+      "listing_id": "6519514",
+      "listing_url": "https://buy.yungching.com.tw/house/6519514",
+      "listing_address": "新竹縣竹北市興隆路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35696",
+      "transaction_url": "https://community.yungching.com.tw/building/35696/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市興隆路一段633號",
+          "transaction_address": "新竹縣竹北市興隆路一段633號14樓之8",
+          "transaction_month": "114年09月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:27.444851+00:00"
+    },
+    {
+      "listing_id": "7451267",
+      "listing_url": "https://buy.yungching.com.tw/house/7451267",
+      "listing_address": "新竹縣竹北市新瀧三街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/57241",
+      "transaction_url": "https://community.yungching.com.tw/building/57241/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市新瀧三街55號",
+          "transaction_address": "新竹縣竹北市新瀧三街55號4樓",
+          "transaction_month": "114年08月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市新瀧三街57號",
+          "transaction_address": "新竹縣竹北市新瀧三街57號8樓",
+          "transaction_month": "113年08月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:30.049292+00:00"
+    },
+    {
+      "listing_id": "7438931",
+      "listing_url": "https://buy.yungching.com.tw/house/7438931",
+      "listing_address": "新竹縣竹北市嘉興路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35662",
+      "transaction_url": "https://community.yungching.com.tw/building/35662/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市嘉興路338巷26號",
+          "transaction_address": "新竹縣竹北市嘉興路338巷26號2樓",
+          "transaction_month": "113年02月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市嘉興路338巷18號",
+          "transaction_address": "新竹縣竹北市嘉興路338巷18號3樓",
+          "transaction_month": "113年01月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:33.057789+00:00"
+    },
+    {
+      "listing_id": "7180017",
+      "listing_url": "https://buy.yungching.com.tw/house/7180017",
+      "listing_address": "新竹縣竹北市十興路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35709",
+      "transaction_url": "https://community.yungching.com.tw/building/35709/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市十興路一段268號",
+          "transaction_address": "新竹縣竹北市十興路一段268號4樓之5",
+          "transaction_month": "113年12月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市十興路一段266號",
+          "transaction_address": "新竹縣竹北市十興路一段266號13樓之1",
+          "transaction_month": "113年11月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:36.060012+00:00"
+    },
+    {
+      "listing_id": "7489328",
+      "listing_url": "https://buy.yungching.com.tw/house/7489328",
+      "listing_address": "新竹縣竹北市台元街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/2628",
+      "transaction_url": "https://community.yungching.com.tw/building/2628/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹北市台元街45號",
+          "transaction_address": "新竹縣竹北市台元街45號4樓之3",
+          "transaction_month": "113年11月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市台元街41號",
+          "transaction_address": "新竹縣竹北市台元街41號",
+          "transaction_month": "114年03月"
+        },
+        {
+          "proxy_address": "新竹縣竹北市台元街53號",
+          "transaction_address": "新竹縣竹北市台元街53號7樓之1",
+          "transaction_month": "114年01月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:45.449550+00:00"
+    },
+    {
+      "listing_id": "7250242",
+      "listing_url": "https://buy.yungching.com.tw/house/7250242",
+      "listing_address": "新竹縣竹東鎮和江街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/32077",
+      "transaction_url": "https://community.yungching.com.tw/building/32077/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮和江街368巷2號",
+          "transaction_address": "新竹縣竹東鎮和江街368巷2號4樓",
+          "transaction_month": "113年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮和江街370號",
+          "transaction_address": "新竹縣竹東鎮和江街370號9樓",
+          "transaction_month": "112年10月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:00:54.223608+00:00"
+    },
+    {
+      "listing_id": "7524483",
+      "listing_url": "https://buy.yungching.com.tw/house/7524483",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:04.560698+00:00"
+    },
+    {
+      "listing_id": "7369826",
+      "listing_url": "https://buy.yungching.com.tw/house/7369826",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:08.067028+00:00"
+    },
+    {
+      "listing_id": "7388104",
+      "listing_url": "https://buy.yungching.com.tw/house/7388104",
+      "listing_address": "新竹縣竹東鎮光明路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/14600",
+      "transaction_url": "https://community.yungching.com.tw/building/14600/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮光明路126巷87弄22號",
+          "transaction_address": "新竹縣竹東鎮光明路126巷87弄22號3樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮光明路126巷87弄36號",
+          "transaction_address": "新竹縣竹東鎮光明路126巷87弄36號10樓",
+          "transaction_month": "115年06月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮光明路126巷87弄13號",
+          "transaction_address": "新竹縣竹東鎮光明路126巷87弄13號3樓",
+          "transaction_month": "115年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:18.125975+00:00"
+    },
+    {
+      "listing_id": "7407047",
+      "listing_url": "https://buy.yungching.com.tw/house/7407047",
+      "listing_address": "新竹縣竹東鎮公道路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91813",
+      "transaction_url": "https://community.yungching.com.tw/building/91813/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮公道路758巷27弄3號",
+          "transaction_address": "新竹縣竹東鎮公道路758巷27弄3號2樓",
+          "transaction_month": "113年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮公道路758巷31號",
+          "transaction_address": "新竹縣竹東鎮公道路758巷31號3樓之2",
+          "transaction_month": "111年04月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮公道路758巷27弄7號",
+          "transaction_address": "新竹縣竹東鎮公道路758巷27弄7號2樓",
+          "transaction_month": "111年04月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮公道路758巷27弄1號",
+          "transaction_address": "新竹縣竹東鎮公道路758巷27弄1號4樓",
+          "transaction_month": "111年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:26.951704+00:00"
+    },
+    {
+      "listing_id": "7365875",
+      "listing_url": "https://buy.yungching.com.tw/house/7365875",
+      "listing_address": "新竹縣竹東鎮至善路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/76234",
+      "transaction_url": "https://community.yungching.com.tw/building/76234/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷16號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷16號12樓",
+          "transaction_month": "115年02月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷6號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷6號11樓",
+          "transaction_month": "112年10月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷8號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷8號8樓",
+          "transaction_month": "112年12月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷20號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷20號9樓",
+          "transaction_month": "112年12月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷18號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷18號12樓",
+          "transaction_month": "112年11月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷10號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷10號11樓",
+          "transaction_month": "112年10月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮至善路35巷26號",
+          "transaction_address": "新竹縣竹東鎮至善路35巷26號8樓",
+          "transaction_month": "112年10月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:38.986650+00:00"
+    },
+    {
+      "listing_id": "7509863",
+      "listing_url": "https://buy.yungching.com.tw/house/7509863",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:01:42.148789+00:00"
+    },
+    {
+      "listing_id": "7291565",
+      "listing_url": "https://buy.yungching.com.tw/house/7291565",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:02:06.103230+00:00"
+    },
+    {
+      "listing_id": "7273020",
+      "listing_url": "https://buy.yungching.com.tw/house/7273020",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:02:09.484314+00:00"
+    },
+    {
+      "listing_id": "7434084",
+      "listing_url": "https://buy.yungching.com.tw/house/7434084",
+      "listing_address": "新竹縣竹東鎮龍鳳路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/55075",
+      "transaction_url": "https://community.yungching.com.tw/building/55075/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮龍鳳路28號",
+          "transaction_address": "新竹縣竹東鎮龍鳳路28號3樓",
+          "transaction_month": "113年04月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮龍鳳路30之2號",
+          "transaction_address": "新竹縣竹東鎮龍鳳路30之2號13樓",
+          "transaction_month": "112年12月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:02:17.828610+00:00"
+    },
+    {
+      "listing_id": "7295938",
+      "listing_url": "https://buy.yungching.com.tw/house/7295938",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:05:19.007172+00:00"
+    },
+    {
+      "listing_id": "7073513",
+      "listing_url": "https://buy.yungching.com.tw/house/7073513",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91999",
+      "transaction_url": "https://community.yungching.com.tw/building/91999/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路202號",
+          "transaction_address": "新竹縣竹東鎮旭光一路202號6樓",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路220號",
+          "transaction_address": "新竹縣竹東鎮旭光一路220號7樓",
+          "transaction_month": "115年05月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路228號",
+          "transaction_address": "新竹縣竹東鎮旭光一路228號6樓",
+          "transaction_month": "115年04月"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路188號",
+          "transaction_address": "新竹縣竹東鎮旭光一路188號14樓",
+          "transaction_month": "114年10月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:07:12.742716+00:00"
+    },
+    {
+      "listing_id": "7302738",
+      "listing_url": "https://buy.yungching.com.tw/house/7302738",
+      "listing_address": "新竹縣寶山鄉雙豐二街",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/35776",
+      "transaction_url": "https://community.yungching.com.tw/building/35776/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣寶山鄉雙豐二街75號",
+          "transaction_address": "新竹縣寶山鄉雙豐二街75號5樓",
+          "transaction_month": "114年09月"
+        },
+        {
+          "proxy_address": "新竹縣寶山鄉雙豐二街77號",
+          "transaction_address": "新竹縣寶山鄉雙豐二街77號3樓",
+          "transaction_month": "112年05月"
+        },
+        {
+          "proxy_address": "新竹縣寶山鄉雙豐二街67號",
+          "transaction_address": "新竹縣寶山鄉雙豐二街67號6樓",
+          "transaction_month": "112年05月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:07:26.461141+00:00"
+    },
+    {
+      "listing_id": "7098275",
+      "listing_url": "https://buy.yungching.com.tw/house/7098275",
+      "listing_address": "新竹縣寶山鄉寶新路一段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/76228",
+      "transaction_url": "https://community.yungching.com.tw/building/76228/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣寶山鄉寶新路一段137號",
+          "transaction_address": "新竹縣寶山鄉寶新路一段137號4樓",
+          "transaction_month": "114年11月"
+        },
+        {
+          "proxy_address": "新竹縣寶山鄉寶新路一段129號",
+          "transaction_address": "新竹縣寶山鄉寶新路一段129號6樓",
+          "transaction_month": "112年04月"
+        },
+        {
+          "proxy_address": "新竹縣寶山鄉寶新路一段135號",
+          "transaction_address": "新竹縣寶山鄉寶新路一段135號2樓",
+          "transaction_month": "112年04月"
+        },
+        {
+          "proxy_address": "新竹縣寶山鄉寶新路一段127號",
+          "transaction_address": "新竹縣寶山鄉寶新路一段127號6樓",
+          "transaction_month": "112年04月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:07:35.168809+00:00"
+    },
+    {
+      "listing_id": "7336089",
+      "listing_url": "https://buy.yungching.com.tw/house/7336089",
+      "listing_address": "新竹縣芎林鄉光明路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91127",
+      "transaction_url": "https://community.yungching.com.tw/building/91127/price",
+      "doors": [
+        {
+          "proxy_address": "新竹縣芎林鄉光明路102號",
+          "transaction_address": "新竹縣芎林鄉光明路102號",
+          "transaction_month": "113年05月"
+        },
+        {
+          "proxy_address": "新竹縣芎林鄉光明路100號",
+          "transaction_address": "新竹縣芎林鄉光明路100號4樓之1",
+          "transaction_month": "112年03月"
+        }
+      ],
+      "matched_at": "2026-10-07T11:07:45.684893+00:00"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "listing_id": "7334193",
+      "listing_url": "https://buy.yungching.com.tw/house/7334193",
+      "reason": "no_unique_listing_community_link",
+      "detail": "房源本身沒有唯一公開社區連結；不可套用附近社區門牌"
+    },
+    {
+      "listing_id": "7501157",
+      "listing_url": "https://buy.yungching.com.tw/house/7501157",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7489255",
+      "listing_url": "https://buy.yungching.com.tw/house/7489255",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7508502",
+      "listing_url": "https://buy.yungching.com.tw/house/7508502",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7525224",
+      "listing_url": "https://buy.yungching.com.tw/house/7525224",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7542290",
+      "listing_url": "https://buy.yungching.com.tw/house/7542290",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7533364",
+      "listing_url": "https://buy.yungching.com.tw/house/7533364",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7533453",
+      "listing_url": "https://buy.yungching.com.tw/house/7533453",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7512742",
+      "listing_url": "https://buy.yungching.com.tw/house/7512742",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    },
+    {
+      "listing_id": "7307446",
+      "reason": "listing_page_unavailable",
+      "detail": "刊登頁無法開啟（HTTP 404）；不判定距離不合格"
+    },
+    {
+      "listing_id": "7139285",
+      "reason": "listing_server_error",
+      "detail": "刊登頁暫時服務異常（HTTP 503）；尚無門牌結果"
+    },
+    {
+      "listing_id": "7548821",
+      "listing_url": "https://buy.yungching.com.tw/house/7548821",
+      "reason": "no_unique_listing_community_link",
+      "detail": "刊登缺少社區連結；同街找到CD區合併實價，尚未確認刊登與門牌所屬分區",
+      "alternative_transaction_url": "https://market.591.com.tw/6536744/price",
+      "alternative_scope": "Combined C/D community; not treated as a verified match"
+    }
+  ],
+  "checked_ids": [
+    "7517313",
+    "7242809",
+    "7489250",
+    "7429273",
+    "7334193",
+    "7462870",
+    "7502477",
+    "7486453",
+    "7513317",
+    "7489341",
+    "6667621",
+    "7448640",
+    "7509805",
+    "7520983",
+    "7508492",
+    "7497607",
+    "7447384",
+    "7466543",
+    "7346711",
+    "7527524",
+    "7541940",
+    "7478172",
+    "6519514",
+    "7451267",
+    "7438931",
+    "7180017",
+    "7489328",
+    "7250242",
+    "7524483",
+    "7369826",
+    "7388104",
+    "7407047",
+    "7501157",
+    "7365875",
+    "7509863",
+    "7489255",
+    "7508502",
+    "7525224",
+    "7542290",
+    "7533364",
+    "7533453",
+    "7512742",
+    "7291565",
+    "7273020",
+    "7434084",
+    "7307446",
+    "7295938",
+    "7139285",
+    "7073513",
+    "7548821",
+    "7302738",
+    "7098275",
+    "7336089"
+  ]
 }
