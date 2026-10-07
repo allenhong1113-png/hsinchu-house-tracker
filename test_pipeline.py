@@ -53,6 +53,9 @@ def test_streamlit_reads_collected_data():
     estimates = load_estimates()
     expected = sum(e.get("complete_doors") and e["total_max_km"] <= 15 for e in estimates.values())
     assert len(app.get("link_button")) == expected
+    app.toggle[2].set_value(False).run()
+    assert len(app.get("link_button")) == 0
+    assert app.metric[6].value == "0"
     app.toggle[1].set_value(False).run()
     assert not app.exception
     assert any("房源 (" in x.value for x in app.subheader)
