@@ -12,5 +12,18 @@
     "status": "reviewed_exact_door_pin",
     "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF38%E8%99%9F/@24.7902763,121.0099628,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c12ae39:0x2638cfa7ff1f3ed1!8m2!3d24.7902763!4d121.0125431!16s%2Fg%2F11p5bdpyq5?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
     "reviewed_at": "2026-10-07"
+  },
+  "新竹市東區慈濟路149號": {
+    "lat": 24.7914402,
+    "lon": 121.014359,
+    "status": "reviewed_exact_door_pin",
+    "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%9F%94%E9%A0%82%E9%87%8C%E6%85%88%E6%BF%9F%E8%B7%AF149%E8%99%9F/@24.7914402,121.0117787,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363f6d0afd73:0x6926cc490b8e3abc!8m2!3d24.7914402!4d121.014359!16s%2Fg%2F11vln9m3jx?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+    "reviewed_at": "2026-10-07"
+  },
+  "新竹市香山區延平路二段1428號": {
+    "status": "rejected_address_range",
+    "reason": "Map result represents 1428–1430號, not a uniquely verified 1428號 pin",
+    "map_url": "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E6%B8%AF%E5%8D%97%E9%87%8C%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%BA%8C%E6%AE%B51428-1430%E8%99%9F/@24.8205968,120.925151,17z/data=!3m1!4b1!4m6!3m5!1s0x3468351054773b51:0x3c6319aae9c1d9c6!8m2!3d24.8205968!4d120.9277313!16s%2Fg%2F11yjgkwl6m?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+    "reviewed_at": "2026-10-07"
   }
 }
