@@ -49,8 +49,64 @@ def test_streamlit_reads_collected_data():
     assert int(app.metric[4].value.replace(",", "")) == len(snapshot)
     assert snapshot.url.notna().all() and snapshot.collected_at.notna().all()
     # Candidate mode renders actual listing links, while final mode excludes unknown routes.
-    assert len(app.get("link_button")) == 0
+    from commute_estimates import load_estimates
+    estimates = load_estimates()
+    expected = sum(e.get("complete_doors") and e["total_max_km"] <= 15 for e in estimates.values())
+    assert len(app.get("link_button")) == expected
     app.toggle[1].set_value(False).run()
     assert not app.exception
     assert any("房源 (" in x.value for x in app.subheader)
     assert len(app.get("link_button")) > 0
+
+
+def test_transaction_doors_require_ministry_record_and_same_street():
+    from commute_estimates import parse_transactions
+    html = '<article class="deal-card"><p class="deal-card__address">新竹市新竹市埔頂三路30號20樓之7</p><span class="deal-card__date">115年06月</span><p>來源：內政部實價登錄</p></article>'
+    rows = parse_transactions(html, "新竹市東區埔頂三路")
+    assert rows[0]["proxy_address"] == "新竹市東區埔頂三路30號"
+    assert rows[0]["transaction_address"].endswith("20樓之7")
+    assert parse_transactions(html, "新竹市東區慈濟路") == []
+    assert parse_transactions(html.replace("內政部實價登錄", "永慶房產集團"), "新竹市東區埔頂三路") == []
+
+
+def test_destination_change_invalidates_estimates(tmp_path):
+    import json
+    from commute_estimates import load_estimates
+    path = tmp_path / "estimates.json"
+    path.write_text(json.dumps({"destination_digest": "stale", "rows": [{"listing_id": "1", "status": "estimated_transaction_proxy"}]}))
+    assert load_estimates(path) == {}
+
+
+def test_commute_snapshot_matches_public_provenance():
+    import json
+    import math
+    from commute_estimates import destination_digest
+    root = Path(__file__).resolve().parent
+    path = root / "data/commute_estimates.json"
+    assert path.exists(), "Real road estimate snapshot must be committed before testing"
+    estimates = json.loads(path.read_text())
+    proxies = json.loads((root / "data/transaction_proxies.json").read_text())
+    pins = json.loads((root / "data/transaction_pins.json").read_text())
+    listings = pd.read_csv(root / "data/houses.csv", dtype={"listing_id": str}).set_index("listing_id")
+    assert estimates["rows"], "No actual road routes were obtained"
+    evidence = {r["listing_id"]: r for r in proxies["rows"]}
+    assert estimates["destination_digest"] == destination_digest()
+    for e in estimates["rows"]:
+        h = listings.loc[e["listing_id"]]
+        assert h.address == e["listing_address"]
+        assert h.collected_at == e["listing_collected_at"]
+        assert e["community_url"] == evidence[e["listing_id"]]["community_url"]
+        assert e["transaction_url"].startswith(e["community_url"] + "/price")
+        assert e["complete_doors"] == (e["door_count"] == e["routed_door_count"])
+        totals = []
+        for p in e["proxies"]:
+            assert p["proxy_address"] in {d["proxy_address"] for d in evidence[e["listing_id"]]["doors"]}
+            pin = pins[p["proxy_address"]]
+            assert p["lat"] == pin["lat"] and p["lon"] == pin["lon"]
+            assert f"!3d{p['lat']}!4d{p['lon']}" in pin["map_url"]
+            assert len(p["distances_km"]) == 2
+            assert all(math.isfinite(x) and x > 0 for x in p["distances_km"])
+            assert all(0 <= x <= 200 for pair in p["road_snap_distances_m"] for x in pair)
+            totals.append(sum(p["distances_km"]))
+        assert e["total_min_km"] == min(totals)
+        assert e["total_max_km"] == max(totals)
