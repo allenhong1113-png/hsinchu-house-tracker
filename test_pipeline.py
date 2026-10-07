@@ -57,10 +57,13 @@ def test_streamlit_reads_collected_data():
     valid_routes = load_estimates()
     over = set(audit.loc[audit["處理狀態"].str.contains("（超過上限）", regex=False), "刊登ID"])
     assert over == {i for i,e in valid_routes.items() if e.get("complete_doors") and e["total_max_km"] > 15}
-    # Candidate mode renders actual listing links, while final mode excludes unknown routes.
+    # Default cards include every basic candidate; optional final mode excludes unknown routes.
     from commute_estimates import load_estimates
     estimates = load_estimates()
     expected = sum(e.get("complete_doors") and e["total_max_km"] <= 15 for e in estimates.values())
+    assert len(app.get("link_button")) == len(basic)
+    assert any(f"房源 ({len(basic)})" in x.value for x in app.subheader)
+    app.toggle[1].set_value(True).run()
     assert len(app.get("link_button")) == expected
     app.toggle[2].set_value(False).run()
     assert len(app.get("link_button")) == 0
@@ -68,7 +71,7 @@ def test_streamlit_reads_collected_data():
     app.toggle[1].set_value(False).run()
     assert not app.exception
     assert any("房源 (" in x.value for x in app.subheader)
-    assert len(app.get("link_button")) > 0
+    assert len(app.get("link_button")) == len(basic)
 
 
 def test_transaction_doors_require_ministry_record_and_same_street():
