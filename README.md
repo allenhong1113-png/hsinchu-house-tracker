@@ -7,7 +7,7 @@ Streamlit entry point: `App.py`. Install `requirements.txt` (the old `Requiremen
 `public search HTML → Sources/source_yungching.py → collector.py → data/houses.csv → import_houses.py → houses.db → App.py`
 
 Run `python collector.py`, `python import_houses.py`, `python -m pytest -q`, then `streamlit run App.py`.
-Actions runs the same sequence twice daily at 08:00/20:00 Taiwan time or by manual dispatch. Data is committed only after tests pass. `data/collection_report.json` records actual counts and failed requests.
+Actions validates the retained real snapshot twice daily at 08:00/20:00 Taiwan time or by manual dispatch. Live refresh is disabled by default after the observed hosted-runner HTTP 403; manually enable it only where source access is permitted. Data is committed only after tests pass. `data/collection_report.json` records actual counts and failed requests.
 
 ## Honest scope and filters
 
@@ -26,3 +26,7 @@ Final results default to verified road distance total <=15km. Disable the distan
 Original collector imported lowercase `sources` but the repository used `Sources`. All errors were swallowed; Actions reported success and imported four existing manual rows. Fixed failure propagation and atomic publication. Shared hash-based importer prevents Streamlit reruns altering seen/status/history. Stable listing IDs tolerate edited titles. No automatic delisting after partial collection. Map requires explicit geocode verification; final list requires road verification.
 
 Tests cover public parser, unknown age, converted rooms, source identity, import idempotence, prices/history, guessed-coordinate rejection, and actual Streamlit rendering of collected candidates. Original `Sources/source_591.py` remains a disabled placeholder, not a working source.
+
+## Runner access limitation observed in Actions
+
+Run #2 returned HTTP 403 for Yungching robots.txt on the hosted runner. Do not evade this restriction. The public HTML snapshot obtained in the development environment is real but is not a successful runner refresh. Collection failure writes `last_collection_attempt.json`; Actions then tests the last successful snapshot with an explicit warning. A green integration run means the App can read real retained data, NOT that a live refresh succeeded. Snapshot provenance remains in `collection_report.json` and each record's `collected_at`. Automatic refresh remains blocked until an allowed data source or permitted runner is available.
