@@ -1,0 +1,79 @@
+{
+  "collected_at": "2026-10-07T04:57:46.621828+00:00",
+  "candidate_count": 53,
+  "attempt_limit": 4,
+  "linked_listings": 4,
+  "rows": [
+    {
+      "listing_id": "7517313",
+      "listing_url": "https://buy.yungching.com.tw/house/7517313",
+      "listing_address": "新竹市東區埔頂三路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/53581",
+      "transaction_url": "https://community.yungching.com.tw/building/53581/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市東區埔頂三路30號",
+          "transaction_address": "新竹市新竹市埔頂三路30號20樓之7",
+          "transaction_month": "115年06月"
+        },
+        {
+          "proxy_address": "新竹市東區埔頂三路38號",
+          "transaction_address": "新竹市新竹市埔頂三路38號22樓之1",
+          "transaction_month": "115年01月"
+        }
+      ]
+    },
+    {
+      "listing_id": "7242809",
+      "listing_url": "https://buy.yungching.com.tw/house/7242809",
+      "listing_address": "新竹市香山區延平路二段",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/66871",
+      "transaction_url": "https://community.yungching.com.tw/building/66871/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市香山區延平路二段1428號",
+          "transaction_address": "新竹市新竹市延平路二段1428號5樓之3",
+          "transaction_month": "114年05月"
+        }
+      ]
+    },
+    {
+      "listing_id": "7489250",
+      "listing_url": "https://buy.yungching.com.tw/house/7489250",
+      "listing_address": "新竹市東區埔頂三路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/53581",
+      "transaction_url": "https://community.yungching.com.tw/building/53581/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市東區埔頂三路30號",
+          "transaction_address": "新竹市新竹市埔頂三路30號20樓之7",
+          "transaction_month": "115年06月"
+        },
+        {
+          "proxy_address": "新竹市東區埔頂三路38號",
+          "transaction_address": "新竹市新竹市埔頂三路38號22樓之1",
+          "transaction_month": "115年01月"
+        }
+      ]
+    },
+    {
+      "listing_id": "7429273",
+      "listing_url": "https://buy.yungching.com.tw/house/7429273",
+      "listing_address": "新竹市東區慈濟路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/51988",
+      "transaction_url": "https://community.yungching.com.tw/building/51988/price",
+      "doors": [
+        {
+          "proxy_address": "新竹市東區慈濟路149號",
+          "transaction_address": "新竹市新竹市慈濟路149號4樓",
+          "transaction_month": "115年07月"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
