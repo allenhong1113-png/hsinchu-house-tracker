@@ -1,5 +1,5 @@
 {
-  "calculated_at": "2026-10-07T04:59:30.180206+00:00",
+  "calculated_at": "2026-10-07T11:08:31.260782+00:00",
   "destination_digest": "bbb5eabbf6d158cff8b89c852212eb84ba0195bd0dfe14e7c5efc39f59f535b4",
   "route_provider": "OSRM / FOSSGIS, car fastest-route distance; © OpenStreetMap contributors (ODbL)",
   "policy_url": "https://routing.openstreetmap.de/about.html",
@@ -38,7 +38,8 @@
               55.20788591,
               11.72883492
             ]
-          ]
+          ],
+          "route_calculated_at": "2026-10-07T04:59:30.180206+00:00"
         },
         {
           "proxy_address": "新竹市東區埔頂三路38號",
@@ -62,7 +63,8 @@
               66.164318,
               11.72883492
             ]
-          ]
+          ],
+          "route_calculated_at": "2026-10-07T04:59:30.180206+00:00"
         }
       ],
       "total_min_km": 10.4118,
@@ -102,7 +104,8 @@
               55.20788591,
               11.72883492
             ]
-          ]
+          ],
+          "route_calculated_at": "2026-10-07T04:59:30.180206+00:00"
         },
         {
           "proxy_address": "新竹市東區埔頂三路38號",
@@ -126,7 +129,8 @@
               66.164318,
               11.72883492
             ]
-          ]
+          ],
+          "route_calculated_at": "2026-10-07T04:59:30.180206+00:00"
         }
       ],
       "total_min_km": 10.4118,
@@ -166,11 +170,426 @@
               20.85488566,
               11.72883492
             ]
-          ]
+          ],
+          "route_calculated_at": "2026-10-07T04:59:30.180206+00:00"
         }
       ],
       "total_min_km": 10.534600000000001,
       "total_max_km": 10.534600000000001
+    },
+    {
+      "listing_id": "7524483",
+      "listing_url": "https://buy.yungching.com.tw/house/7524483",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:01:04.560698+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
+    },
+    {
+      "listing_id": "7369826",
+      "listing_url": "https://buy.yungching.com.tw/house/7369826",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:01:08.067028+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
+    },
+    {
+      "listing_id": "7509863",
+      "listing_url": "https://buy.yungching.com.tw/house/7509863",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:01:42.148789+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
+    },
+    {
+      "listing_id": "7291565",
+      "listing_url": "https://buy.yungching.com.tw/house/7291565",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:02:06.103230+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
+    },
+    {
+      "listing_id": "7273020",
+      "listing_url": "https://buy.yungching.com.tw/house/7273020",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:02:09.484314+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
+    },
+    {
+      "listing_id": "7295938",
+      "listing_url": "https://buy.yungching.com.tw/house/7295938",
+      "listing_address": "新竹縣竹東鎮旭光一路",
+      "listing_collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "community_url": "https://community.yungching.com.tw/building/91951",
+      "transaction_url": "https://community.yungching.com.tw/building/91951/price",
+      "matched_at": "2026-10-07T11:05:19.007172+00:00",
+      "status": "estimated_transaction_proxy",
+      "door_count": 2,
+      "routed_door_count": 2,
+      "complete_doors": true,
+      "proxies": [
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路121號",
+          "transaction_address": "新竹縣竹東鎮旭光一路121號4樓",
+          "transaction_month": "115年07月",
+          "lat": 24.7730745,
+          "lon": 121.0571041,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路121號十四樓號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            7.0552,
+            11.0998
+          ],
+          "road_snap_distances_m": [
+            [
+              48.75876392,
+              51.78965236
+            ],
+            [
+              48.75876392,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:27.412456+00:00"
+        },
+        {
+          "proxy_address": "新竹縣竹東鎮旭光一路129號",
+          "transaction_address": "新竹縣竹東鎮旭光一路129號14樓",
+          "transaction_month": "115年06月",
+          "lat": 24.7732741,
+          "lon": 121.0568247,
+          "status": "reviewed_exact_door_pin",
+          "map_url": "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF129%E8%99%9F/@24.7732741,121.0542444,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e819495def:0x4cb2d97ef9b7d7bd!8m2!3d24.7732741!4d121.0568247!16s%2Fg%2F11ntpbd_pp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+          "observed_map_address": "新竹縣竹東鎮二重里旭光一路129號",
+          "reviewed_at": "2026-10-07",
+          "distances_km": [
+            6.9414,
+            10.7813
+          ],
+          "road_snap_distances_m": [
+            [
+              65.29934083,
+              51.78965236
+            ],
+            [
+              65.29934083,
+              11.72883492
+            ]
+          ],
+          "route_calculated_at": "2026-10-07T11:05:47.604309+00:00"
+        }
+      ],
+      "total_min_km": 17.7227,
+      "total_max_km": 18.155
     }
   ],
   "errors": []
