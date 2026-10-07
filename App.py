@@ -529,3 +529,9 @@ report_path = Path(__file__).resolve().parent / "data/collection_report.json"
 if report_path.exists():
     st.json(json.loads(report_path.read_text()))
 st.caption("未使用付費 API key。只顯示正式地址驗證座標；不使用路中心或社區中心猜測。部分頁面抓取不推斷下架。")
+attempt_path = Path(__file__).resolve().parent / "data/last_collection_attempt.json"
+if attempt_path.exists():
+    attempt = json.loads(attempt_path.read_text())
+    if attempt.get("status") != "success":
+        st.warning("最新自動抓取失敗；目前顯示上次成功取得的房源快照，不代表本次有取得新資料。")
+        st.json(attempt)
