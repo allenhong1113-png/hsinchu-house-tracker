@@ -191,7 +191,9 @@ with st.expander("🔎 篩選", expanded=False):
 
     strict_distance = st.toggle(
         "只看雙通勤≤上限",
-        True
+        False,
+        key="strict_distance_candidates_v2",
+        help="預設保留待定位與超過距離的刊登；開啟後只保留已有道路距離且符合上限的結果。"
     )
 
     allow_estimates = st.toggle("允許同社區實價門牌估算", True)
@@ -405,6 +407,8 @@ else:
 st.subheader(
     f"🏘️ 房源 ({len(f)})"
 )
+st.caption("目前只顯示已算出距離且符合上限的刊登；可展開上方「🔎 篩選」關閉『只看雙通勤≤上限』查看全部基本條件刊登。" if strict_distance else "目前顯示全部基本條件刊登；其中包含待定位、待道路計算與超過距離上限的物件，並非全部符合雙通勤條件。")
+audit_by_id = {r["刊登ID"]: r for r in audit_rows}
 
 status_icons = {
     "new": "🆕 新增",
@@ -430,6 +434,9 @@ for _, h in f.iterrows():
         st.caption(
             f"{h['district']}｜{h['address']}"
         )
+        match = audit_by_id.get(str(h["listing_id"]))
+        if match:
+            st.info(f"門牌／距離狀態：{match['處理狀態']}")
 
         c1, c2 = st.columns(2)
 
@@ -492,6 +499,10 @@ for _, h in f.iterrows():
             st.caption("OSRM 汽車路線的道路距離；不考慮即時路況、車行入口。© OpenStreetMap contributors（ODbL）／FOSSGIS。")
         else:
             st.caption("🚘 尚無可核對的實價門牌定位／道路距離")
+            if match and match["實價門牌"]:
+                st.write(f"已取得實價門牌：{match['實價門牌']}")
+            if match and match["實價來源"]:
+                st.markdown(f"[查看實價來源（門牌尚待定位或核對）]({match['實價來源']})")
 
         # -----------------------------------------------
         # HISTORY
