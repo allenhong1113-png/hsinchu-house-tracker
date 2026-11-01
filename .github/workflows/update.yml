@@ -40,6 +40,8 @@ jobs:
         run: |
           echo "::warning::Live refresh disabled or failed. Testing the last genuinely collected snapshot; this run did not obtain new listings."
           echo "Live refresh disabled or failed; last collected snapshot remains available. See last_collection_attempt.json." >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve reviewed road route cache without network
+        run: python commute_estimates.py migrate-cache
       - name: Import last successful snapshot with verified provenance
         run: python import_houses.py
       - name: Parser, database and Streamlit integration tests
