@@ -21,7 +21,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -55,11 +55,13 @@ jobs:
             data/transaction_proxies.json
             data/transaction_pins.json
             data/commute_estimates.json
+            data/route_cache.json
+            data/listing_checks.json
       - name: Commit collected data only after tests pass
         run: |
           git config user.name "House Tracker Bot"
           git config user.email "actions@github.com"
-          git add data/houses.csv data/collection_report.json data/last_collection_attempt.json houses.db
+          git add data houses.db
           if ! git diff --cached --quiet; then
             git commit -m "data: sync tested listing snapshot with provenance"
             git push
