@@ -1,0 +1,4024 @@
+{
+  "schema_version": 1,
+  "purpose": "Observed driving distances at community or transaction-door proxy locations. Separate from exact listing coordinates and live sale verification.",
+  "summary": {
+    "records": 121,
+    "origins": 80,
+    "usable_records": 101,
+    "pending_records": 20,
+    "within_15km_records": 44,
+    "over_15km_records": 57,
+    "cached_origin_groups": 3,
+    "basic_records": 56,
+    "basic_within": 27
+  },
+  "destinations": {
+    "verified_at": "2026-10-07",
+    "coordinate_source": "Google Maps place pin (!3d/!4d), not map viewport (@)",
+    "distance_limit_km": 15,
+    "destinations": [
+      {
+        "id": "work1",
+        "name": "台積電全球研發中心（F12P8）",
+        "address": "新竹縣寶山鄉科環路168號",
+        "lat": 24.7673267,
+        "lon": 121.0087257,
+        "geocode_status": "verified_place_pin",
+        "entrance_verified": false,
+        "sources": [
+          "https://www.tsmc.com/chinese/aboutTSMC/TSMC_Fabs",
+          "https://findbiz.nat.gov.tw/fts/factory/05/11095N00098"
+        ],
+        "map_url": "https://www.google.com/maps/place/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E5%85%A8%E7%90%83%E7%A0%94%E7%99%BC%E4%B8%AD%E5%BF%83(F12P8)/@24.765768,121.0092177,18z/data=!4m6!3m5!1s0x34684973fe2cf8bf:0x15346965bd724a7d!8m2!3d24.7673267!4d121.0087257!16s%2Fg%2F11krp_40p8?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+      },
+      {
+        "id": "work2",
+        "name": "半吊子廚房",
+        "address": "新竹縣竹北市中山路52巷5號",
+        "lat": 24.8349387,
+        "lon": 121.0244598,
+        "geocode_status": "verified_place_pin",
+        "entrance_verified": false,
+        "sources": [
+          "https://www.thehalfkitchen.com/"
+        ],
+        "map_url": "https://www.google.com.tw/maps/place/%E5%8D%8A%E5%90%8A%E5%AD%90%E5%BB%9A%E6%88%BF/@24.8349387,121.0244598,17z/data=!3m1!4b1!4m6!3m5!1s0x3468376849bc425b:0xbf1acbe417520e6f!8m2!3d24.8349387!4d121.0244598!16s%2Fg%2F11pw8z2wyp?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+      }
+    ]
+  },
+  "route_origins": [
+    {
+      "id": "origin_033",
+      "name": "公園1號",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市十興路一段268號",
+      "evidence_url": "https://community.yungching.com.tw/building/35709/price",
+      "record_ids": [
+        "7448640",
+        "7180017",
+        "I070-BB04073",
+        "7419816"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市北興里十興路一段268號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:08.409Z",
+      "distances_km": [
+        9.2,
+        0.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.1,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5268%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF%E4%B8%80%E6%AE%B5268%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_034",
+      "name": "國賓大悅",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市勝利八街一段233號",
+      "evidence_url": "https://community.yungching.com.tw/building/14227/price",
+      "record_ids": [
+        "7509805",
+        "7447384",
+        "I070-BB04044"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "30286新竹縣竹北市十興里勝利八街一段233號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:10.929Z",
+      "distances_km": [
+        8.8,
+        1.4
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.200000000000001,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8B%9D%E5%88%A9%E5%85%AB%E8%A1%97%E4%B8%80%E6%AE%B5233%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8B%9D%E5%88%A9%E5%85%AB%E8%A1%97%E4%B8%80%E6%AE%B5233%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_088",
+      "name": "富廣和合",
+      "kind": "community_location_proxy",
+      "query": "富廣和合 新竹縣竹東鎮和江街",
+      "evidence_url": "https://sale.591.com.tw/home/house/detail/2/20937879.html",
+      "record_ids": [
+        "20937879"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "富廣和合 310新竹縣竹東鎮上舘里和江街63號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:45:53.891Z",
+      "distances_km": [
+        20.5,
+        19.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 39.6,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/%E5%AF%8C%E5%BB%A3%E5%92%8C%E5%90%88+310%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%B8%8A%E8%88%98%E9%87%8C%E5%92%8C%E6%B1%9F%E8%A1%9763%E8%99%9F/24.7673267,121.0087257/@24.7533281,120.9717754,12z/data=!3m1!4b1!4m9!4m8!1m5!1m1!1s0x346847cb0e47c5e9:0xda77b94e6b860911!2m2!1d121.0944275!2d24.7198033!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%8C%E5%BB%A3%E5%92%8C%E5%90%88%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%92%8C%E6%B1%9F%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_089",
+      "name": "仁發富悅",
+      "kind": "community_location_proxy",
+      "query": "仁發富悅 新竹縣竹北市十興路二段",
+      "evidence_url": "https://sale.591.com.tw/home/house/detail/2/21158684.html",
+      "record_ids": [
+        "21158684"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "仁發富悅 302新竹縣竹北市東興里十興路二段100~158號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:28.896Z",
+      "distances_km": [
+        9.7,
+        2.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 12,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E4%BB%81%E7%99%BC%E5%AF%8C%E6%82%85%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E4%BB%81%E7%99%BC%E5%AF%8C%E6%82%85%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_090",
+      "name": "北大文化中心二房平車",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹市北大路",
+      "evidence_url": "https://www.houseol.com.tw/sell_item/I030-BB04070",
+      "record_ids": [
+        "I030-BB04070"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "300新竹市北大路",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:31.341Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.5,
+        11.4
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%A4%A7%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%A4%A7%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_005",
+      "name": "竹科潤隆",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市東區埔頂三路30號",
+      "evidence_url": "https://community.yungching.com.tw/building/53581/price",
+      "record_ids": [
+        "7517313",
+        "7489250"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "沿用既有成功快取；同社區已算門牌合計範圍 10.4118–10.4118 km。本列兩段取合計最大之同一門牌。",
+      "used_origin": "新竹市東區埔頂三路30號",
+      "provider": "OSRM / FOSSGIS 駕車既有快取（OpenStreetMap ODbL）",
+      "checked_at": "2026-10-07T04:59:30.180206+00:00",
+      "distances_km": [
+        3.961,
+        6.4508
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.4118,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF30%E8%99%9F/@24.7901281,121.0127963,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c4694a1:0x6c2646fa7988bb2!8m2!3d24.7901281!4d121.0127963!16s%2Fg%2F11rx_f6rpc?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%BE%8D%E5%B1%B1%E9%87%8C%E5%9F%94%E9%A0%82%E4%B8%89%E8%B7%AF30%E8%99%9F/@24.7901281,121.0127963,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363e4c4694a1:0x6c2646fa7988bb2!8m2!3d24.7901281!4d121.0127963!16s%2Fg%2F11rx_f6rpc?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+      ],
+      "cache_range": [
+        10.4118,
+        10.4118
+      ]
+    },
+    {
+      "id": "origin_012",
+      "name": "新祐景然",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市香山區延平路二段1428號",
+      "evidence_url": "https://community.yungching.com.tw/building/66871/price",
+      "record_ids": [
+        "7242809"
+      ],
+      "usable": true,
+      "level": "同社區門牌範圍代理",
+      "note": "Google Maps 回傳1428–1430號範圍，非獨立1428號精確門牌。",
+      "used_origin": "300新竹市香山區港南里延平路二段1428-1430號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:34.018Z",
+      "distances_km": [
+        17.7,
+        17.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 34.8,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%BA%8C%E6%AE%B51428%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%BA%8C%E6%AE%B51428%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_019",
+      "name": "禾園運動家2｜全新景觀兩房附車位《近金雅重劃區》",
+      "kind": "community_location_proxy",
+      "query": "禾園運動家2 新竹市北區東大路三段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7444682",
+      "record_ids": [
+        "7444682",
+        "7334193"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "禾園運動家II A棟 300新竹市北區古賢里東大路三段110巷1弄10號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:36.582Z",
+      "distances_km": [
+        10.9,
+        8.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 19.200000000000003,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%A6%BE%E5%9C%92%E9%81%8B%E5%8B%95%E5%AE%B62%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%9D%B1%E5%A4%A7%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%A6%BE%E5%9C%92%E9%81%8B%E5%8B%95%E5%AE%B62%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%9D%B1%E5%A4%A7%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_021",
+      "name": "竹科悅揚",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市東區慈濟路149號",
+      "evidence_url": "https://community.yungching.com.tw/building/51988/price",
+      "record_ids": [
+        "7429273",
+        "7395575"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "沿用既有成功快取；同社區已算門牌合計範圍 10.534600000000001–10.534600000000001 km。本列兩段取合計最大之同一門牌。",
+      "used_origin": "新竹市東區慈濟路149號",
+      "provider": "OSRM / FOSSGIS 駕車既有快取（OpenStreetMap ODbL）",
+      "checked_at": "2026-10-07T04:59:30.180206+00:00",
+      "distances_km": [
+        4.085,
+        6.4496
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.534600000000001,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%9F%94%E9%A0%82%E9%87%8C%E6%85%88%E6%BF%9F%E8%B7%AF149%E8%99%9F/@24.7914402,121.0117787,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363f6d0afd73:0x6926cc490b8e3abc!8m2!3d24.7914402!4d121.014359!16s%2Fg%2F11vln9m3jx?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/place/300%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%9F%94%E9%A0%82%E9%87%8C%E6%85%88%E6%BF%9F%E8%B7%AF149%E8%99%9F/@24.7914402,121.0117787,17z/data=!3m1!4b1!4m6!3m5!1s0x3468363f6d0afd73:0x6926cc490b8e3abc!8m2!3d24.7914402!4d121.014359!16s%2Fg%2F11vln9m3jx?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+      ],
+      "cache_range": [
+        10.534600000000001,
+        10.534600000000001
+      ]
+    },
+    {
+      "id": "origin_022",
+      "name": "美學苑",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市北區經國路二段539之16號",
+      "evidence_url": "https://community.yungching.com.tw/building/2413/price",
+      "record_ids": [
+        "7462870"
+      ],
+      "usable": false,
+      "level": "定位待確認",
+      "note": "Google Maps 回傳門牌、社區或期別與原資料不符；觀測距離僅保留為參考，不納入15公里判定。",
+      "used_origin": "布達佩斯社區管理委員會 300新竹市北區中雅里經國路二段537號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:42.998Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.7,
+        13.1
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%BE%8E%E5%AD%B8%E8%8B%91%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%BE%8E%E5%AD%B8%E8%8B%91%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_024",
+      "name": "春福HI INN",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市北區榮濱南路372號",
+      "evidence_url": "https://community.yungching.com.tw/building/33566/price",
+      "record_ids": [
+        "7502477"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "300新竹市北區海濱里榮濱南路372號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:47:58.721Z",
+      "distances_km": [
+        15.7,
+        15.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 30.799999999999997,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%A6%AE%E6%BF%B1%E5%8D%97%E8%B7%AF372%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%A6%AE%E6%BF%B1%E5%8D%97%E8%B7%AF372%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_025",
+      "name": "昌益文清",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹市東區水利路39巷16號",
+      "evidence_url": "https://community.yungching.com.tw/building/38726/price",
+      "record_ids": [
+        "7486453"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "300新竹市東區千甲里水利路39巷16號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:00.998Z",
+      "distances_km": [
+        6.2,
+        6.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.100000000000001,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%B0%B4%E5%88%A9%E8%B7%AF39%E5%B7%B716%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%B0%B4%E5%88%A9%E8%B7%AF39%E5%B7%B716%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_030",
+      "name": "德鑫御寶",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市華興三街37號",
+      "evidence_url": "https://community.yungching.com.tw/building/31211/price",
+      "record_ids": [
+        "7513317"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市新國里華興三街37號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:03.630Z",
+      "distances_km": [
+        10,
+        3.2
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.2,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%8F%AF%E8%88%88%E4%B8%89%E8%A1%9737%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%8F%AF%E8%88%88%E4%B8%89%E8%A1%9737%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_031",
+      "name": "益欣森陽JOY-Q",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市新瀧三街55號",
+      "evidence_url": "https://community.yungching.com.tw/building/57241/price",
+      "record_ids": [
+        "7489341",
+        "7451267",
+        "7480230"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市竹北里新瀧三街55號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:05.911Z",
+      "distances_km": [
+        9.6,
+        0.29
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 9.889999999999999,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%89%E8%A1%9755%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%89%E8%A1%9755%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_032",
+      "name": "佳陞禾樂",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市光明十五街12號",
+      "evidence_url": "https://community.yungching.com.tw/building/68051/price",
+      "record_ids": [
+        "6667621"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市新崙里光明十五街12號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:33.155Z",
+      "distances_km": [
+        9.2,
+        3.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 12.5,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E5%8D%81%E4%BA%94%E8%A1%9712%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E5%8D%81%E4%BA%94%E8%A1%9712%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_035",
+      "name": "原美館",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市六家一路一段138號",
+      "evidence_url": "https://community.yungching.com.tw/building/6617/price",
+      "record_ids": [
+        "7520983"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市東平里六家一路一段138號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:35.803Z",
+      "distances_km": [
+        7.8,
+        4.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 12.7,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%AD%E5%AE%B6%E4%B8%80%E8%B7%AF%E4%B8%80%E6%AE%B5138%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%AD%E5%AE%B6%E4%B8%80%E8%B7%AF%E4%B8%80%E6%AE%B5138%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_036",
+      "name": "冠軍城峰",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市中央路183號",
+      "evidence_url": "https://community.yungching.com.tw/building/32172/price",
+      "record_ids": [
+        "7508492"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市竹義里中央路183號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:38.198Z",
+      "distances_km": [
+        10,
+        2.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 12.7,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%AD%E5%A4%AE%E8%B7%AF183%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%AD%E5%A4%AE%E8%B7%AF183%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_038",
+      "name": "佳陞大河戀",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市興隆路一段51號",
+      "evidence_url": "https://community.yungching.com.tw/building/14542/price",
+      "record_ids": [
+        "7497607"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市新崙里興隆路一段51號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:40.538Z",
+      "distances_km": [
+        9.1,
+        4
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.1,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%80%E6%AE%B551%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%80%E6%AE%B551%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_039",
+      "name": "晴川悅河",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市光明十一路1巷50弄28號",
+      "evidence_url": "https://community.yungching.com.tw/building/35672/price",
+      "record_ids": [
+        "7466543",
+        "7528709"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市新崙里光明十一路1巷50弄28號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:43.142Z",
+      "distances_km": [
+        9.6,
+        3.6
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.2,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E5%8D%81%E4%B8%80%E8%B7%AF1%E5%B7%B750%E5%BC%8428%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E5%8D%81%E4%B8%80%E8%B7%AF1%E5%B7%B750%E5%BC%8428%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_040",
+      "name": "興富發水公園",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市興隆路一段633號",
+      "evidence_url": "https://community.yungching.com.tw/building/35696/price",
+      "record_ids": [
+        "7346711",
+        "6519514"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市斗崙里興隆路一段633號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:48:45.707Z",
+      "distances_km": [
+        8.3,
+        2.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 11,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%80%E6%AE%B5633%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E8%88%88%E9%9A%86%E8%B7%AF%E4%B8%80%E6%AE%B5633%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_042",
+      "name": "青禾",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市嘉興路338巷26號",
+      "evidence_url": "https://community.yungching.com.tw/building/35662/price",
+      "record_ids": [
+        "7527524",
+        "7438931"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市東興里嘉興路338巷26號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:49:23.101Z",
+      "distances_km": [
+        9,
+        2.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 11.8,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%98%89%E8%88%88%E8%B7%AF338%E5%B7%B726%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%98%89%E8%88%88%E8%B7%AF338%E5%B7%B726%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_046",
+      "name": "興築興希望",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市北新一街28號",
+      "evidence_url": "https://community.yungching.com.tw/building/51941/price",
+      "record_ids": [
+        "7541940"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市竹北里北新一街28號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:49:25.469Z",
+      "distances_km": [
+        9.8,
+        0.22
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.020000000000001,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8C%97%E6%96%B0%E4%B8%80%E8%A1%9728%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8C%97%E6%96%B0%E4%B8%80%E8%A1%9728%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_047",
+      "name": "總圓上城",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市新瀧一街13號",
+      "evidence_url": "https://community.yungching.com.tw/building/32157/price",
+      "record_ids": [
+        "7478172"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市竹北里新瀧一街13號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:49:27.848Z",
+      "distances_km": [
+        9.5,
+        0.21
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 9.71,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%80%E8%A1%9713%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%80%E8%A1%9713%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_053",
+      "name": "站前威力",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹北市台元街45號",
+      "evidence_url": "https://community.yungching.com.tw/building/2628/price",
+      "record_ids": [
+        "7489328"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "302新竹縣竹北市竹北里台元街45號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:49:30.237Z",
+      "distances_km": [
+        10.1,
+        1.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 12,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8F%B0%E5%85%83%E8%A1%9745%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8F%B0%E5%85%83%E8%A1%9745%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_054",
+      "name": "臻研臻美",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮和江街368巷2號",
+      "evidence_url": "https://community.yungching.com.tw/building/32077/price",
+      "record_ids": [
+        "7250242"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "原成交門牌未精確匹配，改採名稱及道路相符之社區地標；不是廣告實際戶別。",
+      "used_origin": "臻研臻美 310新竹縣竹東鎮上舘里和江街366號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:55.042Z",
+      "distances_km": [
+        21.1,
+        19.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 40.8,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%BB%E7%A0%94%E8%87%BB%E7%BE%8E%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%92%8C%E6%B1%9F%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%BB%E7%A0%94%E8%87%BB%E7%BE%8E%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%92%8C%E6%B1%9F%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_055",
+      "name": "星都滙AB區",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮旭光一路121號",
+      "evidence_url": "https://community.yungching.com.tw/building/91951/price",
+      "record_ids": [
+        "7524483",
+        "7369826",
+        "7509863",
+        "7291565",
+        "7273020",
+        "7295938",
+        "7307446"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "沿用既有成功快取；同社區已算門牌合計範圍 17.7227–18.155 km。本列兩段取合計最大之同一門牌。",
+      "used_origin": "新竹縣竹東鎮旭光一路121號",
+      "provider": "OSRM / FOSSGIS 駕車既有快取（OpenStreetMap ODbL）",
+      "checked_at": "2026-10-07T11:05:27.412456+00:00",
+      "distances_km": [
+        7.0552,
+        11.0998
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 18.155,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D",
+        "https://www.google.com/maps/place/310%E5%8F%B0%E7%81%A3%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E4%BA%8C%E9%87%8D%E9%87%8C%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF121%E8%99%9F%E5%8D%81%E5%9B%9B%E6%A8%93%E8%99%9F/@24.7730745,121.0571041,17z/data=!3m1!4b1!4m6!3m5!1s0x346837e81a124a49:0x86c89b75141fe7!8m2!3d24.7730745!4d121.0571041!16s%2Fg%2F11zh9wl1qt?entry=ttu&g_ep=EgoyMDI2MTAwNC4wIKXMDSoASAFQAw%3D%3D"
+      ],
+      "cache_range": [
+        17.7227,
+        18.155
+      ]
+    },
+    {
+      "id": "origin_057",
+      "name": "環球市",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮光明路126巷87弄22號",
+      "evidence_url": "https://community.yungching.com.tw/building/14600/price",
+      "record_ids": [
+        "7388104"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "原成交門牌未精確匹配，改採名稱及道路相符之社區地標；不是廣告實際戶別。",
+      "used_origin": "昌益環球市 310新竹縣竹東鎮三重里光明路126巷87弄310號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:57.990Z",
+      "distances_km": [
+        14.2,
+        12.5
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 26.7,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%92%B0%E7%90%83%E5%B8%82%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%85%89%E6%98%8E%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%92%B0%E7%90%83%E5%B8%82%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%85%89%E6%98%8E%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_058",
+      "name": "鑫陞渼山",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮公道路758巷27弄3號",
+      "evidence_url": "https://community.yungching.com.tw/building/91813/price",
+      "record_ids": [
+        "7407047"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "310新竹縣竹東鎮員山里公道路758巷27弄3號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:49:57.913Z",
+      "distances_km": [
+        5.4,
+        8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.4,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%85%AC%E9%81%93%E8%B7%AF758%E5%B7%B727%E5%BC%843%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E5%85%AC%E9%81%93%E8%B7%AF758%E5%B7%B727%E5%BC%843%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_059",
+      "name": "星都匯星都滙D區朝南高樓2房平車位",
+      "kind": "community_location_proxy",
+      "query": "星都匯D區 新竹縣竹東鎮旭光一路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7501157",
+      "record_ids": [
+        "7501157",
+        "7508502",
+        "7525224",
+        "7542290",
+        "7533453",
+        "7548821"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "昌益星都滙D區 310新竹縣竹東鎮二重里旭光一路92~180號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:00.345Z",
+      "distances_km": [
+        13.5,
+        11.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 25.3,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E5%8C%AFD%E5%8D%80%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E5%8C%AFD%E5%8D%80%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_060",
+      "name": "至善高第",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮至善路35巷16號",
+      "evidence_url": "https://community.yungching.com.tw/building/76234/price",
+      "record_ids": [
+        "7365875"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "原成交門牌未精確匹配，改採名稱及道路相符之社區地標；不是廣告實際戶別。",
+      "used_origin": "至善高第 310新竹縣竹東鎮上舘里至善路1~37號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:57:01.068Z",
+      "distances_km": [
+        20.7,
+        19.2
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 39.9,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%B3%E5%96%84%E9%AB%98%E7%AC%AC%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E8%87%B3%E5%96%84%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%B3%E5%96%84%E9%AB%98%E7%AC%AC%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E8%87%B3%E5%96%84%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_061",
+      "name": "星都匯朝南採光成家首購兩房平面車位",
+      "kind": "community_location_proxy",
+      "query": "星都匯朝南採光成家首購兩房平面車位 新竹縣竹東鎮旭光一路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7489255",
+      "record_ids": [
+        "7489255"
+      ],
+      "usable": false,
+      "level": "期別待確認",
+      "note": "Google Maps 僅定位到同名社區或預設期別，尚未確認廣告實際區別；距離僅供參考。",
+      "used_origin": "昌益星都滙A區 310新竹縣竹東鎮二重里旭光一路61～147號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:05.551Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.6,
+        11.9
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E5%8C%AF%E6%9C%9D%E5%8D%97%E6%8E%A1%E5%85%89%E6%88%90%E5%AE%B6%E9%A6%96%E8%B3%BC%E5%85%A9%E6%88%BF%E5%B9%B3%E9%9D%A2%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E5%8C%AF%E6%9C%9D%E5%8D%97%E6%8E%A1%E5%85%89%E6%88%90%E5%AE%B6%E9%A6%96%E8%B3%BC%E5%85%A9%E6%88%BF%E5%B9%B3%E9%9D%A2%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_064",
+      "name": "星都滙住宅區高樓層景觀2房+B1雙平車位",
+      "kind": "community_location_proxy",
+      "query": "星都滙住宅區高樓層景觀2房+B1雙平車位 新竹縣竹東鎮旭光一路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7533364",
+      "record_ids": [
+        "7533364"
+      ],
+      "usable": false,
+      "level": "期別待確認",
+      "note": "Google Maps 僅定位到同名社區或預設期別，尚未確認廣告實際區別；距離僅供參考。",
+      "used_origin": "昌益星都滙A區 310新竹縣竹東鎮二重里旭光一路61～147號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:08.140Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.6,
+        11.9
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E6%BB%99%E4%BD%8F%E5%AE%85%E5%8D%80%E9%AB%98%E6%A8%93%E5%B1%A4%E6%99%AF%E8%A7%802%E6%88%BF%2BB1%E9%9B%99%E5%B9%B3%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%9F%E9%83%BD%E6%BB%99%E4%BD%8F%E5%AE%85%E5%8D%80%E9%AB%98%E6%A8%93%E5%B1%A4%E6%99%AF%E8%A7%802%E6%88%BF%2BB1%E9%9B%99%E5%B9%B3%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_065",
+      "name": "登記住宅！【星都匯】朝南高樓採光二房+B1平車",
+      "kind": "community_location_proxy",
+      "query": "登記住宅！【星都匯】朝南高樓採光二房+B1平車 新竹縣竹東鎮旭光一路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7512742",
+      "record_ids": [
+        "7512742"
+      ],
+      "usable": false,
+      "level": "期別待確認",
+      "note": "Google Maps 僅定位到同名社區或預設期別，尚未確認廣告實際區別；距離僅供參考。",
+      "used_origin": "昌益星都滙A區 310新竹縣竹東鎮二重里旭光一路61～147號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:46.636Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.6,
+        11.9
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%99%BB%E8%A8%98%E4%BD%8F%E5%AE%85%EF%BC%81%E3%80%90%E6%98%9F%E9%83%BD%E5%8C%AF%E3%80%91%E6%9C%9D%E5%8D%97%E9%AB%98%E6%A8%93%E6%8E%A1%E5%85%89%E4%BA%8C%E6%88%BF%2BB1%E5%B9%B3%E8%BB%8A%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%99%BB%E8%A8%98%E4%BD%8F%E5%AE%85%EF%BC%81%E3%80%90%E6%98%9F%E9%83%BD%E5%8C%AF%E3%80%91%E6%9C%9D%E5%8D%97%E9%AB%98%E6%A8%93%E6%8E%A1%E5%85%89%E4%BA%8C%E6%88%BF%2BB1%E5%B9%B3%E8%BB%8A%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_067",
+      "name": "遠雄新時代",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮龍鳳路28號",
+      "evidence_url": "https://community.yungching.com.tw/building/55075/price",
+      "record_ids": [
+        "7434084",
+        "7139285"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "原成交門牌未精確匹配，改採名稱及道路相符之社區地標；不是廣告實際戶別。",
+      "used_origin": "遠雄新時代社區 310新竹縣竹東鎮中正里龍鳳路22號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:57:03.548Z",
+      "distances_km": [
+        19.4,
+        17.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 37.3,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%81%A0%E9%9B%84%E6%96%B0%E6%99%82%E4%BB%A3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E9%BE%8D%E9%B3%B3%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%81%A0%E9%9B%84%E6%96%B0%E6%99%82%E4%BB%A3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E9%BE%8D%E9%B3%B3%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_072",
+      "name": "星都滙C區",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣竹東鎮旭光一路202號",
+      "evidence_url": "https://community.yungching.com.tw/building/91999/price",
+      "record_ids": [
+        "7073513",
+        "6871361"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "310新竹縣竹東鎮二重里旭光一路202號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:51.807Z",
+      "distances_km": [
+        13.6,
+        11.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 25.5,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF202%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%97%AD%E5%85%89%E4%B8%80%E8%B7%AF202%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_075",
+      "name": "富宇居易NO2/原森活NO2",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣寶山鄉雙豐二街75號",
+      "evidence_url": "https://community.yungching.com.tw/building/35776/price",
+      "record_ids": [
+        "7302738"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "308新竹縣寶山鄉雙溪村雙豐二街75號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:54.339Z",
+      "distances_km": [
+        3.6,
+        11.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 14.7,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E8%B1%90%E4%BA%8C%E8%A1%9775%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E8%B1%90%E4%BA%8C%E8%A1%9775%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_077",
+      "name": "吉韻",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣寶山鄉寶新路一段137號",
+      "evidence_url": "https://community.yungching.com.tw/building/76228/price",
+      "record_ids": [
+        "7098275"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "308新竹縣寶山鄉雙新村寶新路一段137號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:57.053Z",
+      "distances_km": [
+        4.3,
+        11
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 15.3,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E5%AF%B6%E6%96%B0%E8%B7%AF%E4%B8%80%E6%AE%B5137%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E5%AF%B6%E6%96%B0%E8%B7%AF%E4%B8%80%E6%AE%B5137%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_084",
+      "name": "竹科主人7",
+      "kind": "same_community_transaction_door_proxy",
+      "query": "新竹縣芎林鄉光明路102號",
+      "evidence_url": "https://community.yungching.com.tw/building/91127/price",
+      "record_ids": [
+        "7336089",
+        "7455616"
+      ],
+      "usable": true,
+      "level": "同社區成交門牌代理",
+      "note": "",
+      "used_origin": "307新竹縣芎林鄉上山村光明路102號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:50:59.470Z",
+      "distances_km": [
+        12,
+        11.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 23.3,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E5%85%89%E6%98%8E%E8%B7%AF102%E8%99%9F&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E5%85%89%E6%98%8E%E8%B7%AF102%E8%99%9F&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_001",
+      "name": "貴族豪門(經國路一段)",
+      "kind": "community_location_proxy",
+      "query": "貴族豪門(經國路一段) 新竹市東區經國路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/4308114",
+      "record_ids": [
+        "4308114",
+        "7056518"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "貴族豪門 300新竹市東區文華里經國路一段682號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:51:28.672Z",
+      "distances_km": [
+        9.2,
+        7.4
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 16.6,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%B2%B4%E6%97%8F%E8%B1%AA%E9%96%80(%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%80%E6%AE%B5)%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%B2%B4%E6%97%8F%E8%B1%AA%E9%96%80(%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%80%E6%AE%B5)%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_002",
+      "name": "【禾園運動家】載熙國小 全新2房+機械平移車位",
+      "kind": "community_location_proxy",
+      "query": "【禾園運動家】載熙國小 全新2房+機械平移車位 新竹市北區東大路三段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7438331",
+      "record_ids": [
+        "7438331"
+      ],
+      "usable": false,
+      "level": "期別待確認",
+      "note": "Google Maps 僅定位到同名社區或預設期別，尚未確認廣告實際區別；距離僅供參考。",
+      "used_origin": "禾園運動家II A棟 300新竹市北區古賢里東大路三段110巷1弄10號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:37.295Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.8,
+        8.3
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%A6%BE%E5%9C%92%E9%81%8B%E5%8B%95%E5%AE%B6%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%9D%B1%E5%A4%A7%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%A6%BE%E5%9C%92%E9%81%8B%E5%8B%95%E5%AE%B6%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%9D%B1%E5%A4%A7%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_003",
+      "name": "近西門國小全新2房3樓",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹市北區延平路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7507942",
+      "record_ids": [
+        "7507942"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "300新竹市北區延平路一段",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:51:35.467Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.3,
+        13.3
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_004",
+      "name": "不是東區買不起＿是金雅更有性價比＿金雅成真",
+      "kind": "community_location_proxy",
+      "query": "金雅成真 新竹市北區金雅七街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7259387",
+      "record_ids": [
+        "7259387"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "成真社區 300新竹市北區金雅里金雅七街37號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:51:38.317Z",
+      "distances_km": [
+        12.7,
+        7.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 20,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%87%91%E9%9B%85%E6%88%90%E7%9C%9F%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E9%87%91%E9%9B%85%E4%B8%83%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%87%91%E9%9B%85%E6%88%90%E7%9C%9F%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E9%87%91%E9%9B%85%E4%B8%83%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_006",
+      "name": "新竹市中心延平路優質三改二房平車美廈",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹市北區延平路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7506282",
+      "record_ids": [
+        "7506282"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "300新竹市北區延平路一段",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:51:41.041Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.3,
+        13.3
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_007",
+      "name": "富宇仰睦",
+      "kind": "community_location_proxy",
+      "query": "富宇仰睦 新竹市北區興濱路",
+      "evidence_url": "https://buy.yungching.com.tw/house/6712032",
+      "record_ids": [
+        "6712032"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "富宇仰睦基地 300新竹市北區南寮里興濱路32號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:51:43.964Z",
+      "distances_km": [
+        15.7,
+        15.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 30.799999999999997,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%8C%E5%AE%87%E4%BB%B0%E7%9D%A6%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E8%88%88%E6%BF%B1%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%8C%E5%AE%87%E4%BB%B0%E7%9D%A6%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E8%88%88%E6%BF%B1%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_008",
+      "name": "香山大庄｜寓見真鑀｜竹科通勤宅｜樓中樓雙室＋車位",
+      "kind": "community_location_proxy",
+      "query": "寓見真鑀 新竹市香山區香北一路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7405608",
+      "record_ids": [
+        "7405608"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "寓見真鑀 300新竹市香山區香山里香北一路28號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:19.364Z",
+      "distances_km": [
+        13.4,
+        20.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 34.3,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%93%E8%A6%8B%E7%9C%9F%E9%91%80%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E9%A6%99%E5%8C%97%E4%B8%80%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%93%E8%A6%8B%E7%9C%9F%E9%91%80%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E9%A6%99%E5%8C%97%E4%B8%80%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_009",
+      "name": "荷蘭村A區3改2精緻裝潢屋",
+      "kind": "community_location_proxy",
+      "query": "荷蘭村A區 新竹市北區武陵路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7312420",
+      "record_ids": [
+        "7312420"
+      ],
+      "usable": false,
+      "level": "期別待確認",
+      "note": "Google Maps 僅定位到同名社區或預設期別，尚未確認廣告實際區別；距離僅供參考。",
+      "used_origin": "荷蘭村 300新竹市北區湳中里武陵路181號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:22.157Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        11.4,
+        10.8
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%8D%B7%E8%98%AD%E6%9D%91A%E5%8D%80%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%AD%A6%E9%99%B5%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%8D%B7%E8%98%AD%E6%9D%91A%E5%8D%80%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E6%AD%A6%E9%99%B5%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_010",
+      "name": "閎基建築-Le Coin",
+      "kind": "community_location_proxy",
+      "query": "閎基建築-Le Coin 新竹市東區文昌街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7504997",
+      "record_ids": [
+        "7504997"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "閎基建築Le Coin 300新竹市東區關帝里文昌街122號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:24.567Z",
+      "distances_km": [
+        6.9,
+        8.5
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 15.4,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%96%8E%E5%9F%BA%E5%BB%BA%E7%AF%89-Le%20Coin%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%96%87%E6%98%8C%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%96%8E%E5%9F%BA%E5%BB%BA%E7%AF%89-Le%20Coin%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%96%87%E6%98%8C%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_011",
+      "name": "專任 全新2房2衛+車位 電梯華廈NO.4",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹市香山區中華路四段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7430215",
+      "record_ids": [
+        "7430215"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "300新竹市香山區中華路四段",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:27.039Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.6,
+        21
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF%E5%9B%9B%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E4%B8%AD%E8%8F%AF%E8%B7%AF%E5%9B%9B%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_013",
+      "name": "悅森朵夫",
+      "kind": "community_location_proxy",
+      "query": "悅森朵夫 新竹市東區光復路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7392089",
+      "record_ids": [
+        "7392089"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "悅森朵夫 300新竹市東區仙水里光復路一段403巷8弄12號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:29.597Z",
+      "distances_km": [
+        3.3,
+        7.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 11,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%82%85%E6%A3%AE%E6%9C%B5%E5%A4%AB%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%85%89%E5%BE%A9%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%82%85%E6%A3%AE%E6%9C%B5%E5%A4%AB%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%85%89%E5%BE%A9%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_015",
+      "name": "探索21",
+      "kind": "community_location_proxy",
+      "query": "探索21 新竹市香山區經國路三段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7513132",
+      "record_ids": [
+        "7513132"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "探索21 300新竹市香山區頂埔里經國路三段92巷29號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:52:32.183Z",
+      "distances_km": [
+        12.7,
+        20.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 32.8,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%8E%A2%E7%B4%A221%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%8E%A2%E7%B4%A221%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_016",
+      "name": "觀璞",
+      "kind": "community_location_proxy",
+      "query": "觀璞 新竹市東區長春街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7384032",
+      "record_ids": [
+        "7384032"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "觀璞社區 300新竹市東區長春街62巷2號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:40.021Z",
+      "distances_km": [
+        3.5,
+        7.6
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 11.1,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%A7%80%E7%92%9E%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%95%B7%E6%98%A5%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%A7%80%E7%92%9E%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E9%95%B7%E6%98%A5%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_017",
+      "name": "寓見愛",
+      "kind": "community_location_proxy",
+      "query": "寓見愛 新竹市北區經國路二段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7503500",
+      "record_ids": [
+        "7503500"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "寓見愛 300新竹市北區民富里經國路二段212號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:42.916Z",
+      "distances_km": [
+        7.9,
+        12.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 20.700000000000003,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%93%E8%A6%8B%E6%84%9B%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%93%E8%A6%8B%E6%84%9B%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E7%B6%93%E5%9C%8B%E8%B7%AF%E4%BA%8C%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_018",
+      "name": "花漾城｜視野邊間採光2+1房+平面車位",
+      "kind": "community_location_proxy",
+      "query": "花漾城 新竹市北區西濱路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7516252",
+      "record_ids": [
+        "7516252"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "協勝花漾城社區 300新竹市北區中寮里西濱路一段185號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:45.874Z",
+      "distances_km": [
+        16.3,
+        15.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 32,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%8A%B1%E6%BC%BE%E5%9F%8E%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E8%A5%BF%E6%BF%B1%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%8A%B1%E6%BC%BE%E5%9F%8E%20%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E8%A5%BF%E6%BF%B1%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_020",
+      "name": "近西門國小全新2房",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹市北區延平路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7507692",
+      "record_ids": [
+        "7507692"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "300新竹市北區延平路一段",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:48.474Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        13.3,
+        13.3
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E5%B8%82%E5%8C%97%E5%8D%80%E5%BB%B6%E5%B9%B3%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_023",
+      "name": "煙波A1",
+      "kind": "community_location_proxy",
+      "query": "煙波A1 新竹市香山區華北路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7460725",
+      "record_ids": [
+        "7460725"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "煙波A1 300新竹市香山區中埔里華北路151號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:51.112Z",
+      "distances_km": [
+        12.9,
+        20.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 33.2,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%85%99%E6%B3%A2A1%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E8%8F%AF%E5%8C%97%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%85%99%E6%B3%A2A1%20%E6%96%B0%E7%AB%B9%E5%B8%82%E9%A6%99%E5%B1%B1%E5%8D%80%E8%8F%AF%E5%8C%97%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_026",
+      "name": "創遊美人",
+      "kind": "community_location_proxy",
+      "query": "創遊美人 新竹市東區新莊街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7408231",
+      "record_ids": [
+        "7408231"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "創遊美人水仙 300新竹市東區新莊里新莊街185巷35號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:54:53.791Z",
+      "distances_km": [
+        3.8,
+        7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.8,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%89%B5%E9%81%8A%E7%BE%8E%E4%BA%BA%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%96%B0%E8%8E%8A%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%89%B5%E9%81%8A%E7%BE%8E%E4%BA%BA%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%96%B0%E8%8E%8A%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_027",
+      "name": "安縵儷舍",
+      "kind": "community_location_proxy",
+      "query": "安縵儷舍 新竹市東區南門街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7110122",
+      "record_ids": [
+        "7110122"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "安縵儷舍-盛祥建設 300新竹市東區南門里南門街47號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:04.420Z",
+      "distances_km": [
+        6.7,
+        11.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 18.5,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%89%E7%B8%B5%E5%84%B7%E8%88%8D%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%8D%97%E9%96%80%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%89%E7%B8%B5%E5%84%B7%E8%88%8D%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%8D%97%E9%96%80%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_028",
+      "name": "春福聯合國",
+      "kind": "community_location_proxy",
+      "query": "春福聯合國 新竹市東區光復路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7428123",
+      "record_ids": [
+        "7428123"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "春福聯合國 300新竹市東區光復路一段476巷",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:06.983Z",
+      "distances_km": [
+        3.5,
+        7.3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.8,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%A5%E7%A6%8F%E8%81%AF%E5%90%88%E5%9C%8B%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%85%89%E5%BE%A9%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%98%A5%E7%A6%8F%E8%81%AF%E5%90%88%E5%9C%8B%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E5%85%89%E5%BE%A9%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_029",
+      "name": "高鐵區全新綠景大2房雙衛 | 新瓦屋旁陽光宅",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹縣竹北市復興三路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7531684",
+      "record_ids": [
+        "7531684"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "302新竹縣竹北市中興里復興三路一段",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:09.391Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        7.5,
+        4.1
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%BE%A9%E8%88%88%E4%B8%89%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%BE%A9%E8%88%88%E4%B8%89%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_037",
+      "name": "靚公園/森CASA/中央公園",
+      "kind": "community_location_proxy",
+      "query": "靚公園/森CASA/中央公園 新竹縣竹北市十興路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7311411",
+      "record_ids": [
+        "7311411"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "原成交門牌未精確匹配，改採名稱及道路相符之社區地標；不是廣告實際戶別。",
+      "used_origin": "靚公園-中央公園社區 30286新竹縣竹北市十興路305巷13弄91號71號77號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:40.044Z",
+      "distances_km": [
+        9.3,
+        0.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 10.100000000000001,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%9D%9A%E5%85%AC%E5%9C%92%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%9D%9A%E5%85%AC%E5%9C%92%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%8D%81%E8%88%88%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_041",
+      "name": "金色大地",
+      "kind": "community_location_proxy",
+      "query": "金色大地 新竹縣竹北市三民路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7544711",
+      "record_ids": [
+        "7544711"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "金色大地 302新竹縣竹北市竹北里三民路53號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:16.316Z",
+      "distances_km": [
+        8.7,
+        0.85
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 9.549999999999999,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%87%91%E8%89%B2%E5%A4%A7%E5%9C%B0%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%89%E6%B0%91%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%87%91%E8%89%B2%E5%A4%A7%E5%9C%B0%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%89%E6%B0%91%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_043",
+      "name": "綠光森林NO28采采/紅樹采采",
+      "kind": "community_location_proxy",
+      "query": "綠光森林NO28采采/紅樹采采 新竹縣竹北市中正西路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7483858",
+      "record_ids": [
+        "7483858"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "綠光采采28 302新竹縣竹北市新國里中正西路219巷17號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:19.203Z",
+      "distances_km": [
+        10.6,
+        3
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 13.6,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B6%A0%E5%85%89%E6%A3%AE%E6%9E%97NO28%E9%87%87%E9%87%87%2F%E7%B4%85%E6%A8%B9%E9%87%87%E9%87%87%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E8%A5%BF%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B6%A0%E5%85%89%E6%A3%AE%E6%9E%97NO28%E9%87%87%E9%87%87%2F%E7%B4%85%E6%A8%B9%E9%87%87%E9%87%87%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E4%B8%AD%E6%AD%A3%E8%A5%BF%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_048",
+      "name": "縣寶大樓",
+      "kind": "community_location_proxy",
+      "query": "縣寶大樓 新竹縣竹北市光明五街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7451056",
+      "record_ids": [
+        "7451056"
+      ],
+      "usable": false,
+      "level": "定位待確認",
+      "note": "Google Maps 回傳門牌、社區或期別與原資料不符；觀測距離僅保留為參考，不納入15公里判定。",
+      "used_origin": "大寶家 302新竹縣竹北市北崙里縣政九路163號9 樓",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:29.029Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.2,
+        2
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B8%A3%E5%AF%B6%E5%A4%A7%E6%A8%93%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E4%BA%94%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B8%A3%E5%AF%B6%E5%A4%A7%E6%A8%93%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%85%89%E6%98%8E%E4%BA%94%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_049",
+      "name": "四季繪",
+      "kind": "community_location_proxy",
+      "query": "四季繪 新竹縣竹北市新瀧一街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7475276",
+      "record_ids": [
+        "7475276"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "四季繪社區 302新竹縣竹北市竹北里新瀧一街35號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:31.539Z",
+      "distances_km": [
+        9.5,
+        0.17
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 9.67,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%9B%9B%E5%AD%A3%E7%B9%AA%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%80%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%9B%9B%E5%AD%A3%E7%B9%AA%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%B0%E7%80%A7%E4%B8%80%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_050",
+      "name": "精工禪",
+      "kind": "community_location_proxy",
+      "query": "精工禪 新竹縣竹北市嘉勤北路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7513021",
+      "record_ids": [
+        "7513021"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "精工禪社區, 302新竹縣竹北市興安里嘉勤北路83號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:34.056Z",
+      "distances_km": [
+        8.2,
+        1.6
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 9.799999999999999,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B2%BE%E5%B7%A5%E7%A6%AA%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%98%89%E5%8B%A4%E5%8C%97%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B2%BE%E5%B7%A5%E7%A6%AA%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E5%98%89%E5%8B%A4%E5%8C%97%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_052",
+      "name": "中正國小大面寬朝南住店",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹縣竹北市文采街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7506693",
+      "record_ids": [
+        "7506693"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "302新竹縣竹北市文采街",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:36.674Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.6,
+        1
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%87%E9%87%87%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E5%8C%97%E5%B8%82%E6%96%87%E9%87%87%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_056",
+      "name": "富宇東方大境兩房兩套衛浴高樓平車",
+      "kind": "community_location_proxy",
+      "query": "富宇東方大境 新竹縣竹東鎮東寧路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7485050",
+      "record_ids": [
+        "7485050"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "富宇東方大境 310新竹縣竹東鎮東寧里東寧路一段56號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:39.278Z",
+      "distances_km": [
+        20.3,
+        18.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 39.1,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%8C%E5%AE%87%E6%9D%B1%E6%96%B9%E5%A4%A7%E5%A2%83%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%9D%B1%E5%AF%A7%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%8C%E5%AE%87%E6%9D%B1%E6%96%B9%E5%A4%A7%E5%A2%83%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%9D%B1%E5%AF%A7%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_062",
+      "name": "恆顧/長春首席",
+      "kind": "community_location_proxy",
+      "query": "恆顧/長春首席 新竹縣竹東鎮敦睦街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7440604",
+      "record_ids": [
+        "7440604"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "長春首席 310新竹縣竹東鎮敦睦街2巷",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:41.798Z",
+      "distances_km": [
+        16.2,
+        14.7
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 30.9,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%81%86%E9%A1%A7%2F%E9%95%B7%E6%98%A5%E9%A6%96%E5%B8%AD%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%95%A6%E7%9D%A6%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%81%86%E9%A1%A7%2F%E9%95%B7%E6%98%A5%E9%A6%96%E5%B8%AD%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%95%A6%E7%9D%A6%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_063",
+      "name": "臻研臻心",
+      "kind": "community_location_proxy",
+      "query": "臻研臻心 新竹縣竹東鎮東峰路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7295073",
+      "record_ids": [
+        "7295073",
+        "7299012"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "臻研臻心 310新竹縣竹東鎮員崠里東峰路270號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:50.871Z",
+      "distances_km": [
+        20.9,
+        19.5
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 40.4,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%BB%E7%A0%94%E8%87%BB%E5%BF%83%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%9D%B1%E5%B3%B0%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%87%BB%E7%A0%94%E8%87%BB%E5%BF%83%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E6%9D%B1%E5%B3%B0%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_066",
+      "name": "長春帝國",
+      "kind": "community_location_proxy",
+      "query": "長春帝國 新竹縣竹東鎮長春路三段",
+      "evidence_url": "https://buy.yungching.com.tw/house/5954288",
+      "record_ids": [
+        "5954288"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "長春帝國 310新竹縣竹東鎮榮華里長春路三段38號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:53.419Z",
+      "distances_km": [
+        14.1,
+        15.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 30,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%95%B7%E6%98%A5%E5%B8%9D%E5%9C%8B%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E9%95%B7%E6%98%A5%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E9%95%B7%E6%98%A5%E5%B8%9D%E5%9C%8B%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E9%95%B7%E6%98%A5%E8%B7%AF%E4%B8%89%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_069",
+      "name": "和發善藝",
+      "kind": "community_location_proxy",
+      "query": "和發善藝 新竹縣竹東鎮至善路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7222665",
+      "record_ids": [
+        "7222665"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "和發善藝 310新竹縣竹東鎮至善路",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:56.103Z",
+      "distances_km": [
+        20.6,
+        19.2
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 39.8,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%92%8C%E7%99%BC%E5%96%84%E8%97%9D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E8%87%B3%E5%96%84%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%92%8C%E7%99%BC%E5%96%84%E8%97%9D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E7%AB%B9%E6%9D%B1%E9%8E%AE%E8%87%B3%E5%96%84%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_073",
+      "name": "寶山曼尼3",
+      "kind": "community_location_proxy",
+      "query": "寶山曼尼3 新竹縣寶山鄉北坑路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7441921",
+      "record_ids": [
+        "7441921",
+        "7323296"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "寶山曼尼3 308新竹縣寶山鄉山湖村北坑路498號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:55:58.576Z",
+      "distances_km": [
+        6.6,
+        14.6
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 21.2,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%B6%E5%B1%B1%E6%9B%BC%E5%B0%BC3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E5%8C%97%E5%9D%91%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AF%B6%E5%B1%B1%E6%9B%BC%E5%B0%BC3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E5%8C%97%E5%9D%91%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_074",
+      "name": "宏道新竹帝寶",
+      "kind": "community_location_proxy",
+      "query": "宏道新竹帝寶 新竹縣寶山鄉環城西路一段",
+      "evidence_url": "https://buy.yungching.com.tw/house/7232267",
+      "record_ids": [
+        "7232267"
+      ],
+      "usable": false,
+      "level": "定位待確認",
+      "note": "Google Maps 回傳門牌、社區或期別與原資料不符；觀測距離僅保留為參考，不納入15公里判定。",
+      "used_origin": "宏道新竹帝寶 300新竹市香山區東香里華德福街168號對面號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:01.097Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.2,
+        15.7
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%8F%E9%81%93%E6%96%B0%E7%AB%B9%E5%B8%9D%E5%AF%B6%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E7%92%B0%E5%9F%8E%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%8F%E9%81%93%E6%96%B0%E7%AB%B9%E5%B8%9D%E5%AF%B6%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E7%92%B0%E5%9F%8E%E8%A5%BF%E8%B7%AF%E4%B8%80%E6%AE%B5&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_076",
+      "name": "宏道新竹帝寶",
+      "kind": "community_location_proxy",
+      "query": "宏道新竹帝寶 新竹縣寶山鄉雙林路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7279284",
+      "record_ids": [
+        "7279284",
+        "7275840",
+        "7160429"
+      ],
+      "usable": false,
+      "level": "定位待確認",
+      "note": "Google Maps 回傳門牌、社區或期別與原資料不符；觀測距離僅保留為參考，不納入15公里判定。",
+      "used_origin": "宏道新竹帝寶 300新竹市香山區東香里華德福街168號對面號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:03.946Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.2,
+        15.7
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%8F%E9%81%93%E6%96%B0%E7%AB%B9%E5%B8%9D%E5%AF%B6%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E6%9E%97%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E5%AE%8F%E9%81%93%E6%96%B0%E7%AB%B9%E5%B8%9D%E5%AF%B6%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E6%9E%97%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_078",
+      "name": "真想賣【宏道帝寶8-2區】三改二好改回B1平車位",
+      "kind": "community_location_proxy",
+      "query": "真想賣【宏道帝寶8-2區】三改二好改回B1平車位 新竹縣寶山鄉雙林路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7486661",
+      "record_ids": [
+        "7486661"
+      ],
+      "usable": false,
+      "level": "定位待確認",
+      "note": "Google Maps 回傳門牌、社區或期別與原資料不符；觀測距離僅保留為參考，不納入15公里判定。",
+      "used_origin": "宏道新竹帝寶7區2號-華廈區 308新竹縣寶山鄉雙新村",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:14.352Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        8.2,
+        15.6
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%9C%9F%E6%83%B3%E8%B3%A3%E3%80%90%E5%AE%8F%E9%81%93%E5%B8%9D%E5%AF%B68-2%E5%8D%80%E3%80%91%E4%B8%89%E6%94%B9%E4%BA%8C%E5%A5%BD%E6%94%B9%E5%9B%9EB1%E5%B9%B3%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E6%9E%97%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%9C%9F%E6%83%B3%E8%B3%A3%E3%80%90%E5%AE%8F%E9%81%93%E5%B8%9D%E5%AF%B68-2%E5%8D%80%E3%80%91%E4%B8%89%E6%94%B9%E4%BA%8C%E5%A5%BD%E6%94%B9%E5%9B%9EB1%E5%B9%B3%E8%BB%8A%E4%BD%8D%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E9%9B%99%E6%9E%97%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_079",
+      "name": "近台積電【豐韻】2+1房平車",
+      "kind": "community_location_proxy",
+      "query": "豐韻 新竹縣寶山鄉明湖路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7443998",
+      "record_ids": [
+        "7443998",
+        "7298891",
+        "7507445"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "星碩豐韻（興合力建築團隊） 308新竹縣寶山鄉雙新村明湖路81號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:17.095Z",
+      "distances_km": [
+        3.5,
+        10.9
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 14.4,
+      "within_15km": true,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%B1%90%E9%9F%BB%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E6%98%8E%E6%B9%96%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E8%B1%90%E9%9F%BB%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E5%AF%B6%E5%B1%B1%E9%84%89%E6%98%8E%E6%B9%96%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "kind": "community_location_proxy",
+      "query": "綠光森林No.29-馥御文昌 新竹縣芎林鄉文昌街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7218638",
+      "record_ids": [
+        "7218638",
+        "7101597",
+        "7096823",
+        "7096796",
+        "7095288",
+        "7101604",
+        "7096819",
+        "6962470"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "綠光森林29 307新竹縣芎林鄉文林村文昌街82號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:19.756Z",
+      "distances_km": [
+        12.3,
+        11.8
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 24.1,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B6%A0%E5%85%89%E6%A3%AE%E6%9E%97No.29-%E9%A6%A5%E5%BE%A1%E6%96%87%E6%98%8C%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E6%98%8C%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%B6%A0%E5%85%89%E6%A3%AE%E6%9E%97No.29-%E9%A6%A5%E5%BE%A1%E6%96%87%E6%98%8C%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E6%98%8C%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_083",
+      "name": "植光寓",
+      "kind": "community_location_proxy",
+      "query": "植光寓 新竹縣芎林鄉柯子林",
+      "evidence_url": "https://buy.yungching.com.tw/house/7373913",
+      "record_ids": [
+        "7373913"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "植光寓 307新竹縣芎林鄉文林村20-5號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:22.334Z",
+      "distances_km": [
+        11.9,
+        13
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 24.9,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%A4%8D%E5%85%89%E5%AF%93%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%9F%AF%E5%AD%90%E6%9E%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%A4%8D%E5%85%89%E5%AF%93%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%9F%AF%E5%AD%90%E6%9E%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_086",
+      "name": "美山河",
+      "kind": "community_location_proxy",
+      "query": "美山河 新竹縣芎林鄉文富街",
+      "evidence_url": "https://buy.yungching.com.tw/house/7529695",
+      "record_ids": [
+        "7529695"
+      ],
+      "usable": true,
+      "level": "社區地標代理",
+      "note": "",
+      "used_origin": "美山河 307新竹縣芎林鄉文富街86號",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:25.304Z",
+      "distances_km": [
+        10.8,
+        11.1
+      ],
+      "reference_distances_km": [
+        null,
+        null
+      ],
+      "total_km": 21.9,
+      "within_15km": false,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%BE%8E%E5%B1%B1%E6%B2%B3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E5%AF%8C%E8%A1%97&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E7%BE%8E%E5%B1%B1%E6%B2%B3%20%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E5%AF%8C%E8%A1%97&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "origin_087",
+      "name": "芎林創業成家首選 文山路住店",
+      "kind": "advertised_street_reference_only",
+      "query": "新竹縣芎林鄉文山路",
+      "evidence_url": "https://buy.yungching.com.tw/house/7482321",
+      "record_ids": [
+        "7482321"
+      ],
+      "usable": false,
+      "level": "街道參考點",
+      "note": "廣告只有道路名稱，Google Maps 道路代表點不是實際房源位置；距離僅供參考。",
+      "used_origin": "307新竹縣芎林鄉文山路",
+      "provider": "Google Maps 駕車建議路線",
+      "checked_at": "2026-11-01T02:56:27.761Z",
+      "distances_km": [
+        null,
+        null
+      ],
+      "reference_distances_km": [
+        11.9,
+        9.2
+      ],
+      "total_km": null,
+      "within_15km": null,
+      "route_urls": [
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E5%B1%B1%E8%B7%AF&destination=24.7673267%2C121.0087257",
+        "https://www.google.com/maps/dir/?api=1&travelmode=driving&origin=%E6%96%B0%E7%AB%B9%E7%B8%A3%E8%8A%8E%E6%9E%97%E9%84%89%E6%96%87%E5%B1%B1%E8%B7%AF&destination=24.8349387%2C121.0244598"
+      ],
+      "cache_range": [
+        null,
+        null
+      ]
+    }
+  ],
+  "listings": [
+    {
+      "listing_id": "4308114",
+      "origin_id": "origin_001",
+      "name": "貴族豪門(經國路一段)",
+      "district": "新竹市",
+      "address": "新竹市東區經國路一段",
+      "url": "https://buy.yungching.com.tw/house/4308114",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7056518",
+      "origin_id": "origin_001",
+      "name": "貴族豪門(經國路一段)",
+      "district": "新竹市",
+      "address": "新竹市東區經國路一段",
+      "url": "https://buy.yungching.com.tw/house/7056518",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7438331",
+      "origin_id": "origin_002",
+      "name": "【禾園運動家】載熙國小 全新2房+機械平移車位",
+      "district": "新竹市",
+      "address": "新竹市北區東大路三段",
+      "url": "https://buy.yungching.com.tw/house/7438331",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7507942",
+      "origin_id": "origin_003",
+      "name": "近西門國小全新2房3樓",
+      "district": "新竹市",
+      "address": "新竹市北區延平路一段",
+      "url": "https://buy.yungching.com.tw/house/7507942",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7259387",
+      "origin_id": "origin_004",
+      "name": "不是東區買不起＿是金雅更有性價比＿金雅成真",
+      "district": "新竹市",
+      "address": "新竹市北區金雅七街",
+      "url": "https://buy.yungching.com.tw/house/7259387",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7517313",
+      "origin_id": "origin_005",
+      "name": "竹科潤隆",
+      "district": "新竹市",
+      "address": "新竹市東區埔頂三路",
+      "url": "https://buy.yungching.com.tw/house/7517313",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7506282",
+      "origin_id": "origin_006",
+      "name": "新竹市中心延平路優質三改二房平車美廈",
+      "district": "新竹市",
+      "address": "新竹市北區延平路一段",
+      "url": "https://buy.yungching.com.tw/house/7506282",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "6712032",
+      "origin_id": "origin_007",
+      "name": "富宇仰睦",
+      "district": "新竹市",
+      "address": "新竹市北區興濱路",
+      "url": "https://buy.yungching.com.tw/house/6712032",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7405608",
+      "origin_id": "origin_008",
+      "name": "香山大庄｜寓見真鑀｜竹科通勤宅｜樓中樓雙室＋車位",
+      "district": "新竹市",
+      "address": "新竹市香山區香北一路",
+      "url": "https://buy.yungching.com.tw/house/7405608",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7312420",
+      "origin_id": "origin_009",
+      "name": "荷蘭村A區3改2精緻裝潢屋",
+      "district": "新竹市",
+      "address": "新竹市北區武陵路",
+      "url": "https://buy.yungching.com.tw/house/7312420",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7504997",
+      "origin_id": "origin_010",
+      "name": "閎基建築-Le Coin",
+      "district": "新竹市",
+      "address": "新竹市東區文昌街",
+      "url": "https://buy.yungching.com.tw/house/7504997",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7430215",
+      "origin_id": "origin_011",
+      "name": "專任 全新2房2衛+車位 電梯華廈NO.4",
+      "district": "新竹市",
+      "address": "新竹市香山區中華路四段",
+      "url": "https://buy.yungching.com.tw/house/7430215",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7242809",
+      "origin_id": "origin_012",
+      "name": "新祐景然",
+      "district": "新竹市",
+      "address": "新竹市香山區延平路二段",
+      "url": "https://buy.yungching.com.tw/house/7242809",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7392089",
+      "origin_id": "origin_013",
+      "name": "悅森朵夫",
+      "district": "新竹市",
+      "address": "新竹市東區光復路一段",
+      "url": "https://buy.yungching.com.tw/house/7392089",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7395575",
+      "origin_id": "origin_021",
+      "name": "竹科悅揚",
+      "district": "新竹市",
+      "address": "新竹市東區慈濟路",
+      "url": "https://buy.yungching.com.tw/house/7395575",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7513132",
+      "origin_id": "origin_015",
+      "name": "探索21",
+      "district": "新竹市",
+      "address": "新竹市香山區經國路三段",
+      "url": "https://buy.yungching.com.tw/house/7513132",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7384032",
+      "origin_id": "origin_016",
+      "name": "觀璞",
+      "district": "新竹市",
+      "address": "新竹市東區長春街",
+      "url": "https://buy.yungching.com.tw/house/7384032",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7489250",
+      "origin_id": "origin_005",
+      "name": "竹科潤隆",
+      "district": "新竹市",
+      "address": "新竹市東區埔頂三路",
+      "url": "https://buy.yungching.com.tw/house/7489250",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7503500",
+      "origin_id": "origin_017",
+      "name": "寓見愛",
+      "district": "新竹市",
+      "address": "新竹市北區經國路二段",
+      "url": "https://buy.yungching.com.tw/house/7503500",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7516252",
+      "origin_id": "origin_018",
+      "name": "花漾城｜視野邊間採光2+1房+平面車位",
+      "district": "新竹市",
+      "address": "新竹市北區西濱路一段",
+      "url": "https://buy.yungching.com.tw/house/7516252",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7444682",
+      "origin_id": "origin_019",
+      "name": "禾園運動家2｜全新景觀兩房附車位《近金雅重劃區》",
+      "district": "新竹市",
+      "address": "新竹市北區東大路三段",
+      "url": "https://buy.yungching.com.tw/house/7444682",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7507692",
+      "origin_id": "origin_020",
+      "name": "近西門國小全新2房",
+      "district": "新竹市",
+      "address": "新竹市北區延平路一段",
+      "url": "https://buy.yungching.com.tw/house/7507692",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7429273",
+      "origin_id": "origin_021",
+      "name": "竹科悅揚",
+      "district": "新竹市",
+      "address": "新竹市東區慈濟路",
+      "url": "https://buy.yungching.com.tw/house/7429273",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7334193",
+      "origin_id": "origin_019",
+      "name": "禾園運動家2｜近金雅全新兩房平車",
+      "district": "新竹市",
+      "address": "新竹市北區東大路三段",
+      "url": "https://buy.yungching.com.tw/house/7334193",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7462870",
+      "origin_id": "origin_022",
+      "name": "美學苑",
+      "district": "新竹市",
+      "address": "新竹市北區經國路二段",
+      "url": "https://buy.yungching.com.tw/house/7462870",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7460725",
+      "origin_id": "origin_023",
+      "name": "煙波A1",
+      "district": "新竹市",
+      "address": "新竹市香山區華北路",
+      "url": "https://buy.yungching.com.tw/house/7460725",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7502477",
+      "origin_id": "origin_024",
+      "name": "春福HI INN",
+      "district": "新竹市",
+      "address": "新竹市北區榮濱南路",
+      "url": "https://buy.yungching.com.tw/house/7502477",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7486453",
+      "origin_id": "origin_025",
+      "name": "昌益文清",
+      "district": "新竹市",
+      "address": "新竹市東區水利路",
+      "url": "https://buy.yungching.com.tw/house/7486453",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7408231",
+      "origin_id": "origin_026",
+      "name": "創遊美人",
+      "district": "新竹市",
+      "address": "新竹市東區新莊街",
+      "url": "https://buy.yungching.com.tw/house/7408231",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7110122",
+      "origin_id": "origin_027",
+      "name": "安縵儷舍",
+      "district": "新竹市",
+      "address": "新竹市東區南門街",
+      "url": "https://buy.yungching.com.tw/house/7110122",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7428123",
+      "origin_id": "origin_028",
+      "name": "春福聯合國",
+      "district": "新竹市",
+      "address": "新竹市東區光復路一段",
+      "url": "https://buy.yungching.com.tw/house/7428123",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7531684",
+      "origin_id": "origin_029",
+      "name": "高鐵區全新綠景大2房雙衛 | 新瓦屋旁陽光宅",
+      "district": "竹北市",
+      "address": "新竹縣竹北市復興三路一段",
+      "url": "https://buy.yungching.com.tw/house/7531684",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7513317",
+      "origin_id": "origin_030",
+      "name": "德鑫御寶",
+      "district": "竹北市",
+      "address": "新竹縣竹北市華興三街",
+      "url": "https://buy.yungching.com.tw/house/7513317",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7489341",
+      "origin_id": "origin_031",
+      "name": "益欣森陽JOY-Q",
+      "district": "竹北市",
+      "address": "新竹縣竹北市新瀧三街",
+      "url": "https://buy.yungching.com.tw/house/7489341",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "6667621",
+      "origin_id": "origin_032",
+      "name": "佳陞禾樂",
+      "district": "竹北市",
+      "address": "新竹縣竹北市光明十五街",
+      "url": "https://buy.yungching.com.tw/house/6667621",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7448640",
+      "origin_id": "origin_033",
+      "name": "公園1號",
+      "district": "竹北市",
+      "address": "新竹縣竹北市十興路一段",
+      "url": "https://buy.yungching.com.tw/house/7448640",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7509805",
+      "origin_id": "origin_034",
+      "name": "國賓大悅",
+      "district": "竹北市",
+      "address": "新竹縣竹北市勝利八街一段",
+      "url": "https://buy.yungching.com.tw/house/7509805",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7520983",
+      "origin_id": "origin_035",
+      "name": "原美館",
+      "district": "竹北市",
+      "address": "新竹縣竹北市六家一路一段",
+      "url": "https://buy.yungching.com.tw/house/7520983",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7508492",
+      "origin_id": "origin_036",
+      "name": "冠軍城峰",
+      "district": "竹北市",
+      "address": "新竹縣竹北市中央路",
+      "url": "https://buy.yungching.com.tw/house/7508492",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7311411",
+      "origin_id": "origin_037",
+      "name": "靚公園/森CASA/中央公園",
+      "district": "竹北市",
+      "address": "新竹縣竹北市十興路",
+      "url": "https://buy.yungching.com.tw/house/7311411",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7497607",
+      "origin_id": "origin_038",
+      "name": "佳陞大河戀",
+      "district": "竹北市",
+      "address": "新竹縣竹北市興隆路一段",
+      "url": "https://buy.yungching.com.tw/house/7497607",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7447384",
+      "origin_id": "origin_034",
+      "name": "國賓大悅",
+      "district": "竹北市",
+      "address": "新竹縣竹北市勝利八街一段",
+      "url": "https://buy.yungching.com.tw/house/7447384",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7466543",
+      "origin_id": "origin_039",
+      "name": "晴川悅河",
+      "district": "竹北市",
+      "address": "新竹縣竹北市光明十一路",
+      "url": "https://buy.yungching.com.tw/house/7466543",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7346711",
+      "origin_id": "origin_040",
+      "name": "興富發水公園",
+      "district": "竹北市",
+      "address": "新竹縣竹北市興隆路一段",
+      "url": "https://buy.yungching.com.tw/house/7346711",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7544711",
+      "origin_id": "origin_041",
+      "name": "金色大地",
+      "district": "竹北市",
+      "address": "新竹縣竹北市三民路",
+      "url": "https://buy.yungching.com.tw/house/7544711",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7527524",
+      "origin_id": "origin_042",
+      "name": "青禾",
+      "district": "竹北市",
+      "address": "新竹縣竹北市嘉興路",
+      "url": "https://buy.yungching.com.tw/house/7527524",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7483858",
+      "origin_id": "origin_043",
+      "name": "綠光森林NO28采采/紅樹采采",
+      "district": "竹北市",
+      "address": "新竹縣竹北市中正西路",
+      "url": "https://buy.yungching.com.tw/house/7483858",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7528709",
+      "origin_id": "origin_039",
+      "name": "晴川悅河",
+      "district": "竹北市",
+      "address": "新竹縣竹北市光明十一路",
+      "url": "https://buy.yungching.com.tw/house/7528709",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7480230",
+      "origin_id": "origin_031",
+      "name": "益欣森陽JOY-Q",
+      "district": "竹北市",
+      "address": "新竹縣竹北市新瀧三街",
+      "url": "https://buy.yungching.com.tw/house/7480230",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7541940",
+      "origin_id": "origin_046",
+      "name": "興築興希望",
+      "district": "竹北市",
+      "address": "新竹縣竹北市北新一街",
+      "url": "https://buy.yungching.com.tw/house/7541940",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7478172",
+      "origin_id": "origin_047",
+      "name": "總圓上城",
+      "district": "竹北市",
+      "address": "新竹縣竹北市新瀧一街",
+      "url": "https://buy.yungching.com.tw/house/7478172",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7451056",
+      "origin_id": "origin_048",
+      "name": "縣寶大樓",
+      "district": "竹北市",
+      "address": "新竹縣竹北市光明五街",
+      "url": "https://buy.yungching.com.tw/house/7451056",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7475276",
+      "origin_id": "origin_049",
+      "name": "四季繪",
+      "district": "竹北市",
+      "address": "新竹縣竹北市新瀧一街",
+      "url": "https://buy.yungching.com.tw/house/7475276",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7513021",
+      "origin_id": "origin_050",
+      "name": "精工禪",
+      "district": "竹北市",
+      "address": "新竹縣竹北市嘉勤北路",
+      "url": "https://buy.yungching.com.tw/house/7513021",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "6519514",
+      "origin_id": "origin_040",
+      "name": "興富發水公園",
+      "district": "竹北市",
+      "address": "新竹縣竹北市興隆路一段",
+      "url": "https://buy.yungching.com.tw/house/6519514",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7451267",
+      "origin_id": "origin_031",
+      "name": "益欣森陽JOY-Q",
+      "district": "竹北市",
+      "address": "新竹縣竹北市新瀧三街",
+      "url": "https://buy.yungching.com.tw/house/7451267",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7438931",
+      "origin_id": "origin_042",
+      "name": "青禾",
+      "district": "竹北市",
+      "address": "新竹縣竹北市嘉興路",
+      "url": "https://buy.yungching.com.tw/house/7438931",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7419816",
+      "origin_id": "origin_033",
+      "name": "公園1號",
+      "district": "竹北市",
+      "address": "新竹縣竹北市十興路一段",
+      "url": "https://buy.yungching.com.tw/house/7419816",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7180017",
+      "origin_id": "origin_033",
+      "name": "公園1號",
+      "district": "竹北市",
+      "address": "新竹縣竹北市十興路一段",
+      "url": "https://buy.yungching.com.tw/house/7180017",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7506693",
+      "origin_id": "origin_052",
+      "name": "中正國小大面寬朝南住店",
+      "district": "竹北市",
+      "address": "新竹縣竹北市文采街",
+      "url": "https://buy.yungching.com.tw/house/7506693",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7489328",
+      "origin_id": "origin_053",
+      "name": "站前威力",
+      "district": "竹北市",
+      "address": "新竹縣竹北市台元街",
+      "url": "https://buy.yungching.com.tw/house/7489328",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7250242",
+      "origin_id": "origin_054",
+      "name": "臻研臻美",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮和江街",
+      "url": "https://buy.yungching.com.tw/house/7250242",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7524483",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7524483",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7485050",
+      "origin_id": "origin_056",
+      "name": "富宇東方大境兩房兩套衛浴高樓平車",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮東寧路一段",
+      "url": "https://buy.yungching.com.tw/house/7485050",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7369826",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7369826",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7388104",
+      "origin_id": "origin_057",
+      "name": "環球市",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮光明路",
+      "url": "https://buy.yungching.com.tw/house/7388104",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7407047",
+      "origin_id": "origin_058",
+      "name": "鑫陞渼山",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮公道路",
+      "url": "https://buy.yungching.com.tw/house/7407047",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7501157",
+      "origin_id": "origin_059",
+      "name": "星都匯星都滙D區朝南高樓2房平車位",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7501157",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7365875",
+      "origin_id": "origin_060",
+      "name": "至善高第",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮至善路",
+      "url": "https://buy.yungching.com.tw/house/7365875",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7509863",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7509863",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7489255",
+      "origin_id": "origin_061",
+      "name": "星都匯朝南採光成家首購兩房平面車位",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7489255",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7508502",
+      "origin_id": "origin_059",
+      "name": "二重埔全新星都滙D區【住宅】2房平車~小資最愛",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7508502",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7525224",
+      "origin_id": "origin_059",
+      "name": "星都滙 星都匯D區次頂樓採光2房平車",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7525224",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7440604",
+      "origin_id": "origin_062",
+      "name": "恆顧/長春首席",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮敦睦街",
+      "url": "https://buy.yungching.com.tw/house/7440604",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7542290",
+      "origin_id": "origin_059",
+      "name": "星都匯D區｜寧靜採光美裝兩房平車｜近竹科交通便利",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7542290",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7295073",
+      "origin_id": "origin_063",
+      "name": "臻研臻心",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮東峰路",
+      "url": "https://buy.yungching.com.tw/house/7295073",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7533364",
+      "origin_id": "origin_064",
+      "name": "星都滙住宅區高樓層景觀2房+B1雙平車位",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7533364",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7533453",
+      "origin_id": "origin_059",
+      "name": "二重埔星都滙D區 高樓景觀2房B1平車位",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7533453",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7512742",
+      "origin_id": "origin_065",
+      "name": "登記住宅！【星都匯】朝南高樓採光二房+B1平車",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7512742",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7291565",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7291565",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7273020",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7273020",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "5954288",
+      "origin_id": "origin_066",
+      "name": "長春帝國",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮長春路三段",
+      "url": "https://buy.yungching.com.tw/house/5954288",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7434084",
+      "origin_id": "origin_067",
+      "name": "遠雄新時代",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮龍鳳路",
+      "url": "https://buy.yungching.com.tw/house/7434084",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7299012",
+      "origin_id": "origin_063",
+      "name": "臻研臻心",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮東峰路",
+      "url": "https://buy.yungching.com.tw/house/7299012",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7307446",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7307446",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7295938",
+      "origin_id": "origin_055",
+      "name": "星都滙AB區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7295938",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7222665",
+      "origin_id": "origin_069",
+      "name": "和發善藝",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮至善路",
+      "url": "https://buy.yungching.com.tw/house/7222665",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "6871361",
+      "origin_id": "origin_072",
+      "name": "星都滙C區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/6871361",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7139285",
+      "origin_id": "origin_067",
+      "name": "遠雄新時代",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮龍鳳路",
+      "url": "https://buy.yungching.com.tw/house/7139285",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7073513",
+      "origin_id": "origin_072",
+      "name": "星都滙C區",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7073513",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7548821",
+      "origin_id": "origin_059",
+      "name": "星都滙D區/稀有次頂樓二房+雙車位",
+      "district": "竹東鎮",
+      "address": "新竹縣竹東鎮旭光一路",
+      "url": "https://buy.yungching.com.tw/house/7548821",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7441921",
+      "origin_id": "origin_073",
+      "name": "寶山曼尼3",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉北坑路",
+      "url": "https://buy.yungching.com.tw/house/7441921",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7232267",
+      "origin_id": "origin_074",
+      "name": "宏道新竹帝寶",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉環城西路一段",
+      "url": "https://buy.yungching.com.tw/house/7232267",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7302738",
+      "origin_id": "origin_075",
+      "name": "富宇居易NO2/原森活NO2",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉雙豐二街",
+      "url": "https://buy.yungching.com.tw/house/7302738",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7279284",
+      "origin_id": "origin_076",
+      "name": "宏道新竹帝寶",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉雙林路",
+      "url": "https://buy.yungching.com.tw/house/7279284",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7275840",
+      "origin_id": "origin_076",
+      "name": "宏道新竹帝寶",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉雙林路",
+      "url": "https://buy.yungching.com.tw/house/7275840",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7098275",
+      "origin_id": "origin_077",
+      "name": "吉韻",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉寶新路一段",
+      "url": "https://buy.yungching.com.tw/house/7098275",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7160429",
+      "origin_id": "origin_076",
+      "name": "宏道新竹帝寶",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉雙林路",
+      "url": "https://buy.yungching.com.tw/house/7160429",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7486661",
+      "origin_id": "origin_078",
+      "name": "真想賣【宏道帝寶8-2區】三改二好改回B1平車位",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉雙林路",
+      "url": "https://buy.yungching.com.tw/house/7486661",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7443998",
+      "origin_id": "origin_079",
+      "name": "近台積電【豐韻】2+1房平車",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉明湖路",
+      "url": "https://buy.yungching.com.tw/house/7443998",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7298891",
+      "origin_id": "origin_079",
+      "name": "豐韻",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉明湖路",
+      "url": "https://buy.yungching.com.tw/house/7298891",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7507445",
+      "origin_id": "origin_079",
+      "name": "低總價｜近台積【豐韻】2+1房平車",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉明湖路",
+      "url": "https://buy.yungching.com.tw/house/7507445",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7323296",
+      "origin_id": "origin_073",
+      "name": "寶山曼尼3",
+      "district": "寶山鄉",
+      "address": "新竹縣寶山鄉北坑路",
+      "url": "https://buy.yungching.com.tw/house/7323296",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7218638",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7218638",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7101597",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7101597",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7096823",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7096823",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7096796",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7096796",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7095288",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7095288",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7373913",
+      "origin_id": "origin_083",
+      "name": "植光寓",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉柯子林",
+      "url": "https://buy.yungching.com.tw/house/7373913",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7336089",
+      "origin_id": "origin_084",
+      "name": "竹科主人7",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉光明路",
+      "url": "https://buy.yungching.com.tw/house/7336089",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7455616",
+      "origin_id": "origin_084",
+      "name": "竹科主人7",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉光明路",
+      "url": "https://buy.yungching.com.tw/house/7455616",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7101604",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7101604",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7096819",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/7096819",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7529695",
+      "origin_id": "origin_086",
+      "name": "美山河",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文富街",
+      "url": "https://buy.yungching.com.tw/house/7529695",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "7482321",
+      "origin_id": "origin_087",
+      "name": "芎林創業成家首選 文山路住店",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文山路",
+      "url": "https://buy.yungching.com.tw/house/7482321",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "6962470",
+      "origin_id": "origin_082",
+      "name": "綠光森林No.29-馥御文昌",
+      "district": "芎林鄉",
+      "address": "新竹縣芎林鄉文昌街",
+      "url": "https://buy.yungching.com.tw/house/6962470",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "20937879",
+      "origin_id": "origin_088",
+      "name": "富廣和合",
+      "district": null,
+      "address": "新竹縣竹東鎮和江街",
+      "url": "https://sale.591.com.tw/home/house/detail/2/20937879.html",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "21158684",
+      "origin_id": "origin_089",
+      "name": "仁發富悅",
+      "district": null,
+      "address": "新竹縣竹北市十興路二段",
+      "url": "https://sale.591.com.tw/home/house/detail/2/21158684.html",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "I070-BB04044",
+      "origin_id": "origin_034",
+      "name": "國賓大悅",
+      "district": null,
+      "address": "新竹縣竹北市勝利八街一段",
+      "url": "https://www.houseol.com.tw/sell_item/I070-BB04044",
+      "basic_candidate": true,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "I030-BB04070",
+      "origin_id": "origin_090",
+      "name": "北大文化中心二房平車",
+      "district": null,
+      "address": "新竹市北大路",
+      "url": "https://www.houseol.com.tw/sell_item/I030-BB04070",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    },
+    {
+      "listing_id": "I070-BB04073",
+      "origin_id": "origin_033",
+      "name": "公園1號",
+      "district": null,
+      "address": "新竹縣竹北市十興路一段",
+      "url": "https://www.houseol.com.tw/sell_item/I070-BB04073",
+      "basic_candidate": false,
+      "sale_verification": "未重新驗證在售"
+    }
+  ]
+}

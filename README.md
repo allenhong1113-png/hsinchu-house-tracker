@@ -11,7 +11,7 @@ Actions validates the retained real snapshot twice daily at 08:00/20:00 Taiwan t
 
 ## Honest scope and filters
 
-This no-key PoC requests one public search page for 新竹市、竹北市、竹東鎮 (including 二重埔)、寶山鄉、芎林鄉. It is not a full market scan. Respect robots.txt, use an identifying User-Agent, sequential requests with >=3 seconds between pages, bounded timeouts, no retry after failed access, no private API, login, cookies or CAPTCHA bypass. Do not infer delisting from missing first-page results.
+This no-key collector follows every rendered, accessible pagination link for 新竹市、竹北市、竹東鎮 (including 二重埔)、寶山鄉、芎林鄉. It is not a full market scan. Respect robots.txt, use an identifying User-Agent, sequential requests with >=3 seconds between requests, bounded timeouts, no retry or alternate endpoint after a source-level access block, no private API, login, cookies or CAPTCHA bypass. Do not infer delisting from search absence. Every configured region records attempted/successful/discovered pages, errors, pending URLs and known result-count coverage. Missing terminal-page or total-count evidence is incomplete, never 100% market coverage.
 
 1000–2000萬, advertised 2 bedrooms, known age <=20, explicit 坡道平面, excluding 綠光森林16. Reject obvious 1+1/2+1/converted rooms and duplex rentals; listing room counts still require floorplan confirmation. Unknown age is not zero. Deduplicate only stable source IDs, never merge separate units by similar size/community.
 
@@ -42,3 +42,17 @@ Run #2 returned HTTP 403 for Yungching robots.txt on the hosted runner. Do not e
 結果存入 `data/commute_estimates.json`，不覆蓋原房源的精確地址／座標／驗證距離。Streamlit 以房源 ID、街名、取得時間及目的地座標摘要檢查快照，目的地改變即失效。估算顯示每個實價門牌的兩段距離與合計範圍；≤15公里的估算結果仍須確認待售戶正2房格局，不宣稱確切待售戶已驗證。Actions 實際執行快照與 Streamlit 整合測試，並保留門牌、點位及距離 artifacts；不宣稱 hosted runner 取得新房源。
 
 App 新增「全部基本條件刊登的實價門牌比對」表及 CSV 下載：即使道路距離篩選只留下3筆，表中仍保留全部53筆的實價門牌及處理狀態。未定位、網站失效與超過15公里分開顯示；不能用尚未算出距離來判定不合格。已取得的道路距離按目的地摘要及門牌點位快取，目的地或點位變更才重新請求。
+
+## Resilient refresh and verification
+
+Successful pages are published even when another page, region or adapter fails. New rows replace the same source/ID; other rows retain their original collected_at and database last_seen, status and price history. No automatic delisting from an absent filtered search result. An entirely failed run retains the prior CSV and records failure. Source-level 401/403/429, robots failure or challenge stops that host; other region failures such as a page timeout or 5xx do not discard successes.
+
+Each collector run checks original detail URLs for all new and retained records. data/listing_checks.json distinguishes HTTP unavailable, explicit off-market, changed identity/details, inaccessible and verified_available. A positive needs the original house path/canonical, matching primary title, advertised price/area/floor and a viewing/contact action; HTTP 200 alone is insufficient. The app binds checks to the current attempt, URL, address and collection time, expires them after 24 hours, labels unverified records explicitly and suppresses links known unavailable. This conservative parser needs live markup verification before any production availability claim; unknown markup remains unverified. Detail checking can be skipped after a host-level block, and is reported as skipped rather than verified. Filters for road distance and current availability remain separate, preserving all-candidate and history views.
+
+The final distance slider is capped at 15 km. Destinations remain F12P8 (科環路168號) and 半吊子廚房 (中山路52巷5號), using OSRM/FOSSGIS driving routes and reviewed door pins. No straight-line distances or invented coordinates. Community transaction doors remain clearly labelled proxies, not exact sale-unit verification. Unlocated addresses remain pending: this change does not introduce an automatic geocoder or Google Routes credentials.
+
+The independent, atomically saved data/route_cache.json retains all successful address/pin/destination/provider/mode keys even when no current listing uses them. Existing reviewed routes migrate from the estimate snapshot. Successful entries never expire; new/changed addresses, changed pins/destinations or previously failed queries request routes. Failed requests are not cached as successes. Commit the cache together with public data to persist it across Actions runners. Run python commute_estimates.py calculate after reviewed pins/proxies change; normal collection does not reroute known addresses.
+
+Pipeline regression tests runs on fix branches and PRs, executes both the existing retained-snapshot/Streamlit tests and mocked pagination, partial failure, history, URL status and cache tests. Test success proves code behavior against fixtures and retained data; it does not prove a fresh live scan. Hosted-runner source access and current pagination/detail markup remain external limitations; live refresh stays opt-in. No new in-sale records or distances were fabricated for this change.
+
+`python commute_estimates.py migrate-cache` performs only an offline migration of existing reviewed routes into the permanent cache. The update workflow runs this step and commits the cache after tests pass, including when a live source refresh is blocked. No network distance queries are made by this migration.

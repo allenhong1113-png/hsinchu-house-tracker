@@ -1,0 +1,1166 @@
+{
+  "checked_at": "2026-11-01T02:23:28.810547+00:00",
+  "rows": [
+    {
+      "listing_id": "4308114",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/4308114",
+      "address": "新竹市東區經國路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7056518",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7056518",
+      "address": "新竹市東區經國路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7438331",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7438331",
+      "address": "新竹市北區東大路三段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7507942",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7507942",
+      "address": "新竹市北區延平路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7259387",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7259387",
+      "address": "新竹市北區金雅七街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7517313",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7517313",
+      "address": "新竹市東區埔頂三路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7506282",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7506282",
+      "address": "新竹市北區延平路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "6712032",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/6712032",
+      "address": "新竹市北區興濱路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7405608",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7405608",
+      "address": "新竹市香山區香北一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7312420",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7312420",
+      "address": "新竹市北區武陵路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7504997",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7504997",
+      "address": "新竹市東區文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7430215",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7430215",
+      "address": "新竹市香山區中華路四段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7242809",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7242809",
+      "address": "新竹市香山區延平路二段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7392089",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7392089",
+      "address": "新竹市東區光復路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7395575",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7395575",
+      "address": "新竹市東區慈濟路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7513132",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7513132",
+      "address": "新竹市香山區經國路三段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7384032",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7384032",
+      "address": "新竹市東區長春街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7489250",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7489250",
+      "address": "新竹市東區埔頂三路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7503500",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7503500",
+      "address": "新竹市北區經國路二段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7516252",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7516252",
+      "address": "新竹市北區西濱路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7444682",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7444682",
+      "address": "新竹市北區東大路三段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7507692",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7507692",
+      "address": "新竹市北區延平路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7429273",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7429273",
+      "address": "新竹市東區慈濟路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7334193",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7334193",
+      "address": "新竹市北區東大路三段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7462870",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7462870",
+      "address": "新竹市北區經國路二段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7460725",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7460725",
+      "address": "新竹市香山區華北路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7502477",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7502477",
+      "address": "新竹市北區榮濱南路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7486453",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7486453",
+      "address": "新竹市東區水利路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7408231",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7408231",
+      "address": "新竹市東區新莊街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7110122",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7110122",
+      "address": "新竹市東區南門街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7428123",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7428123",
+      "address": "新竹市東區光復路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7531684",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7531684",
+      "address": "新竹縣竹北市復興三路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7513317",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7513317",
+      "address": "新竹縣竹北市華興三街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7489341",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7489341",
+      "address": "新竹縣竹北市新瀧三街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "6667621",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/6667621",
+      "address": "新竹縣竹北市光明十五街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7448640",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7448640",
+      "address": "新竹縣竹北市十興路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7509805",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7509805",
+      "address": "新竹縣竹北市勝利八街一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7520983",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7520983",
+      "address": "新竹縣竹北市六家一路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7508492",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7508492",
+      "address": "新竹縣竹北市中央路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7311411",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7311411",
+      "address": "新竹縣竹北市十興路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7497607",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7497607",
+      "address": "新竹縣竹北市興隆路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7447384",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7447384",
+      "address": "新竹縣竹北市勝利八街一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7466543",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7466543",
+      "address": "新竹縣竹北市光明十一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7346711",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7346711",
+      "address": "新竹縣竹北市興隆路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7544711",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7544711",
+      "address": "新竹縣竹北市三民路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7527524",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7527524",
+      "address": "新竹縣竹北市嘉興路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7483858",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7483858",
+      "address": "新竹縣竹北市中正西路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7528709",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7528709",
+      "address": "新竹縣竹北市光明十一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7480230",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7480230",
+      "address": "新竹縣竹北市新瀧三街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7541940",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7541940",
+      "address": "新竹縣竹北市北新一街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7478172",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7478172",
+      "address": "新竹縣竹北市新瀧一街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7451056",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7451056",
+      "address": "新竹縣竹北市光明五街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7475276",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7475276",
+      "address": "新竹縣竹北市新瀧一街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7513021",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7513021",
+      "address": "新竹縣竹北市嘉勤北路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "6519514",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/6519514",
+      "address": "新竹縣竹北市興隆路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7451267",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7451267",
+      "address": "新竹縣竹北市新瀧三街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7438931",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7438931",
+      "address": "新竹縣竹北市嘉興路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7419816",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7419816",
+      "address": "新竹縣竹北市十興路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7180017",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7180017",
+      "address": "新竹縣竹北市十興路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7506693",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7506693",
+      "address": "新竹縣竹北市文采街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7489328",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7489328",
+      "address": "新竹縣竹北市台元街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7250242",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7250242",
+      "address": "新竹縣竹東鎮和江街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7524483",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7524483",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7485050",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7485050",
+      "address": "新竹縣竹東鎮東寧路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7369826",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7369826",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7388104",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7388104",
+      "address": "新竹縣竹東鎮光明路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7407047",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7407047",
+      "address": "新竹縣竹東鎮公道路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7501157",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7501157",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7365875",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7365875",
+      "address": "新竹縣竹東鎮至善路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7509863",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7509863",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7489255",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7489255",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7508502",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7508502",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7525224",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7525224",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7440604",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7440604",
+      "address": "新竹縣竹東鎮敦睦街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7542290",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7542290",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7295073",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7295073",
+      "address": "新竹縣竹東鎮東峰路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7533364",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7533364",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7533453",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7533453",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7512742",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7512742",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7291565",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7291565",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7273020",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7273020",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "5954288",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/5954288",
+      "address": "新竹縣竹東鎮長春路三段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7434084",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7434084",
+      "address": "新竹縣竹東鎮龍鳳路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7299012",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7299012",
+      "address": "新竹縣竹東鎮東峰路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7307446",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7307446",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7295938",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7295938",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7222665",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7222665",
+      "address": "新竹縣竹東鎮至善路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "6871361",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/6871361",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7139285",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7139285",
+      "address": "新竹縣竹東鎮龍鳳路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7073513",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7073513",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7548821",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7548821",
+      "address": "新竹縣竹東鎮旭光一路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7441921",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7441921",
+      "address": "新竹縣寶山鄉北坑路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7232267",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7232267",
+      "address": "新竹縣寶山鄉環城西路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7302738",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7302738",
+      "address": "新竹縣寶山鄉雙豐二街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7279284",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7279284",
+      "address": "新竹縣寶山鄉雙林路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7275840",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7275840",
+      "address": "新竹縣寶山鄉雙林路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7098275",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7098275",
+      "address": "新竹縣寶山鄉寶新路一段",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7160429",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7160429",
+      "address": "新竹縣寶山鄉雙林路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7486661",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7486661",
+      "address": "新竹縣寶山鄉雙林路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7443998",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7443998",
+      "address": "新竹縣寶山鄉明湖路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7298891",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7298891",
+      "address": "新竹縣寶山鄉明湖路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7507445",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7507445",
+      "address": "新竹縣寶山鄉明湖路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7323296",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7323296",
+      "address": "新竹縣寶山鄉北坑路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7218638",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7218638",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7101597",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7101597",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7096823",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7096823",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7096796",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7096796",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7095288",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7095288",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7373913",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7373913",
+      "address": "新竹縣芎林鄉柯子林",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7336089",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7336089",
+      "address": "新竹縣芎林鄉光明路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7455616",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7455616",
+      "address": "新竹縣芎林鄉光明路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7101604",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7101604",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7096819",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7096819",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7529695",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7529695",
+      "address": "新竹縣芎林鄉文富街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "7482321",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/7482321",
+      "address": "新竹縣芎林鄉文山路",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    },
+    {
+      "listing_id": "6962470",
+      "source": "永慶公開HTML",
+      "url": "https://buy.yungching.com.tw/house/6962470",
+      "address": "新竹縣芎林鄉文昌街",
+      "collected_at": "2026-10-06T17:18:55.081655+00:00",
+      "checked_at": "2026-11-01T02:23:28.810547+00:00",
+      "status": "skipped_access",
+      "error": "Source access already failed; no alternate endpoint attempt"
+    }
+  ],
+  "verified_available": 0
+}

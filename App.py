@@ -8,6 +8,8 @@ import streamlit as st
 from database import init_db, DB_PATH
 from import_houses import import_csv, CSV_PATH
 from commute_estimates import load_estimates
+from known_distances import load_known_distances, match_known_distance, report_rows
+from listing_validation import load_checks, row_check
 
 # ============================================================
 # CONFIG
@@ -92,6 +94,27 @@ if destination_path.exists():
             st.map(pd.DataFrame(pins)[["lat", "lon"]])
         st.caption("目的地使用已核對的地標點位；依指定地標計算，不核對車行出入口。可使用同社區實價門牌作估算，結果會分開標示。")
 
+# Offline road observations are read on every rerun, independent of DB import.
+st.caption("網頁版本：道路距離整合版 2026-11-01")
+try:
+    known_distances = load_known_distances()
+except (ValueError, OSError, KeyError, TypeError) as exc:
+    known_distances = {}
+    st.warning(f"整批距離資料暫時無法讀取：{exc}")
+if known_distances:
+    with st.expander("完整已知房源道路距離（含591、愛屋網紀錄）", expanded=True):
+        known_df = pd.DataFrame(report_rows(known_distances))
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric("已知刊登紀錄", len(known_df))
+        k2.metric("可用代理距離", int(known_df["合計公里"].notna().sum()))
+        k3.metric("代理位置≤15公里", int((known_df["距離判定"] == "代理位置≤15公里").sum()))
+        k4.metric("定位待確認", int(known_df["合計公里"].isna().sum()))
+        st.caption("本表涵蓋整批已知刊登，不套用下方基本條件篩選。距離採社區或同社區成交門牌代理，非實際戶別；售況未重新驗證。定位待確認不納入≤15公里。")
+        known_view = st.selectbox("整批距離表顯示", ["全部紀錄", "代理位置≤15公里", "超過15公里", "定位待確認"])
+        shown_known = known_df if known_view == "全部紀錄" else known_df[known_df["距離判定"] == known_view]
+        st.dataframe(shown_known, hide_index=True, use_container_width=True)
+        st.download_button("下載完整已知房源距離", known_df.to_csv(index=False).encode("utf-8-sig"), file_name="known-property-distances.csv", mime="text/csv")
+
 # ============================================================
 # DATA STATUS
 # ============================================================
@@ -104,7 +127,12 @@ if df.empty:
 active = df[(df["active"] == 1) & df["listing_id"].notna() & df["collected_at"].notna()].copy()
 # Legacy rows lacking listing URLs are retained in history but are not collected listings.
 st.caption("筆數按不同刊登ID計算；同社區、樓層、坪數相同者可能為重複刊登，尚未確認是否同一戶。")
-st.info("公開房源 PoC：各區第一頁，並非全市場掃描。同社區實價門牌可作道路距離估算，不代表待售戶的確切門牌。正2房仍須核對格局圖。")
+st.info("搜尋涵蓋各區可存取的公開分頁；實際覆蓋率見下方報告。保留紀錄不代表本次確認在售；同社區實價門牌的道路距離是估算，正2房仍須核對格局圖。")
+root = Path(__file__).resolve().parent
+checks = load_checks(root / 'data/listing_checks.json', root / 'data/last_collection_attempt.json')
+active['availability'] = [row_check(h, checks)['status'] for h in active.to_dict('records')]
+active['availability_checked_at'] = [row_check(h, checks)['checked_at'] for h in active.to_dict('records')]
+st.caption(f"本次24小時內逐筆確認刊登頁顯示在售：{int((active['availability'] == 'verified_available').sum())} 筆；其餘為待確認或無法存取。")
 
 # ============================================================
 # METRICS
@@ -162,7 +190,7 @@ with st.expander("🔎 篩選", expanded=False):
     max_distance = st.slider(
         "雙通勤合計上限（km）",
         5,
-        40,
+        15,
         15
     )
 
@@ -196,7 +224,8 @@ with st.expander("🔎 篩選", expanded=False):
         help="預設保留待定位與超過距離的刊登；開啟後只保留已有道路距離且符合上限的結果。"
     )
 
-    allow_estimates = st.toggle("允許同社區實價門牌估算", True)
+    allow_estimates = st.toggle("允許社區地標／實價門牌估算", True)
+    only_available = st.toggle("只看本次已確認刊登頁在售", False)
 
 # ============================================================
 # FILTER
@@ -238,10 +267,14 @@ f["distance_total"] = (
 estimates = load_estimates()
 f["estimate"] = [estimates.get(str(x)) for x in f["listing_id"]]
 f["estimate"] = [e if isinstance(e, dict) and e.get("listing_address") == a and e.get("listing_collected_at") == t else None for e, a, t in zip(f["estimate"], f["address"], f["collected_at"])]
+f["known_distance"] = [match_known_distance(h, known_distances) for h in f.to_dict("records")]
 f["distance_kind"] = "unverified"
 for index, h in f.iterrows():
     if h["route_status"] == "verified_road" and pd.notna(h["distance_total"]):
         f.at[index, "distance_kind"] = "verified_road"
+    elif allow_estimates and isinstance(h["known_distance"], dict) and h["known_distance"]["usable"]:
+        f.at[index, "distance_total"] = h["known_distance"]["total"]
+        f.at[index, "distance_kind"] = "estimated_community_proxy"
     elif allow_estimates and isinstance(h["estimate"], dict):
         e = h["estimate"]
         # Unlocated transaction doors remain uncertain and cannot pass the final filter.
@@ -249,9 +282,12 @@ for index, h in f.iterrows():
             f.at[index, "distance_total"] = e["total_max_km"]
             f.at[index, "distance_kind"] = "estimated_transaction_proxy"
 
-estimated_count = int((f["distance_kind"] == "estimated_transaction_proxy").sum())
+estimated_count = int(f["distance_kind"].isin(["estimated_transaction_proxy", "estimated_community_proxy"]).sum())
 if strict_distance:
     f = f[(f["distance_kind"] != "unverified") & f["distance_total"].notna() & (f["distance_total"] <= max_distance)]
+
+if only_available:
+    f = f[f["availability"] == "verified_available"]
 
 # ============================================================
 # PIPELINE COUNTERS
@@ -280,7 +316,7 @@ m3.metric(
     f"{len(verified):,}"
 )
 
-st.caption(f"已完成同社區實價門牌估算：{estimated_count} 筆基本條件房源。估算採已取得門牌中的最大合計；不是確切待售戶定位，也不是完整社區範圍。")
+st.caption(f"已完成社區地標／實價門牌估算：{estimated_count} 筆目前條件房源。新整批道路觀測優先使用，舊門牌快取取最大合計；均非確切待售戶定位。")
 
 # Every basic candidate remains visible in the audit table, even when the distance
 # filter hides its card. A missing route is pending, never over the limit.
@@ -315,7 +351,10 @@ for _, h in basic_candidates.iterrows():
             status = f"已完成門牌估算：{e['total_max_km']:.2f} km" + ("（≤上限）" if e["total_max_km"] <= max_distance else "（超過上限）")
         else:
             status = "部分門牌完成路線，其他門牌待定位"
-    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else (error.get("alternative_transaction_url", "") if error else ""), "刊登網址": h["url"]})
+    known = match_known_distance(h, known_distances)
+    if known:
+        status = (f"已完成代理道路估算：{known['total']:.2f} km" + ("（≤上限）" if known['total'] <= max_distance else "（超過上限）")) if known["usable"] else "定位待確認：" + known["origin"].get("note", "")
+    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "原始頁驗證": h["availability"], "驗證時間": h["availability_checked_at"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else (error.get("alternative_transaction_url", "") if error else ""), "刊登網址": h["url"]})
 with st.expander(f"📋 全部基本條件刊登的實價門牌比對 ({len(audit_rows)})", expanded=True):
     st.caption(f"已取得門牌 {matched_count}/{len(audit_rows)} 筆。待定位或待路線計算不代表超過15公里；下方距離篩選不會隱藏本表。")
     audit_df = pd.DataFrame(audit_rows)
@@ -434,6 +473,15 @@ for _, h in f.iterrows():
         st.caption(
             f"{h['district']}｜{h['address']}"
         )
+        availability_labels = {
+            'verified_available': '已核對原始頁身分、價格／坪數與看屋入口，頁面顯示在售',
+            'unavailable_http': '原始頁已無法開啟（404／410）；保留歷史，不確認在售',
+            'explicitly_offmarket': '原始頁明示已下架／成交；保留歷史',
+            'not_verified_this_run': '本次尚未驗證；不確認在售',
+        }
+        st.warning('原始刊登驗證：' + availability_labels.get(h['availability'], '未能確認：' + h['availability']))
+        if h['availability_checked_at']:
+            st.caption('原始頁檢查時間：' + str(h['availability_checked_at']))
         match = audit_by_id.get(str(h["listing_id"]))
         if match:
             st.info(f"門牌／距離狀態：{match['處理狀態']}")
@@ -486,6 +534,15 @@ for _, h in f.iterrows():
                     f"{h['distance_total']:.1f} km ✕"
                 )
 
+        elif allow_estimates and isinstance(h["known_distance"], dict) and h["known_distance"]["usable"]:
+            known = h["known_distance"]
+            origin = known["origin"]
+            legs = origin["distances_km"]
+            st.warning(f"{origin['level']}：F12P8 {legs[0]:.2f} km ＋ 半吊子廚房 {legs[1]:.2f} km ＝ {known['total']:.2f} km（非待售戶確址）")
+            st.caption(f"代理起點：{origin['used_origin']}。{origin.get('note', '')}")
+            st.caption(f"道路來源：{origin['provider']}；計算時間：{origin['checked_at']}")
+            for label, url in zip(["F12P8路線／快取地標", "半吊子路線／快取地標"], origin.get("route_urls", [])):
+                st.markdown(f"[{label}]({url})")
         elif allow_estimates and isinstance(h["estimate"], dict):
             e = h["estimate"]
             st.warning(f"實價門牌估算：雙通勤合計 {e['total_min_km']:.2f}–{e['total_max_km']:.2f} km（非待售戶確址）")
@@ -551,10 +608,10 @@ for _, h in f.iterrows():
         # LINK
         # -----------------------------------------------
 
-        if isinstance(h["url"], str) and h["url"]:
+        if isinstance(h["url"], str) and h["url"] and h["availability"] not in ("unavailable_http", "explicitly_offmarket"):
 
             st.link_button(
-                "🔗 查看刊登",
+                "🔗 查看刊登" if h["availability"] == "verified_available" else "🔗 原始連結（尚未確認在售）",
                 h["url"],
                 use_container_width=True
             )
@@ -627,11 +684,11 @@ st.subheader("⚙️ 公開資料 PoC 狀態")
 report_path = Path(__file__).resolve().parent / "data/collection_report.json"
 if report_path.exists():
     st.json(json.loads(report_path.read_text()))
-st.caption("未使用付費 API key。確切房源與實價門牌估算位置分開顯示，不使用路中心或社區中心猜測。部分頁面抓取不推斷下架。")
+st.caption("未使用付費 API key。Google Maps 駕車建議路線與既有 OSRM 快取均標示來源；社區代理距離與確址驗證分開。街道參考與期別不符不納入距離合格，部分頁面抓取不推斷下架。")
 st.markdown("[道路服務使用規則](https://routing.openstreetmap.de/about.html) · [回報道路問題](https://www.openstreetmap.org/fixthemap)")
 attempt_path = Path(__file__).resolve().parent / "data/last_collection_attempt.json"
 if attempt_path.exists():
     attempt = json.loads(attempt_path.read_text())
     if attempt.get("status") != "success":
-        st.warning("最新自動抓取失敗；目前顯示上次成功取得的房源快照，不代表本次有取得新資料。")
+        st.warning("最新搜尋為部分完成或失敗；已保留成功資料與歷史。各區覆蓋率及逐筆在售驗證應分別檢查。")
         st.json(attempt)
