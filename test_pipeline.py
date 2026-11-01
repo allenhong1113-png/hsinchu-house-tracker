@@ -46,28 +46,39 @@ def test_streamlit_reads_collected_data():
     assert not app.error
     snapshot = pd.read_csv(Path(__file__).resolve().parent / "data" / "houses.csv")
     assert len(snapshot) > 0
-    assert int(app.metric[4].value.replace(",", "")) == len(snapshot)
+    assert int(next(m.value for m in app.metric if m.label == "資料庫").replace(",", "")) == len(snapshot)
     assert snapshot.url.notna().all() and snapshot.collected_at.notna().all()
     # The distance filter must never hide the all-candidate matching audit.
     basic = snapshot[snapshot.price.between(1000,2000) & (snapshot.rooms == 2) & (snapshot.age <= 20) & (snapshot.parking == "坡道平面") & (snapshot.layout_status == "advertised_2_rooms")]
-    audit = next(d.value for d in app.dataframe if "刊登ID" in d.value.columns)
+    audit = next(d.value for d in app.dataframe if "處理狀態" in d.value.columns)
     assert set(audit["刊登ID"].astype(str)) == set(basic.listing_id.astype(str))
     assert len(audit) == len(basic)
     from commute_estimates import load_estimates
     valid_routes = load_estimates()
     over = set(audit.loc[audit["處理狀態"].str.contains("（超過上限）", regex=False), "刊登ID"])
-    assert over == {i for i,e in valid_routes.items() if e.get("complete_doors") and e["total_max_km"] > 15}
+    from known_distances import load_known_distances, match_known_distance
+    known = load_known_distances()
+    effective = {}
+    for h in basic.to_dict('records'):
+        key = str(h['listing_id'])
+        observed = match_known_distance(h, known)
+        e = valid_routes.get(key)
+        if observed and observed['usable']:
+            effective[key] = observed['total']
+        elif e and e.get('complete_doors'):
+            effective[key] = e['total_max_km']
+    assert over == {i for i,total in effective.items() if total > 15}
     # Default cards include every basic candidate; optional final mode excludes unknown routes.
     from commute_estimates import load_estimates
     estimates = load_estimates()
-    expected = sum(e.get("complete_doors") and e["total_max_km"] <= 15 for e in estimates.values())
+    expected = sum(total <= 15 for total in effective.values())
     assert len(app.get("link_button")) == len(basic)
     assert any(f"房源 ({len(basic)})" in x.value for x in app.subheader)
     app.toggle[1].set_value(True).run()
     assert len(app.get("link_button")) == expected
     app.toggle[2].set_value(False).run()
     assert len(app.get("link_button")) == 0
-    assert app.metric[6].value == "0"
+    assert next(m.value for m in app.metric if m.label == "已驗證距離") == "0"
     app.toggle[1].set_value(False).run()
     assert not app.exception
     assert any("房源 (" in x.value for x in app.subheader)
@@ -144,3 +155,71 @@ def test_all_candidates_have_transaction_match_result():
         assert r["transaction_url"].startswith(r["community_url"] + "/price")
         for d in r["doors"]:
             assert "號" in d["proxy_address"] and d["transaction_month"]
+
+
+"""Offline fixtures and retained observations; no live routing or sale claims."""
+import copy
+import json
+from pathlib import Path
+import pandas as pd
+from known_distances import load_known_distances, match_known_distance, report_rows
+
+
+def test_retained_batch_and_address_invalidation():
+    known = load_known_distances()
+    rows = report_rows(known)
+    assert len(rows) == 121
+    assert sum(r['合計公里'] is not None for r in rows) == 101
+    assert sum(r['距離判定'] == '代理位置≤15公里' for r in rows) == 44
+    assert sum(r['距離判定'] == '定位待確認' for r in rows) == 20
+    assert all(r['售況'] == '未重新驗證在售' for r in rows)
+    for entry in known.values():
+        assert match_known_distance(entry, known) is entry
+        assert match_known_distance(dict(entry, address='changed'), known) is None
+        assert match_known_distance(dict(entry, url='https://example.invalid/changed'), known) is None
+
+
+def test_changed_destinations_invalidate_all(tmp_path):
+    root = Path(__file__).resolve().parent
+    (tmp_path/'data').mkdir()
+    for name in ['known_property_distances.json', 'destinations.json']:
+        (tmp_path/'data'/name).write_text((root/'data'/name).read_text())
+    d = json.loads((tmp_path/'data/destinations.json').read_text())
+    d['destinations'][0]['lat'] += .001
+    (tmp_path/'data/destinations.json').write_text(json.dumps(d))
+    assert load_known_distances(tmp_path) == {}
+
+
+def test_pending_and_invalid_distance_never_pass(tmp_path):
+    root = Path(__file__).resolve().parent
+    report = json.loads((root/'data/known_property_distances.json').read_text())
+    report['route_origins'][0]['distances_km'] = [-1, 1]
+    report['route_origins'][1]['distances_km'] = [True, 1]
+    report['route_origins'][2]['usable'] = False
+    (tmp_path/'data').mkdir()
+    (tmp_path/'data/known_property_distances.json').write_text(json.dumps(report))
+    (tmp_path/'data/destinations.json').write_text((root/'data/destinations.json').read_text())
+    entries = load_known_distances(tmp_path)
+    invalid_ids = {r['id'] for r in report['route_origins'][:3]}
+    assert all(not e['usable'] and e['total'] is None for e in entries.values() if e['origin_id'] in invalid_ids)
+
+
+def test_streamlit_displays_batch_and_uses_proxy_filter(tmp_path, monkeypatch):
+    from streamlit.testing.v1 import AppTest
+    import database
+    monkeypatch.setattr(database, 'DB_PATH', str(tmp_path/'app.db'))
+    app = AppTest.from_file(str(Path(__file__).with_name('App.py')), default_timeout=30).run()
+    assert not app.exception
+    assert any(c.value == '網頁版本：道路距離整合版 2026-11-01' for c in app.caption)
+    table = next(t.value for t in app.dataframe if '距離判定' in t.value.columns)
+    assert len(table) == 121
+    assert len(table[table['距離判定'] == '定位待確認']) == 20
+    app.selectbox[0].select('代理位置≤15公里').run()
+    assert not app.exception
+    table = next(t.value for t in app.dataframe if '距離判定' in t.value.columns)
+    assert len(table) == 44
+    toggle = next(t for t in app.toggle if t.label == '只看雙通勤≤上限')
+    toggle.set_value(True).run()
+    assert not app.exception
+    assert any('＝' in w.value and 'F12P8' in w.value for w in app.warning)
+    assert not any('合計 nan' in w.value for w in app.warning)
