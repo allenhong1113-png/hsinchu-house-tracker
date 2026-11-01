@@ -224,3 +224,27 @@ def test_failed_route_retries_without_poisoning_cache(tmp_path, monkeypatch):
     assert routes.valid_cached_route(value)
     value['distances_km'][0] = float('nan')
     assert not routes.valid_cached_route(value)
+
+
+def test_source_block_is_not_retried_across_regions_or_details(monkeypatch):
+    monkeypatch.setattr(source.time, 'sleep', lambda _: None)
+    requests_seen = []
+    def get(url, **kwargs):
+        requests_seen.append(url)
+        if url.endswith('/robots.txt'):
+            return SimpleNamespace(url=url, text='User-agent: *\nAllow: /', status_code=200, raise_for_status=lambda: None)
+        return SimpleNamespace(url=url, text='Forbidden', status_code=403)
+    client = source.PublicClient()
+    monkeypatch.setattr(client.session, 'get', get)
+    frames, reports = source.collect('fixture', client)
+    assert not frames and len(reports) == len(source.REGIONS)
+    assert all(r['status'] == 'failed' and not r['complete'] for r in reports)
+    checks = verify_listings(pd.DataFrame([listing('1'), listing('2')]), 'fixture', client)
+    assert all(r['status'] == 'skipped_access' for r in checks['rows'])
+    assert len(requests_seen) == 2  # one robots request and one denied search, no alternate paths
+
+
+@pytest.mark.parametrize('bad', [float('nan'), -1, 201])
+def test_invalid_road_snap_never_becomes_a_cached_success(bad):
+    route = dict(distances_km=[1, 2], road_snap_distances_m=[[0, 1], [bad, 1]], route_calculated_at='fixture')
+    assert not routes.valid_cached_route(route)
