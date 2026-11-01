@@ -248,3 +248,15 @@ def test_source_block_is_not_retried_across_regions_or_details(monkeypatch):
 def test_invalid_road_snap_never_becomes_a_cached_success(bad):
     route = dict(distances_km=[1, 2], road_snap_distances_m=[[0, 1], [bad, 1]], route_calculated_at='fixture')
     assert not routes.valid_cached_route(route)
+
+
+def test_existing_reviewed_routes_migrate_without_any_network(tmp_path, monkeypatch):
+    data, destinations, pin, proxy, calls = route_fixture(tmp_path, monkeypatch)
+    routes.calculate()
+    (data / 'route_cache.json').unlink()
+    def forbidden(*args, **kwargs):
+        pytest.fail('cache migration must not query the network')
+    monkeypatch.setattr(routes.requests, 'get', forbidden)
+    routes.calculate(cache_only=True)
+    assert len(json.loads((data / 'route_cache.json').read_text())['entries']) == 1
+    assert len(calls) == 2
