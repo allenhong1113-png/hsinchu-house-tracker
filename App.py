@@ -8,6 +8,7 @@ import streamlit as st
 from database import init_db, DB_PATH
 from import_houses import import_csv, CSV_PATH
 from commute_estimates import load_estimates
+from listing_validation import load_checks, row_check
 
 # ============================================================
 # CONFIG
@@ -104,7 +105,12 @@ if df.empty:
 active = df[(df["active"] == 1) & df["listing_id"].notna() & df["collected_at"].notna()].copy()
 # Legacy rows lacking listing URLs are retained in history but are not collected listings.
 st.caption("筆數按不同刊登ID計算；同社區、樓層、坪數相同者可能為重複刊登，尚未確認是否同一戶。")
-st.info("公開房源 PoC：各區第一頁，並非全市場掃描。同社區實價門牌可作道路距離估算，不代表待售戶的確切門牌。正2房仍須核對格局圖。")
+st.info("搜尋涵蓋各區可存取的公開分頁；實際覆蓋率見下方報告。保留紀錄不代表本次確認在售；同社區實價門牌的道路距離是估算，正2房仍須核對格局圖。")
+root = Path(__file__).resolve().parent
+checks = load_checks(root / 'data/listing_checks.json', root / 'data/last_collection_attempt.json')
+active['availability'] = [row_check(h, checks)['status'] for h in active.to_dict('records')]
+active['availability_checked_at'] = [row_check(h, checks)['checked_at'] for h in active.to_dict('records')]
+st.caption(f"本次24小時內逐筆確認刊登頁顯示在售：{int((active['availability'] == 'verified_available').sum())} 筆；其餘為待確認或無法存取。")
 
 # ============================================================
 # METRICS
@@ -162,7 +168,7 @@ with st.expander("🔎 篩選", expanded=False):
     max_distance = st.slider(
         "雙通勤合計上限（km）",
         5,
-        40,
+        15,
         15
     )
 
@@ -197,6 +203,7 @@ with st.expander("🔎 篩選", expanded=False):
     )
 
     allow_estimates = st.toggle("允許同社區實價門牌估算", True)
+    only_available = st.toggle("只看本次已確認刊登頁在售", False)
 
 # ============================================================
 # FILTER
@@ -252,6 +259,9 @@ for index, h in f.iterrows():
 estimated_count = int((f["distance_kind"] == "estimated_transaction_proxy").sum())
 if strict_distance:
     f = f[(f["distance_kind"] != "unverified") & f["distance_total"].notna() & (f["distance_total"] <= max_distance)]
+
+if only_available:
+    f = f[f["availability"] == "verified_available"]
 
 # ============================================================
 # PIPELINE COUNTERS
@@ -315,7 +325,7 @@ for _, h in basic_candidates.iterrows():
             status = f"已完成門牌估算：{e['total_max_km']:.2f} km" + ("（≤上限）" if e["total_max_km"] <= max_distance else "（超過上限）")
         else:
             status = "部分門牌完成路線，其他門牌待定位"
-    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else (error.get("alternative_transaction_url", "") if error else ""), "刊登網址": h["url"]})
+    audit_rows.append({"刊登ID": listing_id, "社區／刊登名稱": h["name"], "總價（萬）": h["price"], "刊登街名": h["address"], "原始頁驗證": h["availability"], "驗證時間": h["availability_checked_at"], "實價門牌": "、".join(p["proxy_address"] for p in doors), "處理狀態": status, "實價來源": evidence.get("transaction_url", "") if evidence else (error.get("alternative_transaction_url", "") if error else ""), "刊登網址": h["url"]})
 with st.expander(f"📋 全部基本條件刊登的實價門牌比對 ({len(audit_rows)})", expanded=True):
     st.caption(f"已取得門牌 {matched_count}/{len(audit_rows)} 筆。待定位或待路線計算不代表超過15公里；下方距離篩選不會隱藏本表。")
     audit_df = pd.DataFrame(audit_rows)
@@ -434,6 +444,15 @@ for _, h in f.iterrows():
         st.caption(
             f"{h['district']}｜{h['address']}"
         )
+        availability_labels = {
+            'verified_available': '已核對原始頁身分、價格／坪數與看屋入口，頁面顯示在售',
+            'unavailable_http': '原始頁已無法開啟（404／410）；保留歷史，不確認在售',
+            'explicitly_offmarket': '原始頁明示已下架／成交；保留歷史',
+            'not_verified_this_run': '本次尚未驗證；不確認在售',
+        }
+        st.warning('原始刊登驗證：' + availability_labels.get(h['availability'], '未能確認：' + h['availability']))
+        if h['availability_checked_at']:
+            st.caption('原始頁檢查時間：' + str(h['availability_checked_at']))
         match = audit_by_id.get(str(h["listing_id"]))
         if match:
             st.info(f"門牌／距離狀態：{match['處理狀態']}")
@@ -551,10 +570,10 @@ for _, h in f.iterrows():
         # LINK
         # -----------------------------------------------
 
-        if isinstance(h["url"], str) and h["url"]:
+        if isinstance(h["url"], str) and h["url"] and h["availability"] not in ("unavailable_http", "explicitly_offmarket"):
 
             st.link_button(
-                "🔗 查看刊登",
+                "🔗 查看刊登" if h["availability"] == "verified_available" else "🔗 原始連結（尚未確認在售）",
                 h["url"],
                 use_container_width=True
             )
@@ -633,5 +652,5 @@ attempt_path = Path(__file__).resolve().parent / "data/last_collection_attempt.j
 if attempt_path.exists():
     attempt = json.loads(attempt_path.read_text())
     if attempt.get("status") != "success":
-        st.warning("最新自動抓取失敗；目前顯示上次成功取得的房源快照，不代表本次有取得新資料。")
+        st.warning("最新搜尋為部分完成或失敗；已保留成功資料與歷史。各區覆蓋率及逐筆在售驗證應分別檢查。")
         st.json(attempt)
