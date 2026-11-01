@@ -165,7 +165,7 @@ def save_route_cache(path, entries):
     temporary.replace(path)
 
 
-def calculate():
+def calculate(cache_only=False):
     proxies=json.loads((ROOT/'data/transaction_proxies.json').read_text())
     pins=json.loads((ROOT/'data/transaction_pins.json').read_text())
     destinations=json.loads((ROOT/'data/destinations.json').read_text())['destinations']
@@ -186,6 +186,9 @@ def calculate():
                         persistent.setdefault(route_key(p['proxy_address'], pin, destinations), p)
     # Standalone cache keeps successful routes even when no current listing uses them.
     save_route_cache(cache_path, persistent)
+    if cache_only:
+        print('MIGRATED', len(persistent), 'reviewed route cache entries; no network requests', flush=True)
+        return
     for listing in proxies['rows']:
         results=[]
         for door in listing['doors']:
@@ -229,5 +232,5 @@ def load_estimates(path=None):
     return {r['listing_id']:r for r in report['rows'] if r.get('status')=='estimated_transaction_proxy'}
 
 if __name__=='__main__':
-    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate']);a.add_argument('--limit',type=int);a.add_argument('--retry-unmatched',action='store_true');args=a.parse_args()
-    discover(args.limit,args.retry_unmatched) if args.mode=='discover' else calculate()
+    a=argparse.ArgumentParser();a.add_argument('mode',choices=['discover','calculate','migrate-cache']);a.add_argument('--limit',type=int);a.add_argument('--retry-unmatched',action='store_true');args=a.parse_args()
+    discover(args.limit,args.retry_unmatched) if args.mode=='discover' else calculate(cache_only=args.mode=='migrate-cache')
