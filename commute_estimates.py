@@ -7,6 +7,7 @@ import json
 import math
 import re
 import time
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -133,11 +134,44 @@ def discover(limit=None, retry_unmatched=False):
     save(status)
     print('SUMMARY',len(checked),'checked;',sum(bool(r['doors']) for r in rows.values()),'with doors; errors',len(errors),'status',status,flush=True)
 
+
+ROUTE_ENDPOINT = 'https://routing.openstreetmap.de/routed-car/route/v1/driving/'
+
+
+def route_key(address, pin, destinations):
+    address = re.sub(r'\s+', '', unicodedata.normalize('NFKC', address))
+    return digest(dict(address=address, lat=pin['lat'], lon=pin['lon'],
+                       destinations=[{k: d[k] for k in ('id', 'lat', 'lon')} for d in destinations],
+                       provider=ROUTE_ENDPOINT, mode='driving', radiuses='200;200'))
+
+
+def valid_cached_route(route):
+    if not isinstance(route, dict):
+        return False
+    distances = route.get('distances_km', [])
+    snaps = route.get('road_snap_distances_m', [])
+    try:
+        return (len(distances) == 2 and all(math.isfinite(x) and x > 0 for x in distances)
+                and len(snaps) == 2 and all(len(pair) == 2 for pair in snaps)
+                and all(math.isfinite(x) and 0 <= x <= 200 for pair in snaps for x in pair)
+                and bool(route.get('route_calculated_at')))
+    except (TypeError, ValueError):
+        return False
+
+
+def save_route_cache(path, entries):
+    temporary = path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(dict(schema_version=1, entries=entries), ensure_ascii=False, indent=2) + '\n')
+    temporary.replace(path)
+
+
 def calculate():
     proxies=json.loads((ROOT/'data/transaction_proxies.json').read_text())
     pins=json.loads((ROOT/'data/transaction_pins.json').read_text())
     destinations=json.loads((ROOT/'data/destinations.json').read_text())['destinations']
-    endpoint='https://routing.openstreetmap.de/routed-car/route/v1/driving/'
+    endpoint=ROUTE_ENDPOINT
+    cache_path=ROOT/'data/route_cache.json'
+    persistent=json.loads(cache_path.read_text()).get('entries', {}) if cache_path.exists() else {}
     rows=[];cache={};errors=[]
     existing_path=ROOT/'data/commute_estimates.json'
     existing=json.loads(existing_path.read_text()) if existing_path.exists() else {}
@@ -147,12 +181,20 @@ def calculate():
                 pin=pins.get(p['proxy_address'],{})
                 if pin.get('status')=='reviewed_exact_door_pin' and pin.get('lat')==p.get('lat') and pin.get('lon')==p.get('lon') and len(p.get('distances_km',[]))==2 and all(math.isfinite(v) and v>0 for v in p['distances_km']):
                     p['route_calculated_at']=p.get('route_calculated_at',existing.get('calculated_at'))
-                    cache[p['proxy_address']]=p
+                    if valid_cached_route(p):
+                        cache[p['proxy_address']]=p
+                        persistent.setdefault(route_key(p['proxy_address'], pin, destinations), p)
+    # Standalone cache keeps successful routes even when no current listing uses them.
+    save_route_cache(cache_path, persistent)
     for listing in proxies['rows']:
         results=[]
         for door in listing['doors']:
             p=pins.get(door['proxy_address'])
             if not p or p.get('status')!='reviewed_exact_door_pin':continue
+            key=route_key(door['proxy_address'], p, destinations)
+            saved=persistent.get(key)
+            if valid_cached_route(saved):
+                cache[door['proxy_address']]=saved
             if door['proxy_address'] not in cache:
                 distances=[];snap=[]
                 try:
@@ -163,16 +205,20 @@ def calculate():
                         if j.get('code')!='Ok' or len(j.get('routes',[]))!=1:raise ValueError('No road route')
                         distance=j['routes'][0]['distance']/1000
                         if not math.isfinite(distance) or distance<=0:raise ValueError('Invalid route distance')
-                        if len(j.get('waypoints',[]))!=2 or any(w['distance']>200 for w in j['waypoints']):raise ValueError('Road snap exceeds 200 metres')
+                        if len(j.get('waypoints',[]))!=2 or any(not math.isfinite(w['distance']) or not 0 <= w['distance'] <= 200 for w in j['waypoints']):raise ValueError('Road snap exceeds 200 metres')
                         distances.append(distance);snap.append([w['distance'] for w in j['waypoints']])
                     cache[door['proxy_address']]=dict(**door,**p,distances_km=distances,road_snap_distances_m=snap,route_calculated_at=datetime.now(timezone.utc).isoformat())
+                    persistent[key]=cache[door['proxy_address']]
+                    save_route_cache(cache_path, persistent)
                 except (requests.RequestException,ValueError,KeyError) as exc:
                     errors.append(dict(proxy_address=door['proxy_address'],reason=str(exc)));cache[door['proxy_address']]=None
             if cache[door['proxy_address']]:results.append({**cache[door['proxy_address']],**door})
         if results:
             rows.append(dict(**{k:v for k,v in listing.items() if k!='doors'},status='estimated_transaction_proxy',door_count=len(listing['doors']),routed_door_count=len(results),complete_doors=len(results)==len(listing['doors']),proxies=results,total_min_km=min(sum(p['distances_km']) for p in results),total_max_km=max(sum(p['distances_km']) for p in results)))
     report=dict(calculated_at=datetime.now(timezone.utc).isoformat(),destination_digest=destination_digest(),route_provider='OSRM / FOSSGIS, car fastest-route distance; © OpenStreetMap contributors (ODbL)',policy_url='https://routing.openstreetmap.de/about.html',rows=rows,errors=errors)
-    (ROOT/'data/commute_estimates.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    temporary=existing_path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+    temporary.replace(existing_path)
     print('ROUTED',len(rows),'listings;',len(cache),'doors',flush=True)
 
 def load_estimates(path=None):
