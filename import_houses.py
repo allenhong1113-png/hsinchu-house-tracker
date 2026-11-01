@@ -19,7 +19,7 @@ def import_csv(path=CSV_PATH):
         return {"already_imported": True}
     con.commit()
     con.close()
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, dtype={"listing_id": str})
     required = {"listing_id", "source", "url", "collected_at", "price", "rooms"}
     if not required.issubset(df.columns) or df.empty:
         raise ValueError("CSV lacks real listing provenance or contains no listings")
@@ -36,6 +36,14 @@ def import_csv(path=CSV_PATH):
             house.update(lat=None, lon=None)
         if house.get("route_status") != "verified_road":
             house.update(work1_distance=None, work2_distance=None)
+        # Carry-forward rows must not reset last_seen, status or price history.
+        from database import make_fingerprint
+        with connect() as existing_con:
+            old = existing_con.execute('SELECT collected_at FROM houses WHERE fingerprint=?',
+                                       (make_fingerprint(house),)).fetchone()
+        if old and old['collected_at'] == house.get('collected_at'):
+            stats['retained'] = stats.get('retained', 0) + 1
+            continue
         status, _ = upsert_house(house)
         stats[status] = stats.get(status, 0) + 1
     con = connect()
